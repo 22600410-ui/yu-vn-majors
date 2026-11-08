@@ -1,6 +1,7 @@
 {
-  "_comment": "헤더 로고: 영남대학교 로고 파일(사용 허락 확인 후)을 public/images/ 에 넣고 파일 이름을 logo 에 적으세요. 비워 두면 'YU' 배지. comingSoon: 아직 공개하지 않을 기능. 여기 적힌 기능의 메뉴·버튼·링크를 누르면 페이지가 바뀌지 않고 '준비 중' 안내만 잠깐 뜹니다. 쓸 수 있는 이름: chat(전공 추천 챗봇), faq(자주 묻는 질문), test(전공 유형 테스트), recommend(질문지 추천), departments(학과 찾기). 공개하려면 목록에서 지우면 됩니다.",
-  "logo": "",
+  "_comment": "헤더 로고: public/images/ 폴더의 로고 파일 이름(지금은 YU 심볼만 잘라 낸 yu-symbol.png). logoIncludesName: 로고 그림에 학교 이름 글자가 들어 있으면 true(옆의 학교 이름 글자를 숨김), 심볼만 있으면 false. 파일이 없거나 이름이 다르면 자동으로 'YU' 배지로 표시됩니다. comingSoon: 아직 공개하지 않을 기능. 여기 적힌 기능의 메뉴·버튼·링크를 누르면 페이지가 바뀌지 않고 '준비 중' 안내만 잠깐 뜹니다. 쓸 수 있는 이름: chat(전공 추천 챗봇), faq(자주 묻는 질문), test(전공 유형 테스트), recommend(질문지 추천), departments(학과 찾기). 공개하려면 목록에서 지우면 됩니다.",
+  "logo": "yu-symbol.png",
+  "logoIncludesName": false,
   "logoAlt": "Yeungnam University",
-  "comingSoon": ["chat", "faq"]
+  "comingSoon": ["chat"]
 }

@@ -14,6 +14,8 @@
     "test": "Trắc nghiệm chọn ngành"
   },
   "header": {
+    "brand": "Đại học Yeungnam",
+    "tagline": "Gợi ý ngành cho du học sinh",
     "searchPlaceholder": "Tìm theo tên ngành hoặc từ khóa (VD: tiếng Trung, bán dẫn)",
     "aiButton": "Chatbot gợi ý",
     "helpLink": "Có thắc mắc? Xem câu hỏi thường gặp"
@@ -40,6 +42,8 @@
     "officialBadge": "FAQ tuyển sinh",
     "officialSource": "Nguồn: FAQ tuyển sinh du học sinh của Đại học Yeungnam. Thông tin chi tiết vui lòng liên hệ Phòng tuyển sinh du học sinh (admission@yu.ac.kr).",
     "notFoundTitle": "Không thấy câu hỏi bạn cần?",
+    "introNoChat": "Bấm vào câu hỏi để xem câu trả lời.",
+    "contactText": "Hãy gửi email hỏi Phòng tuyển sinh du học sinh của Đại học Yeungnam.",
     "notFoundText": "Hãy nhập tên ngành hoặc từ khóa vào Chatbot gợi ý ngành."
   },
   "lang": {
@@ -104,6 +108,7 @@
     "official": "Trang giới thiệu chính thức",
     "homepage": "Trang web khoa",
     "homepageShort": "Trang web",
+    "previewHint": "Bấm để xem trang chi tiết ngành",
     "phone": "Điện thoại",
     "viewDetail": "Xem chi tiết",
     "sourceNote": "Thông tin được thu thập từ trang chủ Đại học Yeungnam ngày {{date}}. Vui lòng xem trang chính thức để có thông tin mới nhất.",

@@ -7,6 +7,7 @@ import { tr } from '../utils/localize';
 import UnderlineTabs from './UnderlineTabs';
 import LocalizedText from './LocalizedText';
 import { useChat } from './RecommenderChat';
+import { isComingSoon } from './Notice';
 
 /** 카드 아래 출처 줄: 관련 학과가 있으면 [단과대학] 학과명, 없으면 [영남대학교] 분류 */
 function CardFooter({ item }) {
@@ -129,16 +130,19 @@ function FaqModal({ item, onClose }) {
               {t(`faq.action.${item.action}`)}
             </Link>
           )}
-          <button
-            type="button"
-            onClick={() => {
-              onClose();
-              ask(t('faq.followUp', { q }));
-            }}
-            className="rounded-xl bg-yu px-4 py-3 font-bold text-white hover:bg-yu-dark sm:ml-auto"
-          >
-            ✦ {t('faq.askAi')}
-          </button>
+          {/* 챗봇이 '준비 중'(site.json comingSoon)이면 버튼을 숨김 */}
+          {!isComingSoon('chat') && (
+            <button
+              type="button"
+              onClick={() => {
+                onClose();
+                ask(t('faq.followUp', { q }));
+              }}
+              className="rounded-xl bg-yu px-4 py-3 font-bold text-white hover:bg-yu-dark sm:ml-auto"
+            >
+              ✦ {t('faq.askAi')}
+            </button>
+          )}
           <button type="button" onClick={onClose} className="rounded-xl px-4 py-3 font-semibold text-slate-600 hover:bg-slate-100">
             {t('chat.close')}
           </button>

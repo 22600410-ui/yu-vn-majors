@@ -32,21 +32,37 @@ function ScrollToTop() {
   return null;
 }
 
-/** 로고: src/data/site.json 에 파일 이름이 있으면 그 이미지, 없으면 'YU' 배지 */
-function Logo() {
-  if (site.logo) {
-    return (
-      <img
-        src={`${import.meta.env.BASE_URL}images/${site.logo}`}
-        alt={site.logoAlt}
-        className="h-10 w-auto max-w-[120px] shrink-0 object-contain"
-      />
-    );
-  }
+/**
+ * 왼쪽 위 로고: public/images/<site.json 의 logo 파일> 이 있으면 그 이미지,
+ * 파일이 없거나 못 불러오면 'YU' 배지 + "Yeungnam University" 글자로 대신 표시
+ */
+function Brand() {
+  const { t } = useTranslation();
+  const [logoFailed, setLogoFailed] = useState(false);
+  const useImage = site.logo && !logoFailed;
+  // 로고 그림에 학교 이름이 들어 있으면 옆 글자는 생략, YU 심볼만 있으면 '영남대학교' 글자를 함께 표시
+  const showName = !useImage || !site.logoIncludesName;
   return (
-    <span aria-hidden className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-yu-dark text-sm font-extrabold tracking-tight text-white">
-      YU
-    </span>
+    <Link to="/" className="flex min-w-0 items-center gap-3">
+      {useImage ? (
+        <img
+          src={`${import.meta.env.BASE_URL}images/${site.logo}`}
+          alt={site.logoAlt}
+          onError={() => setLogoFailed(true)}
+          className="h-8 w-auto max-w-[150px] shrink-0 object-contain sm:h-10 sm:max-w-[200px]"
+        />
+      ) : (
+        <span aria-hidden className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-yu-dark text-sm font-extrabold tracking-tight text-white">
+          YU
+        </span>
+      )}
+      <span className="min-w-0 leading-tight">
+        {showName && <span className="block text-base font-extrabold text-yu-dark sm:text-lg">{t('header.brand')}</span>}
+        <span className={`block truncate text-[13px] font-medium text-slate-600 sm:text-sm ${showName ? '' : 'border-l border-slate-200 pl-3'}`}>
+          {t('header.tagline')}
+        </span>
+      </span>
+    </Link>
   );
 }
 
@@ -92,13 +108,7 @@ function Header() {
     <header className="sticky top-0 z-40 bg-white shadow-[0_1px_0_rgb(226_232_240)]">
       {/* 1줄: 로고 · 큰 검색창 · AI 추천 · 언어 */}
       <div className="mx-auto flex max-w-6xl items-center gap-4 px-4 py-3">
-        <Link to="/" className="flex min-w-0 items-center gap-2.5">
-          <Logo />
-          <span className="min-w-0 leading-tight">
-            <span className="block text-[15px] font-extrabold text-slate-900 sm:text-base">Yeungnam University</span>
-            <span className="block truncate text-xs text-slate-600 sm:text-[13px]">Department Finder for Vietnamese Students</span>
-          </span>
-        </Link>
+        <Brand />
         <SearchBox className="hidden flex-1 md:flex" />
         <div className="ml-auto md:ml-0">
           <LanguageSwitcher />

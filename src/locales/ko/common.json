@@ -14,6 +14,8 @@
     "test": "전공 유형 테스트"
   },
   "header": {
+    "brand": "영남대학교",
+    "tagline": "유학생을 위한 학과 추천",
     "searchPlaceholder": "학과 이름이나 핵심 키워드로 검색 (예: 중국어, 반도체)",
     "aiButton": "추천 챗봇",
     "helpLink": "궁금한 점이 있을 때 자주 묻는 질문"
@@ -40,6 +42,8 @@
     "officialBadge": "입학 FAQ",
     "officialSource": "출처: 영남대학교 외국인 유학생 입학 FAQ. 자세한 내용은 유학생입학팀(admission@yu.ac.kr)에 문의하세요.",
     "notFoundTitle": "찾는 질문이 없나요?",
+    "introNoChat": "궁금한 질문을 누르면 답변을 볼 수 있습니다.",
+    "contactText": "영남대학교 유학생입학팀에 이메일로 문의하세요.",
     "notFoundText": "전공 추천 챗봇에 학과 이름이나 키워드를 입력해 보세요."
   },
   "lang": {
@@ -104,6 +108,7 @@
     "official": "공식 학과소개 페이지",
     "homepage": "학과 홈페이지",
     "homepageShort": "홈페이지",
+    "previewHint": "누르면 학과 상세 페이지로 이동해요",
     "phone": "연락처",
     "viewDetail": "자세히 보기",
     "sourceNote": "이 정보는 {{date}}에 영남대학교 홈페이지에서 수집했습니다. 최신 정보는 공식 페이지에서 확인하세요.",
