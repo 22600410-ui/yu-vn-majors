@@ -1,0 +1,97 @@
+{
+  "meta": {
+    "schemaVersion": 1,
+    "source": "https://www.yu.ac.kr/main/academics/university.do",
+    "crawledAt": "SAMPLE — npm run crawl 로 실제 데이터를 생성하세요",
+    "languages": ["vi", "ko"],
+    "defaultLanguage": "vi",
+    "collegeCount": 1,
+    "departmentCount": 2,
+    "copyright": "Nội dung gốc © Yeungnam University / 원문 저작권: 영남대학교",
+    "untranslatedCount": 0
+  },
+  "colleges": [
+    {
+      "id": "eng",
+      "type": "college",
+      "name": { "ko": "공과대학", "vi": "Trường Đại học Kỹ thuật" },
+      "description": {
+        "ko": "공과대학은 학생들의 창의력과 적응력을 극대화하기 위한 교육을 집중적으로 실시함으로써, 졸업 후 산업현장에서 창의적으로 적응할 수 있는 글로벌 공학인력의 양성을 목표로 한다.",
+        "vi": ""
+      },
+      "links": { "homepage": "https://eng.yu.ac.kr/" },
+      "phone": "053-810-2406",
+      "departments": [
+        {
+          "id": "me",
+          "collegeId": "eng",
+          "name": { "ko": "기계공학부", "vi": "Khoa Kỹ thuật Cơ khí" },
+          "majors": [],
+          "links": {
+            "official": "https://www.yu.ac.kr/main/academics/me.do",
+            "homepage": "https://me.yu.ac.kr/"
+          },
+          "phone": "053-810-2450",
+          "slogan": { "ko": "미래가 필요로 하는 창의적 인재의 요람, 기계공학부", "vi": "" },
+          "tags": [
+            { "ko": "취업깡패", "vi": "" },
+            { "ko": "장학금천국", "vi": "" }
+          ],
+          "description": {
+            "ko": "공학이란 문자의 의미 그대로 무엇을 만들기 위한 원리 및 기술을 다루는 학문이고, 공학의 기본 원리가 실체화된 것이 「기계」입니다.",
+            "vi": ""
+          },
+          "majorGuide": { "ko": "", "vi": "" },
+          "fields": [
+            { "ko": "고체 / 재료 분야", "vi": "Cơ học vật rắn / Vật liệu" },
+            { "ko": "열유체 분야", "vi": "Nhiệt – Chất lưu" }
+          ],
+          "curriculum": [
+            {
+              "year": 1,
+              "label": { "ko": "1학년", "vi": "Năm 1" },
+              "text": { "ko": "기초교양 및 수학물리교양, 정역학", "vi": "" }
+            }
+          ],
+          "careers": [
+            {
+              "category": { "ko": "일반기업", "vi": "Doanh nghiệp tư nhân" },
+              "detail": { "ko": "각종기계 및 관련 장비 생산업체, 자동차생산업체, 항공기 제작회사, 조선소 등", "vi": "" }
+            }
+          ],
+          "certificates": [{ "ko": "일반기계기사", "vi": "" }],
+          "programs": []
+        },
+        {
+          "id": "arch",
+          "collegeId": "eng",
+          "name": { "ko": "건축학부", "vi": "Khoa Kiến trúc" },
+          "majors": [
+            {
+              "name": { "ko": "건축학전공(5년제)", "vi": "Chuyên ngành Kiến trúc (hệ 5 năm)" },
+              "links": { "official": null, "homepage": null }
+            },
+            {
+              "name": { "ko": "건축공학전공", "vi": "Chuyên ngành Kỹ thuật Kiến trúc" },
+              "links": { "official": null, "homepage": null }
+            }
+          ],
+          "links": {
+            "official": "https://www.yu.ac.kr/main/academics/arch.do",
+            "homepage": "https://arch.yu.ac.kr/"
+          },
+          "phone": "053-810-2420",
+          "slogan": { "ko": "", "vi": "" },
+          "tags": [],
+          "description": { "ko": "", "vi": "" },
+          "majorGuide": { "ko": "", "vi": "" },
+          "fields": [],
+          "curriculum": [],
+          "careers": [],
+          "certificates": [],
+          "programs": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "app": {
+    "title": "영남대학교 학과 탐색",
+    "subtitle": "베트남 유학생을 위한 학과 추천·소개",
+    "footerSource": "데이터 출처: 영남대학교 공식 홈페이지",
+    "lastUpdated": "업데이트: {{date}}"
+  },
+  "nav": {
+    "home": "홈",
+    "colleges": "단과대학",
+    "recommend": "학과 추천",
+    "about": "소개"
+  },
+  "lang": {
+    "label": "언어",
+    "vi": "Tiếng Việt",
+    "ko": "한국어"
+  },
+  "search": {
+    "placeholder": "학과 검색 (예: 기계, Cơ khí)…",
+    "noResult": "검색 결과가 없습니다."
+  },
+  "college": {
+    "departmentCount_one": "{{count}}개 학과",
+    "departmentCount_other": "{{count}}개 학과",
+    "homepage": "단과대학 홈페이지"
+  },
+  "department": {
+    "description": "학과 소개",
+    "majorGuide": "전공 안내",
+    "fields": "전공 교육 분야",
+    "curriculum": "학년별 교육과정",
+    "yearN": "{{n}}학년",
+    "careers": "졸업 후 진로",
+    "certificates": "취득 가능 자격증",
+    "programs": "특성화 프로그램",
+    "majors": "세부 전공",
+    "official": "공식 학과소개 페이지",
+    "homepage": "학과 홈페이지",
+    "phone": "연락처",
+    "viewDetail": "자세히 보기"
+  },
+  "translation": {
+    "missing": "베트남어 번역이 아직 없어 한국어 원문을 표시합니다.",
+    "badge": "한국어 원문"
+  },
+  "recommend": {
+    "title": "어떤 분야에 관심이 있나요?",
+    "submit": "추천 보기",
+    "reset": "다시 선택"
+  },
+  "common": {
+    "loading": "불러오는 중…",
+    "error": "데이터를 불러오지 못했습니다.",
+    "back": "뒤로"
+  }
+}

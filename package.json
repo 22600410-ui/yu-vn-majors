@@ -1,0 +1,31 @@
+{
+  "name": "yu-vn-majors",
+  "private": true,
+  "version": "0.1.0",
+  "description": "영남대학교 학과 추천·소개 사이트 (베트남 유학생용, vi/ko)",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "crawl": "python scripts/crawl_departments.py",
+    "crawl:untranslated": "python scripts/crawl_departments.py --export-untranslated data/untranslated.vi.json",
+    "deploy": "vite build && gh-pages -d dist"
+  },
+  "dependencies": {
+    "i18next": "^23.16.8",
+    "i18next-browser-languagedetector": "^8.0.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-i18next": "^15.1.4",
+    "react-router-dom": "^6.28.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "gh-pages": "^6.2.0",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "vite": "^5.4.11"
+  }
+}

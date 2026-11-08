@@ -1,0 +1,57 @@
+{
+  "app": {
+    "title": "Khám phá ngành học tại Đại học Yeungnam",
+    "subtitle": "Hướng dẫn chọn ngành dành cho du học sinh Việt Nam",
+    "footerSource": "Nguồn dữ liệu: Trang chủ Đại học Yeungnam",
+    "lastUpdated": "Cập nhật: {{date}}"
+  },
+  "nav": {
+    "home": "Trang chủ",
+    "colleges": "Các trường thành viên",
+    "recommend": "Gợi ý ngành học",
+    "about": "Giới thiệu"
+  },
+  "lang": {
+    "label": "Ngôn ngữ",
+    "vi": "Tiếng Việt",
+    "ko": "한국어"
+  },
+  "search": {
+    "placeholder": "Tìm ngành học (VD: Cơ khí, 기계)…",
+    "noResult": "Không tìm thấy ngành phù hợp."
+  },
+  "college": {
+    "departmentCount_one": "{{count}} ngành",
+    "departmentCount_other": "{{count}} ngành",
+    "homepage": "Trang web của trường"
+  },
+  "department": {
+    "description": "Giới thiệu ngành",
+    "majorGuide": "Hướng dẫn chuyên ngành",
+    "fields": "Lĩnh vực đào tạo",
+    "curriculum": "Chương trình học theo năm",
+    "yearN": "Năm {{n}}",
+    "careers": "Định hướng nghề nghiệp",
+    "certificates": "Chứng chỉ có thể lấy",
+    "programs": "Chương trình đặc thù",
+    "majors": "Chuyên ngành",
+    "official": "Trang giới thiệu chính thức",
+    "homepage": "Trang web khoa",
+    "phone": "Điện thoại",
+    "viewDetail": "Xem chi tiết"
+  },
+  "translation": {
+    "missing": "Chưa có bản dịch tiếng Việt — đang hiển thị bản gốc tiếng Hàn.",
+    "badge": "Bản gốc tiếng Hàn"
+  },
+  "recommend": {
+    "title": "Bạn quan tâm đến lĩnh vực nào?",
+    "submit": "Xem gợi ý",
+    "reset": "Chọn lại"
+  },
+  "common": {
+    "loading": "Đang tải…",
+    "error": "Không thể tải dữ liệu.",
+    "back": "Quay lại"
+  }
+}
