@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import LocalizedText from './LocalizedText';
+import AdmissionBadges from './AdmissionBadges';
 
 export default function DepartmentCard({ department }) {
   const { t } = useTranslation();
@@ -12,6 +13,7 @@ export default function DepartmentCard({ department }) {
       <LocalizedText as="h3" text={department.name} className="font-semibold text-slate-900" showBadge={false} />
       {/* 보조 언어(한국어) 이름을 함께 보여 주면 학생이 공식 사이트와 대조하기 쉽습니다 */}
       <p className="text-xs text-slate-500" lang="ko">{department.name.ko}</p>
+      <AdmissionBadges admission={department.admission} className="mt-2" />
       <LocalizedText as="p" text={department.slogan} className="mt-2 line-clamp-2 text-sm text-slate-600" />
       {department.tags?.length > 0 && (
         <ul className="mt-3 flex flex-wrap gap-1">

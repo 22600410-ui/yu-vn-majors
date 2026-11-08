@@ -9,6 +9,7 @@ export default function Home() {
   const { t } = useTranslation();
   const { data, loading, error } = useDepartments();
   const [query, setQuery] = useState('');
+  const [track, setTrack] = useState('all'); // all | freshman | transfer
 
   const colleges = useMemo(() => {
     if (!data) return [];
@@ -17,11 +18,15 @@ export default function Home() {
       .map((c) => ({
         ...c,
         departments: c.departments.filter(
-          (d) => !q || searchableText(c.name, d.name, d.tags, d.majors.map((m) => m.name)).includes(q),
+          (d) =>
+            (track === 'all' || d.admission?.[track]) &&
+            (!q || searchableText(c.name, d.name, d.tags, d.majors.map((m) => m.name)).includes(q)),
         ),
       }))
       .filter((c) => c.departments.length > 0);
-  }, [data, query]);
+  }, [data, query, track]);
+
+  const admissionMeta = data?.meta?.admission;
 
   if (loading) return <p className="p-8 text-center">{t('common.loading')}</p>;
   if (error) return <p className="p-8 text-center text-red-600">{t('common.error')}</p>;
@@ -35,6 +40,33 @@ export default function Home() {
         placeholder={t('search.placeholder')}
         className="w-full rounded-xl border border-slate-300 px-4 py-3 focus:border-yu focus:outline-none"
       />
+
+      {admissionMeta && (
+        <>
+          <div role="tablist" aria-label={t('admission.filterLabel')} className="mt-4 flex flex-wrap gap-2">
+            {['all', 'freshman', 'transfer'].map((k) => (
+              <button
+                key={k}
+                type="button"
+                role="tab"
+                aria-selected={track === k}
+                onClick={() => setTrack(k)}
+                className={`rounded-full border px-4 py-1.5 text-sm transition ${
+                  track === k ? 'border-yu bg-yu text-white' : 'border-slate-300 text-slate-700 hover:border-yu'
+                }`}
+              >
+                {t(`admission.${k}`)}
+              </button>
+            ))}
+          </div>
+          <div className="mt-3 text-xs text-slate-500">
+            <LocalizedText text={admissionMeta.year} showBadge={false} /> · {t('admission.basis')}
+            {admissionMeta.notes?.map((n) => (
+              <LocalizedText key={n.ko} as="p" text={n} className="mt-1" showBadge={false} />
+            ))}
+          </div>
+        </>
+      )}
 
       {colleges.length === 0 && <p className="mt-8 text-center text-slate-500">{t('search.noResult')}</p>}
 

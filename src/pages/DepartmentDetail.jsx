@@ -2,6 +2,53 @@ import { Link, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { findDepartment, useDepartments } from '../hooks/useDepartments';
 import LocalizedText from '../components/LocalizedText';
+import AdmissionBadges from '../components/AdmissionBadges';
+
+function AdmissionInfo({ admission }) {
+  const { t } = useTranslation();
+  if (!admission) return null;
+  return (
+    <div className="grid gap-3 sm:grid-cols-2">
+      {['freshman', 'transfer'].map((track) => {
+        const info = admission[track];
+        return (
+          <div
+            key={track}
+            className={`rounded-lg border p-4 ${info ? 'border-yu/30 bg-yu-light/50' : 'border-slate-200 bg-slate-50 text-slate-400'}`}
+          >
+            <h3 className="font-semibold">
+              {t(`admission.${track}`)}
+              {info?.years && (
+                <span className="ml-2 text-sm font-normal text-slate-600">
+                  ({info.years.map((n) => t('department.yearN', { n })).join(' · ')})
+                </span>
+              )}
+            </h3>
+            {!info && <p className="mt-1 text-sm">{t('admission.notAvailable')}</p>}
+            {info && (
+              <>
+                <p className="mt-1 text-sm text-slate-600">
+                  {info.majors.length ? t('admission.majorsOnly') : t('admission.wholeDepartment')}
+                </p>
+                {info.majors.length > 0 && (
+                  <ul className="mt-2 list-disc pl-5 text-sm">
+                    {info.majors.map((m) => <li key={m.ko}><LocalizedText text={m} /></li>)}
+                  </ul>
+                )}
+                {info.special && (
+                  <p className="mt-2 rounded bg-amber-50 px-2 py-1 text-xs font-medium text-amber-800">
+                    {t('admission.special')}
+                  </p>
+                )}
+                <LocalizedText as="p" text={info.note} className="mt-2 text-xs text-slate-600" />
+              </>
+            )}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
 
 function Section({ title, children, show = true }) {
   if (!show) return null;
@@ -29,7 +76,12 @@ export default function DepartmentDetail() {
       <LocalizedText as="p" text={college.name} className="mt-4 text-sm text-slate-500" showBadge={false} />
       <LocalizedText as="h1" text={d.name} className="text-3xl font-bold" showBadge={false} />
       <p className="text-slate-500" lang="ko">{d.name.ko}</p>
+      <AdmissionBadges admission={d.admission} className="mt-2" />
       <LocalizedText as="p" text={d.slogan} className="mt-3 text-lg text-slate-700" />
+
+      <Section title={t('admission.title')} show={!!d.admission}>
+        <AdmissionInfo admission={d.admission} />
+      </Section>
 
       <Section title={t('department.description')} show={!!d.description?.ko}>
         <LocalizedText as="p" text={d.description} className="whitespace-pre-line leading-relaxed" />

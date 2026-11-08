@@ -43,6 +43,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import re
 import sys
 import time
@@ -62,6 +63,7 @@ USER_AGENT = "yu-vn-majors-crawler/0.1 (student project for Vietnamese applicant
 ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_OUT = ROOT / "public" / "data" / "departments.json"
 GLOSSARY_PATH = ROOT / "data" / "translations" / "vi.json"
+ADMISSIONS_PATH = ROOT / "data" / "admissions.json"
 
 SCHEMA_VERSION = 1
 
@@ -316,6 +318,72 @@ def parse_department_detail(html: str) -> dict:
 
 
 # --------------------------------------------------------------------------- #
+# 외국인 유학생 모집 단위 (data/admissions.json)
+# --------------------------------------------------------------------------- #
+def _as_localized(v: Any) -> dict[str, str]:
+    if isinstance(v, dict):
+        return {"ko": clean(v.get("ko", "")), "vi": v.get("vi", "")}
+    return L(str(v or ""))
+
+
+def apply_admissions(colleges: list[dict], adm: dict, keep_all: bool = False) -> tuple[list[dict], list[str]]:
+    """모집 단위에 있는 학과에 admission 정보를 붙이고, 없는 학과는 제외(keep_all=False일 때)."""
+    by_name: dict[tuple[str, str], dict] = {}
+    for c in colleges:
+        if c.get("type") != "college":
+            continue
+        for d in c["departments"]:
+            by_name.setdefault((c["name"]["ko"], d["name"]["ko"]), d)
+
+    unmatched: list[str] = []
+    for track, table in adm.get("tracks", {}).items():
+        years = table.get("_years")
+        for college_name, entries in table.items():
+            if college_name.startswith("_"):
+                continue
+            for e in entries:
+                e = {"name": e} if isinstance(e, str) else e
+                d = by_name.get((college_name, e["name"]))
+                if not d:
+                    unmatched.append(f"[{track}] {college_name} / {e['name']}")
+                    continue
+                info: dict[str, Any] = {"majors": [L(m) for m in e.get("majors", [])]}
+                if years:
+                    info["years"] = years
+                if e.get("special"):
+                    info["special"] = True
+                if e.get("note"):
+                    info["note"] = _as_localized(e["note"])
+                d.setdefault("admission", {})[track] = info
+
+    if not keep_all:
+        for c in colleges:
+            c["departments"] = [d for d in c["departments"] if d.get("admission")]
+        colleges = [c for c in colleges if c["departments"]]
+    return colleges, unmatched
+
+
+def ensure_unique_ids(colleges: list[dict]) -> None:
+    """학과 id가 겹치면(-2, -3 …) 붙여서 상세 페이지 주소가 충돌하지 않게 함."""
+    seen: set[str] = set()
+    for c in colleges:
+        for d in c["departments"]:
+            base, i = d["id"], 2
+            while d["id"] in seen:
+                d["id"] = f"{base}-{i}"
+                i += 1
+            seen.add(d["id"])
+
+
+def write_step_summary(lines: list[str]) -> None:
+    """GitHub Actions 실행 화면의 Summary에 표시 (로컬 실행 시엔 무시)."""
+    path = os.environ.get("GITHUB_STEP_SUMMARY")
+    if path:
+        with open(path, "a", encoding="utf-8") as f:
+            f.write("\n".join(lines) + "\n\n")
+
+
+# --------------------------------------------------------------------------- #
 # 번역 보존(Translation Memory)
 # --------------------------------------------------------------------------- #
 def walk_localized(obj: Any):
@@ -364,6 +432,10 @@ def main() -> int:
     ap = argparse.ArgumentParser(description="영남대 학과 정보 → departments.json")
     ap.add_argument("--out", type=Path, default=DEFAULT_OUT)
     ap.add_argument("--glossary", type=Path, default=GLOSSARY_PATH)
+    ap.add_argument("--admissions", type=Path, default=ADMISSIONS_PATH,
+                    help="외국인 유학생 모집 단위 파일 (없으면 전체 학과 수집)")
+    ap.add_argument("--all-departments", action="store_true",
+                    help="모집 단위에 없는 학과도 결과에 남김")
     ap.add_argument("--delay", type=float, default=1.0, help="요청 간 대기(초)")
     ap.add_argument("--limit", type=int, default=0, help="상세 페이지 수집 개수 제한(0=전체)")
     ap.add_argument("--no-details", action="store_true", help="상세 페이지를 수집하지 않음")
@@ -376,8 +448,31 @@ def main() -> int:
 
     print(f"[1/3] 목록 수집: {LIST_URL}")
     colleges = parse_university_list(fetcher.get(LIST_URL))
+    total_depts = sum(len(c["departments"]) for c in colleges)
+    print(f"      단과대학 {len(colleges)}개, 학과/학부 {total_depts}개")
+
+    admission_meta = None
+    if args.admissions.exists():
+        adm = json.loads(args.admissions.read_text(encoding="utf-8"))
+        colleges, unmatched = apply_admissions(colleges, adm, keep_all=args.all_departments)
+        admission_meta = {
+            "year": _as_localized(adm.get("year", "")),
+            "notes": [_as_localized(n) for n in adm.get("notes", [])],
+            "tracks": [t for t in adm.get("tracks", {})],
+            "unmatched": unmatched,
+        }
+        kept = sum(len(c["departments"]) for c in colleges)
+        print(f"      유학생 모집 단위 적용: {kept}개 학과 (매칭 실패 {len(unmatched)}건)")
+        for u in unmatched:
+            print(f"      [warn] 매칭 실패 {u}", file=sys.stderr)
+        write_step_summary(
+            ["### 유학생 모집 단위 매칭",
+             f"- 사이트에 표시할 학과 {kept}개 (전체 {total_depts}개 중)",
+             f"- 매칭 실패 {len(unmatched)}건" + ("" if not unmatched else " — data/admissions.json 의 이름을 확인하세요")]
+            + [f"  - {u}" for u in unmatched]
+        )
+    ensure_unique_ids(colleges)
     depts = [d for c in colleges for d in c["departments"]]
-    print(f"      단과대학 {len(colleges)}개, 학과/학부 {len(depts)}개")
 
     if not args.no_details:
         targets = [d for d in depts if d["links"]["official"]]
@@ -405,6 +500,8 @@ def main() -> int:
             "defaultLanguage": "vi",
             "collegeCount": len(colleges),
             "departmentCount": len(depts),
+            "totalDepartmentCount": total_depts,
+            "admission": admission_meta,
             "copyright": "Nội dung gốc © Yeungnam University / 원문 저작권: 영남대학교",
         },
         "colleges": colleges,

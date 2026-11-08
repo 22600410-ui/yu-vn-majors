@@ -40,6 +40,18 @@
     "phone": "Điện thoại",
     "viewDetail": "Xem chi tiết"
   },
+  "admission": {
+    "title": "Thông tin tuyển sinh du học sinh",
+    "filterLabel": "Hình thức nhập học",
+    "all": "Tất cả",
+    "freshman": "Nhập học năm 1",
+    "transfer": "Chuyển tiếp (liên thông)",
+    "basis": "Ngành dành cho du học sinh nước ngoài",
+    "wholeDepartment": "Có thể đăng ký toàn bộ khoa.",
+    "majorsOnly": "Chỉ có thể đăng ký các chuyên ngành sau:",
+    "notAvailable": "Không tuyển sinh theo hình thức này.",
+    "special": "Ngành chuyên trách ngoài chỉ tiêu — điều kiện đặc biệt"
+  },
   "translation": {
     "missing": "Chưa có bản dịch tiếng Việt — đang hiển thị bản gốc tiếng Hàn.",
     "badge": "Bản gốc tiếng Hàn"
