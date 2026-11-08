@@ -22,7 +22,11 @@ const NAV = [
 
 function ScrollToTop() {
   const { pathname } = useLocation();
-  useEffect(() => window.scrollTo(0, 0), [pathname]);
+  // 중괄호 필수: 최신 크롬의 window.scrollTo 는 값을 돌려주는데, 그 값을 effect가 반환하면
+  // React가 '정리 함수'로 착각해 페이지 이동 때 화면이 멈춤 → 아무것도 반환하지 않게 함
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   return null;
 }
 
