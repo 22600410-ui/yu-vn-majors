@@ -1,0 +1,12 @@
+{
+  "_comment": "사이트 언어 설정. 크롤러(scripts/crawl_departments.py)와 화면(src/i18n)이 함께 읽습니다. 새 언어를 열려면 enabled를 true로 바꾸고 src/locales/<code>/common.json 을 추가하세요. default는 처음 접속 시 언어입니다(한국어로 틀을 완성하는 동안 ko, 공개할 때 vi로 변경).",
+  "source": "ko",
+  "default": "ko",
+  "languages": [
+    { "code": "ko", "label": "한국어", "enabled": true, "fallback": [] },
+    { "code": "vi", "label": "Tiếng Việt", "enabled": true, "fallback": ["en", "ko"] },
+    { "code": "en", "label": "English", "enabled": false, "fallback": ["ko"] },
+    { "code": "zh", "label": "中文", "enabled": false, "fallback": ["en", "ko"] },
+    { "code": "mn", "label": "Монгол", "enabled": false, "fallback": ["en", "ko"] }
+  ]
+}

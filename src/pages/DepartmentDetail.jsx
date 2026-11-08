@@ -3,6 +3,9 @@ import { useTranslation } from 'react-i18next';
 import { findDepartment, useDepartments } from '../hooks/useDepartments';
 import LocalizedText from '../components/LocalizedText';
 import AdmissionBadges from '../components/AdmissionBadges';
+import CoreTags from '../components/CoreTags';
+import { formatDate } from '../utils/localize';
+import { SOURCE_LANG } from '../i18n/languages';
 
 function AdmissionInfo({ admission }) {
   const { t } = useTranslation();
@@ -62,26 +65,46 @@ function Section({ title, children, show = true }) {
 
 export default function DepartmentDetail() {
   const { id } = useParams();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const { data, loading } = useDepartments();
 
   if (loading) return <p className="p-8 text-center">{t('common.loading')}</p>;
   const found = findDepartment(data, id);
-  if (!found) return <p className="p-8 text-center">{t('search.noResult')}</p>;
+  if (!found) {
+    return (
+      <div className="px-4 py-20 text-center">
+        <p className="text-slate-600">{t('department.notFound')}</p>
+        <Link to="/departments" className="mt-4 inline-block text-yu underline">{t('nav.departments')}</Link>
+      </div>
+    );
+  }
   const { college, department: d } = found;
+  const lang = i18n.resolvedLanguage;
+  const hasDetail = !!(d.description?.ko || d.majorGuide?.ko || d.curriculum.length || d.careers.length);
+  const related = college.departments.filter((x) => x.id !== d.id);
+  const date = formatDate(data.meta?.crawledAt, lang);
 
   return (
     <article className="mx-auto max-w-3xl px-4 py-8">
-      <Link to="/" className="text-sm text-yu">← {t('common.back')}</Link>
+      <Link to="/departments" className="text-sm text-yu">← {t('department.backToList')}</Link>
       <LocalizedText as="p" text={college.name} className="mt-4 text-sm text-slate-500" showBadge={false} />
       <LocalizedText as="h1" text={d.name} className="text-3xl font-bold" showBadge={false} />
-      <p className="text-slate-500" lang="ko">{d.name.ko}</p>
+      {/* 원문(한국어) 이름: 공식 사이트·모집요강과 대조할 수 있게 다른 언어 화면에서만 표시 */}
+      {lang !== SOURCE_LANG && <p className="text-slate-500" lang={SOURCE_LANG}>{d.name[SOURCE_LANG]}</p>}
       <AdmissionBadges admission={d.admission} className="mt-2" />
       <LocalizedText as="p" text={d.slogan} className="mt-3 text-lg text-slate-700" />
+      <CoreTags department={d} size="lg" className="mt-3" />
 
       <Section title={t('admission.title')} show={!!d.admission}>
         <AdmissionInfo admission={d.admission} />
       </Section>
+
+      {!hasDetail && (
+        <Section title={t('department.description')}>
+          <p className="text-slate-600">{t('department.noDetail')}</p>
+          <LocalizedText as="p" text={college.description} className="mt-3 text-sm leading-relaxed text-slate-600" />
+        </Section>
+      )}
 
       <Section title={t('department.description')} show={!!d.description?.ko}>
         <LocalizedText as="p" text={d.description} className="whitespace-pre-line leading-relaxed" />
@@ -155,6 +178,29 @@ export default function DepartmentDetail() {
           </a>
         )}
         {d.phone && <span className="px-2 py-2 text-slate-600">{t('department.phone')}: {d.phone}</span>}
+      </div>
+      {date && <p className="mt-4 text-xs text-slate-500">{t('department.sourceNote', { date })}</p>}
+
+      <Section title={t('department.relatedTitle')} show={related.length > 0}>
+        <ul className="flex flex-wrap gap-2">
+          {related.map((x) => (
+            <li key={x.id}>
+              <Link
+                to={`/department/${x.id}`}
+                className="inline-block rounded-full border px-3 py-1.5 text-sm hover:border-yu hover:text-yu"
+              >
+                <LocalizedText text={x.name} showBadge={false} />
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </Section>
+
+      <div className="mt-10 rounded-xl bg-yu-light p-5 text-center">
+        <p className="text-sm text-slate-700">{t('department.recommendCta')}</p>
+        <Link to="/recommend" className="mt-3 inline-block rounded-lg bg-yu px-4 py-2 text-sm font-semibold text-white">
+          {t('home.ctaRecommend')}
+        </Link>
       </div>
     </article>
   );

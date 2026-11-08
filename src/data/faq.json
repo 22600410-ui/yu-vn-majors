@@ -1,0 +1,145 @@
+{
+  "_comment": "자주 묻는 질문. q(질문)·a(답변)는 ko 원문 + 번역. departments는 관련 학과(한국어 이름), action은 버튼(chat=추천 챗봇 열기, recommend, departments). keywords는 챗봇이 자유 질문을 FAQ와 연결할 때 쓰는 단어(대소문자·베트남어 성조 무시). featured=true 는 챗봇 첫 화면 추천 질문. careerDepartments 학과는 '졸업 후 진로' 질문을 수집 데이터로 자동 생성합니다. 입학 기준처럼 해마다 바뀌는 사실은 단정하지 말고 모집요강 확인을 안내하세요.",
+  "categories": [
+    { "id": "admission", "label": { "ko": "지원·입학", "vi": "Tuyển sinh" } },
+    { "id": "choice", "label": { "ko": "학과 선택", "vi": "Chọn ngành" } },
+    { "id": "career", "label": { "ko": "졸업 후 진로", "vi": "Nghề nghiệp" } }
+  ],
+  "careerDepartments": ["전자공학과", "기계공학부", "경영학과", "무역학부", "시각디자인학과", "국어국문학과"],
+  "items": [
+    {
+      "id": "which-departments",
+      "category": "admission",
+      "featured": true,
+      "q": { "ko": "외국인 유학생은 어떤 학과에 지원할 수 있나요?", "vi": "Du học sinh quốc tế có thể đăng ký những ngành nào?" },
+      "a": {
+        "ko": "영남대학교가 외국인 유학생 모집 단위로 정한 학과에만 지원할 수 있습니다. 이 사이트의 학과 목록은 그 모집 단위에 있는 학과만 보여 줍니다. 의과대학, 약학대학, 사범대학 등은 외국인 유학생 모집 단위에 포함되어 있지 않습니다.",
+        "vi": "Bạn chỉ có thể đăng ký các ngành nằm trong đơn vị tuyển sinh dành cho du học sinh quốc tế của Đại học Yeungnam. Danh sách ngành trên trang này chỉ hiển thị các ngành đó. Trường Y, Trường Dược và Trường Sư phạm không nằm trong đơn vị tuyển sinh dành cho du học sinh quốc tế."
+      },
+      "action": "departments",
+      "keywords": ["어떤 학과", "지원 가능", "지원할 수", "모집 단위", "nganh nao", "dang ky nganh", "duoc dang ky"]
+    },
+    {
+      "id": "freshman-vs-transfer",
+      "category": "admission",
+      "featured": true,
+      "q": { "ko": "신입학과 편입학은 무엇이 다른가요?", "vi": "Nhập học năm 1 và chuyển tiếp khác nhau thế nào?" },
+      "a": {
+        "ko": "신입학은 1학년으로 입학하는 것이고, 편입학은 다른 대학에서 일정 학기·학점을 마친 뒤 2학년 또는 3학년으로 들어오는 것입니다. 두 유형은 지원할 수 있는 학과·전공이 조금 다릅니다. 예를 들어 차세대반도체학과는 신입학으로만, 글로벌학부(정원외 전담학과)는 편입학으로만 모집합니다. 편입 지원 자격(이수 학기·학점 등)은 모집요강에서 확인하세요.",
+        "vi": "Nhập học năm 1 là vào học từ năm nhất; chuyển tiếp là sau khi hoàn thành một số học kỳ/tín chỉ ở trường đại học khác thì vào học năm 2 hoặc năm 3. Ngành và chuyên ngành được đăng ký của hai hình thức có chút khác nhau. Ví dụ: Khoa Bán dẫn thế hệ mới chỉ tuyển năm 1, còn Khoa Toàn cầu (ngành chuyên trách ngoài chỉ tiêu) chỉ tuyển chuyển tiếp. Điều kiện chuyển tiếp (số học kỳ, tín chỉ…) vui lòng xem Hướng dẫn tuyển sinh."
+      },
+      "action": "departments",
+      "keywords": ["신입학", "편입학", "편입", "차이", "nhap hoc nam 1", "chuyen tiep", "lien thong", "khac nhau"]
+    },
+    {
+      "id": "major-choice",
+      "category": "admission",
+      "q": { "ko": "학부에 지원할 때 전공도 골라서 지원하나요?", "vi": "Khi đăng ký vào khoa (학부) có phải chọn luôn chuyên ngành không?" },
+      "a": {
+        "ko": "일부 학부는 외국인 유학생이 지원할 수 있는 전공이 정해져 있습니다. 예를 들어 컴퓨터학부와 음악학부는 지원 가능한 전공이 따로 안내되어 있습니다. 각 학과 상세 페이지의 '외국인 유학생 지원 정보'에서 신입학·편입학별로 확인할 수 있습니다.",
+        "vi": "Một số khoa chỉ cho phép du học sinh đăng ký vào những chuyên ngành nhất định, ví dụ Khoa Máy tính và Khoa Âm nhạc. Bạn có thể xem theo từng hình thức (năm 1 / chuyển tiếp) trong mục 'Thông tin tuyển sinh du học sinh' ở trang chi tiết của mỗi ngành."
+      },
+      "departments": ["컴퓨터학부", "음악학부"],
+      "keywords": ["전공 선택", "세부 전공", "학부", "chuyen nganh", "chon chuyen nganh"]
+    },
+    {
+      "id": "topik",
+      "category": "admission",
+      "featured": true,
+      "q": { "ko": "한국어 능력(TOPIK)이 꼭 필요한가요?", "vi": "Có bắt buộc phải có chứng chỉ tiếng Hàn (TOPIK) không?" },
+      "a": {
+        "ko": "한국 대학의 외국인 전형은 보통 TOPIK 등 한국어 능력 기준을 둡니다. 영남대학교의 정확한 기준(필요한 급수, 다른 시험으로 대신할 수 있는지, 입학 후 조건 등)은 해마다 바뀔 수 있으므로 지원하려는 학년도의 외국인 유학생 모집요강에서 꼭 확인하세요.",
+        "vi": "Các trường đại học Hàn Quốc thường yêu cầu năng lực tiếng Hàn như TOPIK đối với du học sinh. Tiêu chuẩn cụ thể của Đại học Yeungnam (cấp độ cần có, có thể thay bằng chứng chỉ khác hay không, điều kiện sau khi nhập học…) có thể thay đổi theo từng năm, nên hãy kiểm tra trong Hướng dẫn tuyển sinh du học sinh của năm bạn đăng ký."
+      },
+      "keywords": ["topik", "토픽", "한국어", "어학", "tieng han", "chung chi", "ngon ngu"]
+    },
+    {
+      "id": "global-special",
+      "category": "admission",
+      "q": { "ko": "글로벌학부(정원외 전담학과)는 누가 지원할 수 있나요?", "vi": "Ai có thể đăng ký Khoa Toàn cầu (ngành chuyên trách ngoài chỉ tiêu)?" },
+      "a": {
+        "ko": "정원외 전담학과(한국어/영어 트랙)는 영남대학교와 관련 협정을 맺은 대학의 재학생만 지원할 수 있으며, 협정에 따라 입시 전형이 진행됩니다. 재학 중인 대학이 협정 대학인지는 소속 대학 또는 영남대학교에 문의하세요.",
+        "vi": "Ngành chuyên trách ngoài chỉ tiêu (track tiếng Hàn/tiếng Anh) chỉ dành cho sinh viên đang theo học tại các trường đã ký thỏa thuận với Đại học Yeungnam, và việc tuyển sinh được thực hiện theo thỏa thuận đó. Hãy hỏi trường bạn đang học hoặc Đại học Yeungnam để biết trường mình có nằm trong thỏa thuận không."
+      },
+      "departments": ["글로벌학부"],
+      "keywords": ["글로벌학부", "정원외", "협정", "khoa toan cau", "ngoai chi tieu", "thoa thuan"]
+    },
+    {
+      "id": "schedule-docs",
+      "category": "admission",
+      "q": { "ko": "지원 일정과 제출 서류는 어디서 확인하나요?", "vi": "Xem lịch tuyển sinh và hồ sơ cần nộp ở đâu?" },
+      "a": {
+        "ko": "지원 일정, 제출 서류, 전형 방법은 영남대학교 홈페이지에 공지되는 외국인 유학생 모집요강에서 확인해야 합니다. 이 사이트는 학과 선택을 돕는 안내 사이트이며 입학 일정은 다루지 않습니다.",
+        "vi": "Lịch tuyển sinh, hồ sơ cần nộp và phương thức xét tuyển cần được kiểm tra trong Hướng dẫn tuyển sinh du học sinh quốc tế đăng trên trang chủ Đại học Yeungnam. Trang này chỉ hỗ trợ chọn ngành và không cung cấp lịch tuyển sinh."
+      },
+      "keywords": ["일정", "서류", "마감", "원서", "모집요강", "lich", "ho so", "han nop", "giay to"]
+    },
+    {
+      "id": "undecided",
+      "category": "choice",
+      "featured": true,
+      "q": { "ko": "아직 어떤 학과로 가고 싶은지 모르겠어요.", "vi": "Mình vẫn chưa biết nên chọn ngành nào." },
+      "a": {
+        "ko": "괜찮아요! '전공 추천 챗봇'에서 입학 유형, 관심 분야, 희망 진로 세 가지만 답하면 지원 가능한 학과 중 어울리는 곳을 추천해 드립니다. 추천받은 학과의 상세 페이지에서 교육과정과 졸업 후 진로를 비교해 보세요.",
+        "vi": "Không sao cả! Chỉ cần trả lời 3 câu hỏi (hình thức nhập học, lĩnh vực quan tâm, nghề nghiệp mong muốn) trong 'Chatbot gợi ý ngành', bạn sẽ nhận được các ngành phù hợp. Sau đó hãy so sánh chương trình học và định hướng nghề nghiệp ở trang chi tiết."
+      },
+      "action": "chat",
+      "keywords": ["모르겠", "추천", "고민", "어떤 학과가", "chua biet", "goi y", "phan van", "nen chon"]
+    },
+    {
+      "id": "compare",
+      "category": "choice",
+      "q": { "ko": "비슷해 보이는 학과는 어떻게 비교하나요?", "vi": "So sánh các ngành có vẻ giống nhau như thế nào?" },
+      "a": {
+        "ko": "학과 상세 페이지에서 '학년별 교육과정', '졸업 후 진로', '취득 가능 자격증'을 차례로 비교해 보세요. 같은 단과대학의 다른 학과도 상세 페이지 아래에 모아 두었습니다. 예를 들어 전자공학과·컴퓨터학부·차세대반도체학과는 모두 IT 분야지만 배우는 과목과 진로가 다릅니다.",
+        "vi": "Ở trang chi tiết, hãy lần lượt so sánh 'Chương trình học theo năm', 'Định hướng nghề nghiệp' và 'Chứng chỉ có thể lấy'. Các ngành khác cùng trường cũng được liệt kê ở cuối trang. Ví dụ: Kỹ thuật Điện tử, Khoa Máy tính và Bán dẫn thế hệ mới đều thuộc lĩnh vực CNTT nhưng môn học và nghề nghiệp khác nhau."
+      },
+      "departments": ["전자공학과", "컴퓨터학부", "차세대반도체학과"],
+      "keywords": ["비교", "차이", "비슷", "so sanh", "giong nhau"]
+    },
+    {
+      "id": "data-source",
+      "category": "choice",
+      "q": { "ko": "이 사이트의 학과 정보는 믿을 수 있나요?", "vi": "Thông tin ngành trên trang này có đáng tin không?" },
+      "a": {
+        "ko": "학과 소개, 교육과정, 진로 정보는 영남대학교 홈페이지에 공개된 내용을 자동으로 모은 것이며, 각 학과 페이지에 수집 날짜를 표시합니다. 다만 이 사이트는 영남대학교 공식 사이트가 아니므로, 지원을 결정하기 전에는 학과 공식 페이지와 모집요강에서 최신 정보를 확인하세요.",
+        "vi": "Thông tin giới thiệu, chương trình học và nghề nghiệp được thu thập tự động từ nội dung công khai trên trang chủ Đại học Yeungnam, kèm ngày thu thập ở mỗi trang ngành. Tuy nhiên đây không phải trang chính thức của trường, vì vậy trước khi quyết định hãy kiểm tra thông tin mới nhất trên trang chính thức của khoa và Hướng dẫn tuyển sinh."
+      },
+      "keywords": ["출처", "정확", "믿을", "공식", "nguon", "chinh xac", "tin cay", "chinh thuc"]
+    },
+    {
+      "id": "translation",
+      "category": "choice",
+      "q": { "ko": "베트남어 번역이 없는 내용이 있어요.", "vi": "Có nội dung chưa được dịch sang tiếng Việt." },
+      "a": {
+        "ko": "아직 번역되지 않은 문장은 한국어 원문 그대로 보여 주고 옆에 작은 표시를 붙입니다. 번역은 차례로 추가하고 있습니다. 공식 문서와 대조할 때는 한국어 원문을 기준으로 확인하세요.",
+        "vi": "Những câu chưa được dịch sẽ hiển thị bằng tiếng Hàn gốc kèm một nhãn nhỏ bên cạnh. Bản dịch đang được bổ sung dần. Khi đối chiếu với tài liệu chính thức, hãy dựa vào bản tiếng Hàn gốc."
+      },
+      "keywords": ["번역", "베트남어", "dich", "tieng viet", "chua dich"]
+    },
+    {
+      "id": "work-vietnam",
+      "category": "career",
+      "featured": true,
+      "q": { "ko": "졸업 후 베트남에서 일하고 싶어요. 어떤 학과가 좋을까요?", "vi": "Sau khi tốt nghiệp mình muốn làm việc ở Việt Nam. Nên chọn ngành nào?" },
+      "a": {
+        "ko": "한국과 베트남을 잇는 일을 원한다면 무역학부, 글로벌비즈니스학과, 경영학과(한국계 기업·무역), 글로벌통번역학부(통번역), 국제개발새마을학과(국제개발) 등을 살펴보세요. 학과 추천에서 희망 진로를 '베트남–한국 교류'로 고르면 관련 학과를 우선 추천합니다.",
+        "vi": "Nếu muốn làm công việc kết nối Hàn Quốc – Việt Nam, hãy tham khảo Khoa Thương mại, Kinh doanh toàn cầu, Quản trị kinh doanh (công ty Hàn, thương mại), Khoa Biên phiên dịch toàn cầu và Khoa Phát triển quốc tế Saemaul. Trong phần gợi ý, chọn nghề nghiệp 'Cầu nối Việt – Hàn' để được ưu tiên gợi ý các ngành liên quan."
+      },
+      "departments": ["무역학부", "글로벌비즈니스학과", "경영학과", "글로벌통번역학부", "국제개발새마을학과"],
+      "action": "recommend",
+      "keywords": ["베트남", "귀국", "한국계", "현지", "viet nam", "ve nuoc", "cong ty han"]
+    },
+    {
+      "id": "korean-company",
+      "category": "career",
+      "q": { "ko": "한국 기업에 취업하고 싶어요. 어떤 학과가 유리한가요?", "vi": "Mình muốn làm việc tại doanh nghiệp Hàn Quốc. Ngành nào có lợi thế?" },
+      "a": {
+        "ko": "제조·IT 기업 취업을 원한다면 기계공학부, 전자공학과, 컴퓨터학부, 전기공학과, 화학공학부, 신소재공학부, 차세대반도체학과 등을 살펴보세요. 각 학과 페이지의 '졸업 후 진로'와 '취득 가능 자격증'에서 구체적인 분야를 확인할 수 있습니다. 졸업 후 취업 비자 등 체류 조건은 별도로 확인이 필요합니다.",
+        "vi": "Nếu muốn vào doanh nghiệp sản xuất hoặc CNTT, hãy tham khảo Cơ khí, Điện tử, Máy tính, Kỹ thuật Điện, Kỹ thuật Hóa học, Vật liệu mới, Bán dẫn thế hệ mới… Xem lĩnh vực cụ thể trong mục 'Định hướng nghề nghiệp' và 'Chứng chỉ có thể lấy' ở mỗi trang ngành. Điều kiện lưu trú như visa làm việc sau tốt nghiệp cần được kiểm tra riêng."
+      },
+      "departments": ["기계공학부", "전자공학과", "컴퓨터학부", "차세대반도체학과"],
+      "keywords": ["한국 기업", "취업", "대기업", "doanh nghiep han", "viec lam", "xin viec"]
+    }
+  ]
+}

@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 가독성 기본값
+   - 본문 16px, 줄 간격 넉넉하게, 진한 글자색
+   - keep-all: 한국어 단어가 줄 중간에서 잘리지 않게 (긴 영문/URL만 필요할 때 끊음) */
+html {
+  -webkit-text-size-adjust: 100%;
+}
 body {
-  @apply bg-white font-sans text-slate-800 antialiased;
+  @apply bg-white font-sans text-base leading-relaxed text-slate-800 antialiased;
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+}
+html:lang(vi) body {
+  /* 베트남어는 성조 부호가 위아래로 붙어 본문 줄 간격을 조금 더 (제목 등 개별 지정은 그대로) */
+  line-height: 1.7;
+}
+:focus-visible {
+  @apply outline-none ring-[3px] ring-yu-dark ring-offset-2;
 }

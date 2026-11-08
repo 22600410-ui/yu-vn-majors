@@ -1,0 +1,5 @@
+{
+  "_comment": "헤더 로고. 영남대학교 로고 파일(사용 허락 확인 후)을 public/images/ 에 넣고 파일 이름을 logo 에 적으세요. 예) \"logo\": \"yu-logo.png\". 비워 두면 'YU' 글자 배지가 나옵니다. 로고는 영남대 홈페이지 /_res/ 폴더에 있어 robots.txt상 자동 수집하지 않습니다.",
+  "logo": "",
+  "logoAlt": "Yeungnam University"
+}

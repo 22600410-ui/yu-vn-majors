@@ -1,0 +1,47 @@
+{
+  "_comment": "메인 화면 계열 탭. 단과대학 id(colleges)로 기본 계열을 정하고, 예외 학과는 overrides에 한국어 학과명으로 지정합니다. color는 썸네일 색(Tailwind 그라데이션), icon은 썸네일 아이콘입니다.",
+  "fields": [
+    {
+      "id": "humanities",
+      "label": { "ko": "인문계열", "vi": "Khối Nhân văn" },
+      "icon": "📖",
+      "color": "from-amber-400 to-orange-500",
+      "colleges": ["liberalart", "gl"]
+    },
+    {
+      "id": "social",
+      "label": { "ko": "사회계열", "vi": "Khối Xã hội" },
+      "icon": "🏛️",
+      "color": "from-sky-400 to-blue-600",
+      "colleges": ["politics", "sob"]
+    },
+    {
+      "id": "science",
+      "label": { "ko": "자연과학계열", "vi": "Khối Khoa học tự nhiên" },
+      "icon": "🔬",
+      "color": "from-emerald-400 to-teal-600",
+      "colleges": ["sci", "life", "chek"]
+    },
+    {
+      "id": "engineering",
+      "label": { "ko": "공학계열", "vi": "Khối Kỹ thuật" },
+      "icon": "⚙️",
+      "color": "from-indigo-400 to-violet-600",
+      "colleges": ["eng", "digital"]
+    },
+    {
+      "id": "arts",
+      "label": { "ko": "예체능계열", "vi": "Khối Nghệ thuật – Thể thao" },
+      "icon": "🎨",
+      "color": "from-pink-400 to-rose-600",
+      "colleges": ["arts"]
+    }
+  ],
+  "overrides": {
+    "국제개발새마을학과": "social",
+    "글로벌비즈니스학과": "social",
+    "글로벌학부": "social",
+    "휴먼서비스학과": "social",
+    "체육학부": "arts"
+  }
+}

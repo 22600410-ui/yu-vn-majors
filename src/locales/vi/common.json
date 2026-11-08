@@ -1,24 +1,83 @@
 {
   "app": {
-    "title": "Khám phá ngành học tại Đại học Yeungnam",
-    "subtitle": "Hướng dẫn chọn ngành dành cho du học sinh Việt Nam",
+    "title": "Yeungnam University Department Finder for Vietnamese Students",
+    "subtitle": "Hướng dẫn chọn ngành tại Đại học Yeungnam cho du học sinh",
+    "disclaimer": "Đây không phải là trang web chính thức của Đại học Yeungnam. Trang được xây dựng dựa trên thông tin công khai trên trang chủ của trường. Vui lòng kiểm tra Hướng dẫn tuyển sinh du học sinh quốc tế chính thức trước khi nộp hồ sơ.",
     "footerSource": "Nguồn dữ liệu: Trang chủ Đại học Yeungnam",
-    "lastUpdated": "Cập nhật: {{date}}"
+    "lastUpdated": "Cập nhật ngày {{date}}"
   },
   "nav": {
     "home": "Trang chủ",
-    "colleges": "Các trường thành viên",
-    "recommend": "Gợi ý ngành học",
-    "about": "Giới thiệu"
+    "departments": "Tìm ngành",
+    "recommend": "Gợi ý ngành",
+    "faq": "Câu hỏi thường gặp"
+  },
+  "header": {
+    "searchPlaceholder": "Tìm theo tên ngành hoặc từ khóa (VD: tiếng Trung, bán dẫn)",
+    "aiButton": "Chatbot gợi ý",
+    "helpLink": "Có thắc mắc? Xem câu hỏi thường gặp"
+  },
+  "features": {
+    "chat": { "badge": "Beta", "headline": "Ngành nào hợp với bạn?\nHỏi chatbot ngay", "title": "Chatbot gợi ý ngành", "sub": "Chỉ cần 3 câu hỏi" },
+    "quiz": { "badge": "3 phút", "headline": "Tìm ngành theo\nsở thích", "title": "Gợi ý qua bảng câu hỏi", "sub": "Chọn lĩnh vực & nghề nghiệp" },
+    "transfer": { "badge": "Chuyển tiếp", "headline": "Ngành nào nhận\nchuyển tiếp?", "title": "Ngành nhận chuyển tiếp", "sub": "Vào năm 2 · năm 3" },
+    "faq": { "badge": "FAQ", "headline": "Câu hỏi thường gặp\ncủa du học sinh", "title": "Câu hỏi thường gặp", "sub": "Tuyển sinh · chọn ngành · nghề nghiệp" }
+  },
+  "faq": {
+    "title": "Câu hỏi thường gặp của du học sinh",
+    "intro": "Bấm vào câu hỏi để xem câu trả lời. Nếu không tìm thấy, hãy hỏi Chatbot gợi ý ngành.",
+    "more": "Xem tất cả",
+    "relatedDepartments": "Ngành liên quan",
+    "askAi": "Hỏi chatbot",
+    "followUp": "{{q}} — mình muốn biết chi tiết hơn",
+    "careerQ": "Tốt nghiệp {{dept}} thì làm công việc gì?",
+    "action": {
+      "recommend": "Nhận gợi ý ngành",
+      "departments": "Xem các ngành được đăng ký"
+    },
+    "notFoundTitle": "Không thấy câu hỏi bạn cần?",
+    "notFoundText": "Hãy nhập tên ngành hoặc từ khóa vào Chatbot gợi ý ngành."
   },
   "lang": {
-    "label": "Ngôn ngữ",
-    "vi": "Tiếng Việt",
-    "ko": "한국어"
+    "label": "Chọn ngôn ngữ"
+  },
+  "languageNames": {
+    "ko": "tiếng Hàn",
+    "vi": "tiếng Việt",
+    "en": "tiếng Anh",
+    "zh": "tiếng Trung",
+    "mn": "tiếng Mông Cổ"
+  },
+  "home": {
+    "heroTitle": "Tìm ngành học phù hợp với bạn tại Đại học Yeungnam",
+    "heroText": "Xem nhanh giới thiệu, chương trình học và định hướng nghề nghiệp của {{count}} ngành dành cho du học sinh quốc tế.",
+    "ctaChat": "Bắt đầu chatbot gợi ý",
+    "ctaRecommend": "Gợi ý qua bảng câu hỏi",
+    "ctaBrowse": "Tìm kiếm ngành",
+    "sectionTitle": "영남대학교 전공 한눈에 보기 (Khám phá các ngành học tại YU)",
+    "fieldFilter": "Khối ngành",
+    "fieldAll": "Tất cả",
+    "noticeTitle": "Lưu ý trước khi nộp hồ sơ",
+    "noticeCheckGuide": "Điều kiện, lịch tuyển sinh và hồ sơ cần nộp vui lòng xem trong Hướng dẫn tuyển sinh du học sinh quốc tế của Đại học Yeungnam."
+  },
+  "departments": {
+    "title": "Tìm ngành",
+    "intro": "Tìm theo tên ngành hoặc từ khóa, rồi lọc theo hình thức nhập học và trường thành viên.",
+    "collegeFilter": "Trường",
+    "allColleges": "Tất cả",
+    "resultCount_one": "{{count}} ngành",
+    "resultCount_other": "{{count}} ngành"
   },
   "search": {
-    "placeholder": "Tìm ngành học (VD: Cơ khí, 기계)…",
-    "noResult": "Không tìm thấy ngành phù hợp."
+    "placeholder": "Tìm theo tên ngành hoặc từ khóa (VD: tiếng Trung, bán dẫn, thiết kế)",
+    "bestTitle": "Kết quả cho '{{q}}'",
+    "matched": "Khớp",
+    "similarTitle": "Các ngành tương tự",
+    "similarIntro": "Những ngành có lĩnh vực học hoặc khối ngành gần với kết quả tìm kiếm.",
+    "reason_interest": "Lĩnh vực {{label}}",
+    "reason_field": "Cùng {{label}}",
+    "reasonText": "Từ khóa có trong phần giới thiệu",
+    "noResult": "Không có ngành phù hợp với điều kiện."
   },
   "college": {
     "departmentCount_one": "{{count}} ngành",
@@ -26,6 +85,9 @@
     "homepage": "Trang web của trường"
   },
   "department": {
+    "backToList": "Danh sách ngành",
+    "notFound": "Không tìm thấy ngành.",
+    "noDetail": "Thông tin chi tiết của ngành này chưa được cập nhật. Vui lòng xem trang chính thức bên dưới.",
     "description": "Giới thiệu ngành",
     "majorGuide": "Hướng dẫn chuyên ngành",
     "fields": "Lĩnh vực đào tạo",
@@ -38,32 +100,68 @@
     "official": "Trang giới thiệu chính thức",
     "homepage": "Trang web khoa",
     "phone": "Điện thoại",
-    "viewDetail": "Xem chi tiết"
+    "viewDetail": "Xem chi tiết",
+    "sourceNote": "Thông tin được thu thập từ trang chủ Đại học Yeungnam ngày {{date}}. Vui lòng xem trang chính thức để có thông tin mới nhất.",
+    "relatedTitle": "Các ngành khác cùng trường",
+    "recommendCta": "Bạn đang phân vân không biết ngành nào phù hợp?"
   },
   "admission": {
     "title": "Thông tin tuyển sinh du học sinh",
-    "filterLabel": "Hình thức nhập học",
+    "filterLabel": "Hình thức",
     "all": "Tất cả",
     "freshman": "Nhập học năm 1",
-    "transfer": "Chuyển tiếp (liên thông)",
-    "basis": "Ngành dành cho du học sinh nước ngoài",
+    "transfer": "Chuyển tiếp",
+    "basis": "theo đơn vị tuyển sinh du học sinh quốc tế",
     "wholeDepartment": "Có thể đăng ký toàn bộ khoa.",
     "majorsOnly": "Chỉ có thể đăng ký các chuyên ngành sau:",
     "notAvailable": "Không tuyển sinh theo hình thức này.",
-    "special": "Ngành chuyên trách ngoài chỉ tiêu — điều kiện đặc biệt"
-  },
-  "translation": {
-    "missing": "Chưa có bản dịch tiếng Việt — đang hiển thị bản gốc tiếng Hàn.",
-    "badge": "Bản gốc tiếng Hàn"
+    "special": "Ngành chuyên trách ngoài chỉ tiêu — điều kiện riêng"
   },
   "recommend": {
-    "title": "Bạn quan tâm đến lĩnh vực nào?",
+    "title": "Gợi ý ngành",
+    "intro": "Trả lời 3 câu hỏi để nhận gợi ý các ngành phù hợp trong số các ngành dành cho du học sinh quốc tế.",
+    "q1": "1. Bạn dự định nhập học theo hình thức nào?",
+    "unsure": "Mình chưa biết",
+    "q2": "2. Chọn lĩnh vực bạn quan tâm (tối đa {{max}})",
+    "q3": "3. Sau khi tốt nghiệp bạn muốn làm gì? (không bắt buộc)",
+    "careerNone": "Mình chưa biết",
     "submit": "Xem gợi ý",
-    "reset": "Chọn lại"
+    "reset": "Chọn lại",
+    "needInterest": "Hãy chọn ít nhất 1 lĩnh vực.",
+    "resultsTitle": "Ngành được gợi ý",
+    "resultsEmpty": "Không có ngành phù hợp. Hãy thử đổi hình thức nhập học hoặc lĩnh vực quan tâm.",
+    "reasons": "Lý do gợi ý",
+    "disclaimer": "Kết quả chỉ mang tính tham khảo. Vui lòng kiểm tra điều kiện tuyển sinh trong hướng dẫn chính thức.",
+    "seeAll": "Xem tất cả các ngành"
+  },
+  "chat": {
+    "launcher": "Chatbot gợi ý ngành",
+    "title": "Chatbot gợi ý ngành",
+    "subtitle": "Trả lời 3 câu hỏi hoặc nhập từ khóa để tìm ngành",
+    "greeting": "Xin chào! Mình sẽ giúp bạn chọn ngành tại Đại học Yeungnam. Chỉ cần 3 câu hỏi thôi.",
+    "askTrack": "Trước tiên, bạn dự định nhập học theo hình thức nào?",
+    "askInterests": "Hãy chọn lĩnh vực bạn quan tâm. Bạn có thể chọn tối đa {{max}}.",
+    "askCareer": "Sau khi tốt nghiệp, bạn muốn làm công việc gì?",
+    "confirm_one": "Xong ({{count}} lĩnh vực)",
+    "confirm_other": "Xong ({{count}} lĩnh vực)",
+    "results": "Đây là các ngành mình gợi ý! Bấm vào để xem chi tiết.",
+    "searchFound": "Các ngành liên quan đến '{{q}}'.",
+    "searchNone": "Không tìm thấy ngành liên quan đến '{{q}}'. Hãy thử từ khác hoặc trả lời các câu hỏi phía trên.",
+    "inputPlaceholder": "Nhập ngành hoặc từ khóa (VD: máy tính)",
+    "send": "Gửi",
+    "restart": "Bắt đầu lại",
+    "close": "Đóng",
+    "faqLabel": "Câu hỏi thường gặp",
+    "faqSuggest": "Câu hỏi thường gặp"
+  },
+  "translation": {
+    "badge": "Hiển thị bằng {{lang}}"
   },
   "common": {
     "loading": "Đang tải…",
     "error": "Không thể tải dữ liệu.",
-    "back": "Quay lại"
+    "back": "Quay lại",
+    "notFound": "Không tìm thấy trang.",
+    "goHome": "Về trang chủ"
   }
 }

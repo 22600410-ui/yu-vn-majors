@@ -1,24 +1,83 @@
 {
   "app": {
-    "title": "영남대학교 학과 탐색",
-    "subtitle": "베트남 유학생을 위한 학과 추천·소개",
-    "footerSource": "데이터 출처: 영남대학교 공식 홈페이지",
-    "lastUpdated": "업데이트: {{date}}"
+    "title": "Yeungnam University Department Finder for Vietnamese Students",
+    "subtitle": "영남대학교 외국인 유학생 학과 안내",
+    "disclaimer": "이 사이트는 영남대학교 공식 사이트가 아니며, 영남대학교 홈페이지에 공개된 정보를 바탕으로 만든 안내 사이트입니다. 지원 전 반드시 영남대학교 외국인 유학생 모집요강을 확인하세요.",
+    "footerSource": "데이터 출처: 영남대학교 홈페이지",
+    "lastUpdated": "정보 수집일 {{date}}"
   },
   "nav": {
     "home": "홈",
-    "colleges": "단과대학",
+    "departments": "학과 찾기",
     "recommend": "학과 추천",
-    "about": "소개"
+    "faq": "자주 묻는 질문"
+  },
+  "header": {
+    "searchPlaceholder": "학과 이름이나 핵심 키워드로 검색 (예: 중국어, 반도체)",
+    "aiButton": "추천 챗봇",
+    "helpLink": "궁금한 점이 있을 때 자주 묻는 질문"
+  },
+  "features": {
+    "chat": { "badge": "베타", "headline": "나에게 맞는 학과,\n챗봇에게 물어보세요", "title": "전공 추천 챗봇", "sub": "질문 3개로 학과 추천" },
+    "quiz": { "badge": "3분", "headline": "관심 분야로\n학과 찾기", "title": "질문지로 학과 추천", "sub": "관심 분야·희망 진로 선택" },
+    "transfer": { "badge": "편입학", "headline": "편입으로 갈 수 있는\n학과는?", "title": "편입학 지원 가능 학과", "sub": "2·3학년 편입 모집 단위" },
+    "faq": { "badge": "FAQ", "headline": "유학생이\n자주 묻는 질문", "title": "자주 묻는 질문", "sub": "지원·학과 선택·진로" }
+  },
+  "faq": {
+    "title": "유학생이 자주 묻는 질문",
+    "intro": "궁금한 질문을 누르면 답변을 볼 수 있습니다. 원하는 답이 없으면 전공 추천 챗봇에 물어보세요.",
+    "more": "전체 보기",
+    "relatedDepartments": "관련 학과",
+    "askAi": "챗봇에게 물어보기",
+    "followUp": "{{q}} — 더 자세히 알고 싶어요",
+    "careerQ": "{{dept}} 졸업 후에는 어떤 일을 하나요?",
+    "action": {
+      "recommend": "학과 추천 받기",
+      "departments": "지원 가능 학과 보기"
+    },
+    "notFoundTitle": "찾는 질문이 없나요?",
+    "notFoundText": "전공 추천 챗봇에 학과 이름이나 키워드를 입력해 보세요."
   },
   "lang": {
-    "label": "언어",
-    "vi": "Tiếng Việt",
-    "ko": "한국어"
+    "label": "언어 선택"
+  },
+  "languageNames": {
+    "ko": "한국어",
+    "vi": "베트남어",
+    "en": "영어",
+    "zh": "중국어",
+    "mn": "몽골어"
+  },
+  "home": {
+    "heroTitle": "나에게 맞는 영남대학교 학과를 찾아보세요",
+    "heroText": "외국인 유학생이 지원할 수 있는 {{count}}개 학과의 소개, 교육과정, 졸업 후 진로를 한눈에 확인할 수 있습니다.",
+    "ctaChat": "추천 챗봇 시작",
+    "ctaRecommend": "질문지로 추천 받기",
+    "ctaBrowse": "학과 검색",
+    "sectionTitle": "영남대학교 전공 한눈에 보기 (Khám phá các ngành học tại YU)",
+    "fieldFilter": "계열",
+    "fieldAll": "전체",
+    "noticeTitle": "지원 전 꼭 확인하세요",
+    "noticeCheckGuide": "지원 자격, 전형 일정, 제출 서류는 영남대학교 외국인 유학생 모집요강에서 확인하세요."
+  },
+  "departments": {
+    "title": "학과 찾기",
+    "intro": "학과 이름이나 관심 키워드로 검색하고, 입학 유형과 단과대학으로 좁혀 보세요.",
+    "collegeFilter": "단과대학",
+    "allColleges": "전체",
+    "resultCount_one": "{{count}}개 학과",
+    "resultCount_other": "{{count}}개 학과"
   },
   "search": {
-    "placeholder": "학과 검색 (예: 기계, Cơ khí)…",
-    "noResult": "검색 결과가 없습니다."
+    "placeholder": "학과 이름 또는 핵심 키워드로 검색 (예: 중국어, 반도체, 디자인)",
+    "bestTitle": "'{{q}}' 검색 결과",
+    "matched": "일치",
+    "similarTitle": "이런 학과도 비슷해요",
+    "similarIntro": "검색한 학과와 배우는 분야나 계열이 겹치는 학과입니다.",
+    "reason_interest": "{{label}} 분야",
+    "reason_field": "같은 {{label}}",
+    "reasonText": "소개 글에 검색어가 나와요",
+    "noResult": "조건에 맞는 학과가 없습니다."
   },
   "college": {
     "departmentCount_one": "{{count}}개 학과",
@@ -26,6 +85,9 @@
     "homepage": "단과대학 홈페이지"
   },
   "department": {
+    "backToList": "학과 목록",
+    "notFound": "학과를 찾을 수 없습니다.",
+    "noDetail": "이 학과의 상세 소개는 아직 정리되지 않았습니다. 아래 공식 페이지에서 확인하세요.",
     "description": "학과 소개",
     "majorGuide": "전공 안내",
     "fields": "전공 교육 분야",
@@ -38,7 +100,10 @@
     "official": "공식 학과소개 페이지",
     "homepage": "학과 홈페이지",
     "phone": "연락처",
-    "viewDetail": "자세히 보기"
+    "viewDetail": "자세히 보기",
+    "sourceNote": "이 정보는 {{date}}에 영남대학교 홈페이지에서 수집했습니다. 최신 정보는 공식 페이지에서 확인하세요.",
+    "relatedTitle": "같은 단과대학의 다른 학과",
+    "recommendCta": "어떤 학과가 나에게 맞을지 고민된다면?"
   },
   "admission": {
     "title": "외국인 유학생 지원 정보",
@@ -46,24 +111,57 @@
     "all": "전체",
     "freshman": "신입학",
     "transfer": "편입학",
-    "basis": "외국인 유학생 모집 단위",
+    "basis": "외국인 유학생 모집 단위 기준",
     "wholeDepartment": "학과 전체 지원 가능",
     "majorsOnly": "아래 전공만 지원 가능:",
     "notAvailable": "이 유형으로는 모집하지 않습니다.",
     "special": "정원외 전담학과 — 별도 지원 자격"
   },
-  "translation": {
-    "missing": "베트남어 번역이 아직 없어 한국어 원문을 표시합니다.",
-    "badge": "한국어 원문"
-  },
   "recommend": {
-    "title": "어떤 분야에 관심이 있나요?",
+    "title": "학과 추천",
+    "intro": "세 가지 질문에 답하면 외국인 유학생이 지원할 수 있는 학과 중 어울리는 곳을 추천해 드립니다.",
+    "q1": "1. 어떤 유형으로 입학할 계획인가요?",
+    "unsure": "아직 모르겠어요",
+    "q2": "2. 관심 있는 분야를 골라 주세요 (최대 {{max}}개)",
+    "q3": "3. 졸업 후 어떤 일을 하고 싶나요? (선택)",
+    "careerNone": "아직 모르겠어요",
     "submit": "추천 보기",
-    "reset": "다시 선택"
+    "reset": "다시 선택",
+    "needInterest": "관심 분야를 1개 이상 골라 주세요.",
+    "resultsTitle": "추천 학과",
+    "resultsEmpty": "조건에 맞는 학과가 없습니다. 입학 유형이나 관심 분야를 바꿔 보세요.",
+    "reasons": "추천 이유",
+    "disclaimer": "추천 결과는 참고용입니다. 지원 자격과 선발 여부는 모집요강을 확인하세요.",
+    "seeAll": "전체 학과 보기"
+  },
+  "chat": {
+    "launcher": "전공 추천 챗봇",
+    "title": "전공 추천 챗봇",
+    "subtitle": "질문 3개에 답하거나 키워드를 입력하면 학과를 찾아 드려요",
+    "greeting": "안녕하세요! 영남대학교 학과 선택을 도와드릴게요. 질문 3개면 충분해요.",
+    "askTrack": "먼저, 어떤 유형으로 입학할 계획인가요?",
+    "askInterests": "관심 있는 분야를 골라 주세요. 최대 {{max}}개까지 고를 수 있어요.",
+    "askCareer": "졸업 후 어떤 일을 하고 싶나요?",
+    "confirm_one": "{{count}}개 선택 완료",
+    "confirm_other": "{{count}}개 선택 완료",
+    "results": "이런 학과를 추천해요! 눌러서 자세히 보세요.",
+    "searchFound": "'{{q}}'와 관련된 학과예요.",
+    "searchNone": "'{{q}}'와 관련된 학과를 찾지 못했어요. 다른 단어로 검색하거나 위 질문에 답해 보세요.",
+    "inputPlaceholder": "학과·관심 키워드 입력 (예: 컴퓨터)",
+    "send": "보내기",
+    "restart": "처음부터",
+    "close": "닫기",
+    "faqLabel": "자주 묻는 질문",
+    "faqSuggest": "자주 묻는 질문"
+  },
+  "translation": {
+    "badge": "{{lang}}로 표시"
   },
   "common": {
     "loading": "불러오는 중…",
     "error": "데이터를 불러오지 못했습니다.",
-    "back": "뒤로"
+    "back": "뒤로",
+    "notFound": "페이지를 찾을 수 없습니다.",
+    "goHome": "홈으로"
   }
 }

@@ -18,12 +18,13 @@
      - h5 "취득가능 자격증"       : 자격증
      - h4 "특성화 프로그램"       : 특성화 프로그램
 
-다국어
-  모든 텍스트 필드는 {"ko": "...", "vi": "..."} 형태로 저장됩니다.
-  크롤러는 ko만 채우며, vi는 아래 순서로 자동 보존/채움됩니다.
-    a) 기존 departments.json에 이미 들어 있던 vi 번역 (한국어 원문이 같으면 재사용)
-    b) data/translations/vi.json 용어집 { "한국어 원문": "bản dịch tiếng Việt" }  ← 우선 적용
-  --export-untranslated 로 번역이 없는 원문 목록을 뽑아 번역 후 용어집에 붙여 넣으면 됩니다.
+다국어 (언어 목록: config/languages.json)
+  모든 텍스트 필드는 {"ko": "...", "vi": "...", "en": "...", ...} 형태로 저장됩니다(번역이 있는 언어만).
+  크롤러는 원문(ko)만 채우며, 다른 언어는 아래 순서로 자동 보존/채움됩니다.
+    a) 기존 departments.json에 이미 들어 있던 번역 (한국어 원문이 같으면 재사용)
+    b) data/translations/<언어>.json 용어집 { "한국어 원문": "번역" }  ← 우선 적용
+  --export-untranslated 로 켜진 언어(enabled)별 미번역 원문 목록을 뽑을 수 있습니다.
+    폴더를 주면 <폴더>/<언어>.json, .json 파일을 주면 {언어: {원문: ""}} 한 파일로 저장.
 
 사용 예
   pip install -r scripts/requirements.txt
@@ -62,10 +63,26 @@ USER_AGENT = "yu-vn-majors-crawler/0.1 (student project for Vietnamese applicant
 
 ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_OUT = ROOT / "public" / "data" / "departments.json"
-GLOSSARY_PATH = ROOT / "data" / "translations" / "vi.json"
+TRANSLATIONS_DIR = ROOT / "data" / "translations"
 ADMISSIONS_PATH = ROOT / "data" / "admissions.json"
+LANG_CONFIG_PATH = ROOT / "config" / "languages.json"
 
-SCHEMA_VERSION = 1
+SCHEMA_VERSION = 2
+
+# config/languages.json 에서 main()이 다시 설정
+SOURCE_LANG = "ko"
+LANG_CODES: set[str] = {"ko", "vi", "en", "zh", "mn"}
+ENABLED_LANGS: list[str] = ["ko", "vi"]
+
+
+def load_lang_config(path: Path) -> None:
+    global SOURCE_LANG, LANG_CODES, ENABLED_LANGS
+    if not path.exists():
+        return
+    cfg = json.loads(path.read_text(encoding="utf-8"))
+    SOURCE_LANG = cfg.get("source", "ko")
+    LANG_CODES = {lang["code"] for lang in cfg["languages"]}
+    ENABLED_LANGS = [lang["code"] for lang in cfg["languages"] if lang.get("enabled")]
 
 
 # --------------------------------------------------------------------------- #
@@ -84,13 +101,14 @@ def text_of(el: Tag | None) -> str:
     return clean(el.get_text("\n")) if el else ""
 
 
-def L(ko: str, vi: str = "") -> dict[str, str]:
-    """LocalizedText 생성."""
-    return {"ko": clean(ko), "vi": vi}
+def L(text: str) -> dict[str, str]:
+    """LocalizedText 생성 (원문만). 번역은 apply_translation_memory 가 채움."""
+    return {SOURCE_LANG: clean(text)}
 
 
 def is_localized(obj: Any) -> bool:
-    return isinstance(obj, dict) and set(obj.keys()) == {"ko", "vi"}
+    """{원문언어: ..., 다른언어: ...} 형태인지 (키가 모두 언어 코드이고 원문 키 포함)."""
+    return isinstance(obj, dict) and SOURCE_LANG in obj and set(obj.keys()) <= LANG_CODES
 
 
 def slug_from_url(url: str | None) -> str | None:
@@ -321,8 +339,11 @@ def parse_department_detail(html: str) -> dict:
 # 외국인 유학생 모집 단위 (data/admissions.json)
 # --------------------------------------------------------------------------- #
 def _as_localized(v: Any) -> dict[str, str]:
+    """사람이 쓴 {ko, vi, ...} 또는 문자열을 LocalizedText로 (빈 번역은 제외)."""
     if isinstance(v, dict):
-        return {"ko": clean(v.get("ko", "")), "vi": v.get("vi", "")}
+        out = {SOURCE_LANG: clean(v.get(SOURCE_LANG, ""))}
+        out.update({k: t for k, t in v.items() if k in LANG_CODES and k != SOURCE_LANG and t})
+        return out
     return L(str(v or ""))
 
 
@@ -347,6 +368,8 @@ def apply_admissions(colleges: list[dict], adm: dict, keep_all: bool = False) ->
                 if not d:
                     unmatched.append(f"[{track}] {college_name} / {e['name']}")
                     continue
+                if e.get("id"):  # 공식 링크가 없어 id가 x-해시로 생긴 학과에 읽기 쉬운 주소 부여
+                    d["id"] = e["id"]
                 info: dict[str, Any] = {"majors": [L(m) for m in e.get("majors", [])]}
                 if years:
                     info["years"] = years
@@ -397,31 +420,46 @@ def walk_localized(obj: Any):
             yield from walk_localized(v)
 
 
-def build_translation_memory(prev_path: Path, glossary_path: Path) -> dict[str, str]:
-    tm: dict[str, str] = {}
+TranslationMemory = dict[str, dict[str, str]]  # {언어: {원문: 번역}}
+
+
+def build_translation_memory(prev_path: Path, translations_dir: Path) -> TranslationMemory:
+    targets = sorted(LANG_CODES - {SOURCE_LANG})
+    tm: TranslationMemory = {lang: {} for lang in targets}
     if prev_path.exists():
         try:
             prev = json.loads(prev_path.read_text(encoding="utf-8"))
             for loc in walk_localized(prev):
-                if loc["ko"] and loc["vi"]:
-                    tm[loc["ko"]] = loc["vi"]
+                src = loc.get(SOURCE_LANG)
+                for lang in targets:
+                    if src and loc.get(lang):
+                        tm[lang][src] = loc[lang]
         except json.JSONDecodeError:
             print(f"[warn] 기존 파일 파싱 실패, 번역 보존 생략: {prev_path}", file=sys.stderr)
-    if glossary_path.exists():
-        glossary = json.loads(glossary_path.read_text(encoding="utf-8"))
-        tm.update({k: v for k, v in glossary.items() if not k.startswith("_") and v})
+    for lang in targets:
+        glossary_path = translations_dir / f"{lang}.json"
+        if glossary_path.exists():
+            glossary = json.loads(glossary_path.read_text(encoding="utf-8"))
+            tm[lang].update({k: v for k, v in glossary.items() if not k.startswith("_") and v})
     return tm
 
 
-def apply_translation_memory(data: Any, tm: dict[str, str]) -> set[str]:
-    missing: set[str] = set()
+def apply_translation_memory(data: Any, tm: TranslationMemory) -> dict[str, set[str]]:
+    """번역을 채우고, 켜진 언어별 미번역 원문 집합을 반환. 빈 번역 키는 제거."""
+    enabled_targets = [lang for lang in ENABLED_LANGS if lang != SOURCE_LANG]
+    missing: dict[str, set[str]] = {lang: set() for lang in enabled_targets}
     for loc in walk_localized(data):
-        if not loc["ko"]:
+        for k in [k for k, v in loc.items() if k != SOURCE_LANG and not v]:
+            del loc[k]
+        src = loc.get(SOURCE_LANG)
+        if not src:
             continue
-        if not loc["vi"] and loc["ko"] in tm:
-            loc["vi"] = tm[loc["ko"]]
-        if not loc["vi"]:
-            missing.add(loc["ko"])
+        for lang, mem in tm.items():
+            if not loc.get(lang) and src in mem:
+                loc[lang] = mem[src]
+        for lang in enabled_targets:
+            if not loc.get(lang):
+                missing[lang].add(src)
     return missing
 
 
@@ -431,7 +469,9 @@ def apply_translation_memory(data: Any, tm: dict[str, str]) -> set[str]:
 def main() -> int:
     ap = argparse.ArgumentParser(description="영남대 학과 정보 → departments.json")
     ap.add_argument("--out", type=Path, default=DEFAULT_OUT)
-    ap.add_argument("--glossary", type=Path, default=GLOSSARY_PATH)
+    ap.add_argument("--translations-dir", type=Path, default=TRANSLATIONS_DIR,
+                    help="언어별 번역 용어집 폴더 (<언어>.json)")
+    ap.add_argument("--languages", type=Path, default=LANG_CONFIG_PATH, help="언어 설정 파일")
     ap.add_argument("--admissions", type=Path, default=ADMISSIONS_PATH,
                     help="외국인 유학생 모집 단위 파일 (없으면 전체 학과 수집)")
     ap.add_argument("--all-departments", action="store_true",
@@ -441,8 +481,9 @@ def main() -> int:
     ap.add_argument("--no-details", action="store_true", help="상세 페이지를 수집하지 않음")
     ap.add_argument("--cache-dir", type=Path, default=None, help="HTML 캐시 디렉터리")
     ap.add_argument("--export-untranslated", type=Path, default=None,
-                    help="vi 번역이 없는 한국어 원문을 {원문: ''} JSON으로 저장")
+                    help="미번역 원문 목록 저장 (폴더 → <언어>.json / .json 파일 → 언어별로 묶은 한 파일)")
     args = ap.parse_args()
+    load_lang_config(args.languages)
 
     fetcher = Fetcher(delay=args.delay, cache_dir=args.cache_dir)
 
@@ -496,8 +537,8 @@ def main() -> int:
             "schemaVersion": SCHEMA_VERSION,
             "source": LIST_URL,
             "crawledAt": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-            "languages": ["vi", "ko"],
-            "defaultLanguage": "vi",
+            "sourceLanguage": SOURCE_LANG,
+            "languages": ENABLED_LANGS,
             "collegeCount": len(colleges),
             "departmentCount": len(depts),
             "totalDepartmentCount": total_depts,
@@ -508,9 +549,10 @@ def main() -> int:
     }
 
     print("[3/3] 번역 적용 및 저장")
-    tm = build_translation_memory(args.out, args.glossary)
+    tm = build_translation_memory(args.out, args.translations_dir)
     missing = apply_translation_memory(data, tm)
-    data["meta"]["untranslatedCount"] = len(missing)
+    data["meta"]["untranslated"] = {lang: len(s) for lang, s in missing.items()}
+    data["meta"]["untranslatedCount"] = sum(len(s) for s in missing.values())
 
     # 내용이 그대로면 crawledAt도 이전 값을 유지 → 불필요한 커밋/재배포 방지
     if args.out.exists():
@@ -524,15 +566,23 @@ def main() -> int:
 
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"      저장: {args.out}  (vi 미번역 문장 {len(missing)}개)")
+    per_lang = ", ".join(f"{lang} {len(s)}" for lang, s in missing.items()) or "없음"
+    print(f"      저장: {args.out}  (미번역 문장: {per_lang})")
+    write_step_summary(["### 언어별 미번역 문장"] + [f"- {lang}: {len(s)}개" for lang, s in missing.items()])
 
     if args.export_untranslated:
-        args.export_untranslated.parent.mkdir(parents=True, exist_ok=True)
-        args.export_untranslated.write_text(
-            json.dumps({k: "" for k in sorted(missing)}, ensure_ascii=False, indent=2),
-            encoding="utf-8",
-        )
-        print(f"      미번역 목록: {args.export_untranslated}")
+        target = args.export_untranslated
+        as_template = lambda s: {k: "" for k in sorted(s)}
+        if target.suffix == ".json":
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_text(json.dumps({lang: as_template(s) for lang, s in missing.items()},
+                                         ensure_ascii=False, indent=2), encoding="utf-8")
+        else:
+            target.mkdir(parents=True, exist_ok=True)
+            for lang, s in missing.items():
+                (target / f"{lang}.json").write_text(json.dumps(as_template(s), ensure_ascii=False, indent=2),
+                                                     encoding="utf-8")
+        print(f"      미번역 목록: {target}")
     return 0
 
 
