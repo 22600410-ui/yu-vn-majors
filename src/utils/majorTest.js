@@ -6,6 +6,24 @@ const ORDER = TYPES.map((t) => t.id); // R I A S E C (동점이면 이 순서)
 
 export const typeById = (id) => TYPES.find((t) => t.id === id) ?? null;
 
+// 마지막 테스트 결과를 이 브라우저에만 기억 → '학과 추천' 메뉴에서 다시 보여 줌 (서버로 보내지 않음)
+const LAST_KEY = 'yu-major-test-last';
+export function saveLastResult(code, scores) {
+  try {
+    localStorage.setItem(LAST_KEY, JSON.stringify({ code, scores, at: Date.now() }));
+  } catch {
+    /* 저장이 막힌 브라우저(사생활 보호 모드 등)는 그냥 넘어감 */
+  }
+}
+export function loadLastResult() {
+  try {
+    const v = JSON.parse(localStorage.getItem(LAST_KEY) ?? 'null');
+    return v && parseCode(v.code) ? v : null;
+  } catch {
+    return null;
+  }
+}
+
 /** 답 배열(['R','I',...]) → 유형별 점수 {R:2, I:3, ...} */
 export function scoreAnswers(answers) {
   const scores = Object.fromEntries(ORDER.map((id) => [id, 0]));
