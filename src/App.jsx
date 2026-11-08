@@ -9,13 +9,14 @@ import Departments from './pages/Departments';
 import DepartmentDetail from './pages/DepartmentDetail';
 import Recommend from './pages/Recommend';
 import Faq from './pages/Faq';
+import MajorTest from './pages/MajorTest';
 import site from './data/site.json';
 import { ChatProvider, useChat } from './components/RecommenderChat';
 
 const NAV = [
   { to: '/', key: 'nav.home', end: true },
   { to: '/departments', key: 'nav.departments' },
-  { to: '/recommend', key: 'nav.recommend' },
+  { to: '/test', key: 'nav.test' },
   { to: '/faq', key: 'nav.faq' },
 ];
 
@@ -171,6 +172,8 @@ export default function App() {
             <Route path="/department/:id" element={<DepartmentDetail />} />
             <Route path="/recommend" element={<Recommend />} />
             <Route path="/faq" element={<Faq />} />
+            <Route path="/test" element={<MajorTest />} />
+            <Route path="/test/result/:code" element={<MajorTest />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>

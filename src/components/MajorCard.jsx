@@ -3,7 +3,10 @@ import { useTranslation } from 'react-i18next';
 import LocalizedText from './LocalizedText';
 import AdmissionBadges from './AdmissionBadges';
 import CoreTags from './CoreTags';
-import { fieldOf, imageOf, summaryOf } from '../utils/fields';
+import { fieldOf, imageOf, imagePositionOf, summaryOf } from '../utils/fields';
+
+/** 학과 홈페이지 주소 (없으면 영남대 공식 학과소개 페이지) */
+export const homepageOf = (department) => department.links?.homepage || department.links?.official || null;
 import { tr } from '../utils/localize';
 
 /** 소개 글 앞부분 2문장 (미리보기용) */
@@ -36,23 +39,21 @@ function HoverPreview({ department, college, field, side }) {
         ${side === 'left' ? 'left-0 origin-top-left' : 'right-0 origin-top-right'}`}
       style={{ minHeight: '100%' }}
     >
-      <Link
-        to={`/department/${department.id}`}
-        tabIndex={-1}
+      <div
         className="relative flex flex-col overflow-hidden rounded-2xl text-white shadow-2xl ring-[3px] ring-yu-dark"
         style={{ minHeight: 'inherit' }}
       >
         {/* 배경: 학과 사진이 있으면 사진 + 어두운 막, 없으면 남색 그라데이션 */}
         {image ? (
           <>
-            <img src={image} alt="" className="absolute inset-0 h-full w-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-b from-[#06213f]/85 to-[#06213f]/95" />
+            <img src={image} alt="" className="absolute inset-0 h-full w-full object-cover" style={{ objectPosition: imagePositionOf(department) }} />
+            <div className="absolute inset-0 bg-gradient-to-b from-[#06213f]/80 to-[#06213f]/95" />
           </>
         ) : (
           <div className="absolute inset-0 bg-gradient-to-br from-yu-dark via-[#0a3a6e] to-[#06213f]" />
         )}
 
-        <div className="relative flex flex-1 flex-col items-center px-8 pb-6 pt-7 text-center">
+        <Link to={`/department/${department.id}`} tabIndex={-1} className="relative flex flex-1 flex-col items-center px-8 pb-2 pt-7 text-center">
           <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white text-3xl shadow">{field?.icon ?? '🎓'}</span>
           <p className="mt-3 text-sm font-medium text-white/80">{tr(college.name, lang)}</p>
           <p className="mt-0.5 text-2xl font-extrabold leading-snug">{tr(department.name, lang)}</p>
@@ -75,14 +76,29 @@ function HoverPreview({ department, college, field, side }) {
             </div>
           )}
 
-          <div className="mt-auto flex w-full items-center justify-between gap-3 pt-5">
-            <AdmissionBadges admission={department.admission} />
-            <span className="shrink-0 rounded-full bg-white px-4 py-2 text-sm font-bold text-yu-dark">
+        </Link>
+
+        {/* 아래 줄: 지원 유형 · 학과 홈페이지(새 창) · 자세히 보기 */}
+        <div className="relative mt-auto flex w-full flex-wrap items-center justify-between gap-3 px-8 pb-6 pt-3">
+          <AdmissionBadges admission={department.admission} />
+          <div className="flex shrink-0 gap-2">
+            {homepageOf(department) && (
+              <a
+                href={homepageOf(department)}
+                target="_blank"
+                rel="noopener noreferrer"
+                tabIndex={-1}
+                className="rounded-full border-2 border-white/70 px-4 py-1.5 text-sm font-bold text-white hover:bg-white/15"
+              >
+                {t('department.homepageShort')} ↗
+              </a>
+            )}
+            <Link to={`/department/${department.id}`} tabIndex={-1} className="rounded-full bg-white px-4 py-2 text-sm font-bold text-yu-dark hover:bg-yu-light">
               {t('department.viewDetail')} →
-            </span>
+            </Link>
           </div>
         </div>
-      </Link>
+      </div>
     </div>
   );
 }
@@ -108,7 +124,20 @@ export default function MajorCard({ department, college, index = 0 }) {
       >
         <Link to={`/department/${department.id}`} tabIndex={-1} aria-hidden className="block">
           {image ? (
-            <img src={image} alt="" loading="lazy" className="aspect-[16/10] w-full object-cover" />
+            <div className="relative">
+              <img
+                src={image}
+                alt=""
+                loading="lazy"
+                className="aspect-[16/10] w-full object-cover"
+                style={{ objectPosition: imagePositionOf(department) }}
+              />
+              {field && (
+                <span className="absolute left-3 top-3 rounded-full bg-black/45 px-2 py-0.5 text-[11px] font-semibold text-white backdrop-blur-sm sm:left-4 sm:text-xs">
+                  {field.icon} {tr(field.label, i18n.resolvedLanguage)}
+                </span>
+              )}
+            </div>
           ) : (
             // 사진이 없으면 계열 색 + 아이콘 + 학과 이름으로 썸네일 생성
             <div className={`relative flex aspect-[16/10] items-end bg-gradient-to-br p-3 sm:p-4 ${field?.color ?? 'from-slate-400 to-slate-600'}`}>
@@ -135,13 +164,24 @@ export default function MajorCard({ department, college, index = 0 }) {
           {summary && (
             <LocalizedText as="p" text={summary} className="mt-2 line-clamp-2 text-sm leading-relaxed text-slate-700 sm:text-[15px]" showBadge={false} />
           )}
-          <div className="mt-auto pt-4">
+          <div className="mt-auto flex gap-2 pt-4">
             <Link
               to={`/department/${department.id}`}
-              className="flex items-center justify-center rounded-xl bg-slate-100 py-2.5 text-sm font-bold text-slate-800 transition hover:bg-yu-dark hover:text-white"
+              className="flex flex-1 items-center justify-center rounded-xl bg-slate-100 py-2.5 text-sm font-bold text-slate-800 transition hover:bg-yu-dark hover:text-white"
             >
               {t('department.viewDetail')}
             </Link>
+            {homepageOf(department) && (
+              <a
+                href={homepageOf(department)}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={t('department.homepage')}
+                className="flex shrink-0 items-center justify-center rounded-xl border-2 border-slate-200 px-2.5 py-2 text-[13px] font-bold text-slate-700 transition hover:border-yu-dark hover:text-yu-dark sm:px-3 sm:text-sm"
+              >
+                {t('department.homepageShort')} ↗
+              </a>
+            )}
           </div>
         </div>
       </article>

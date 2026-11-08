@@ -10,7 +10,8 @@
     "home": "Trang chủ",
     "departments": "Tìm ngành",
     "recommend": "Gợi ý ngành",
-    "faq": "Câu hỏi thường gặp"
+    "faq": "Câu hỏi thường gặp",
+    "test": "Trắc nghiệm chọn ngành"
   },
   "header": {
     "searchPlaceholder": "Tìm theo tên ngành hoặc từ khóa (VD: tiếng Trung, bán dẫn)",
@@ -19,6 +20,7 @@
   },
   "features": {
     "chat": { "badge": "Beta", "headline": "Ngành nào hợp với bạn?\nHỏi chatbot ngay", "title": "Chatbot gợi ý ngành", "sub": "Chỉ cần 3 câu hỏi" },
+    "test": { "badge": "Beta", "headline": "Bạn hợp với\nnhóm ngành nào?", "title": "Trắc nghiệm chọn ngành", "sub": "12 câu · khoảng 2 phút" },
     "quiz": { "badge": "3 phút", "headline": "Tìm ngành theo\nsở thích", "title": "Gợi ý qua bảng câu hỏi", "sub": "Chọn lĩnh vực & nghề nghiệp" },
     "transfer": { "badge": "Chuyển tiếp", "headline": "Ngành nào nhận\nchuyển tiếp?", "title": "Ngành nhận chuyển tiếp", "sub": "Vào năm 2 · năm 3" },
     "faq": { "badge": "FAQ", "headline": "Câu hỏi thường gặp\ncủa du học sinh", "title": "Câu hỏi thường gặp", "sub": "Tuyển sinh · chọn ngành · nghề nghiệp" }
@@ -99,6 +101,7 @@
     "majors": "Chuyên ngành",
     "official": "Trang giới thiệu chính thức",
     "homepage": "Trang web khoa",
+    "homepageShort": "Trang web",
     "phone": "Điện thoại",
     "viewDetail": "Xem chi tiết",
     "sourceNote": "Thông tin được thu thập từ trang chủ Đại học Yeungnam ngày {{date}}. Vui lòng xem trang chính thức để có thông tin mới nhất.",
@@ -153,6 +156,35 @@
     "close": "Đóng",
     "faqLabel": "Câu hỏi thường gặp",
     "faqSuggest": "Câu hỏi thường gặp"
+  },
+  "test": {
+    "beta": "Beta",
+    "title": "Bạn hợp với nhóm ngành nào?",
+    "subtitle": "Trả lời vài câu hỏi đơn giản để biết nhóm sở thích của bạn và các ngành phù hợp tại Đại học Yeungnam.",
+    "meta1Value": "12 câu",
+    "meta1Label": "2 lựa chọn",
+    "meta2Value": "~2 phút",
+    "meta2Label": "Không giới hạn thời gian",
+    "meta3Value": "6 nhóm",
+    "meta3Label": "Sở thích Holland",
+    "notice": "Không có đáp án đúng sai. Đừng suy nghĩ quá lâu, hãy chọn điều bạn nghĩ đến đầu tiên. Kết quả không được lưu lại.",
+    "start": "Bắt đầu",
+    "back": "Quay lại",
+    "resultIntro": "Nhóm ngành của bạn là",
+    "traitsTitle": "Đặc điểm của bạn",
+    "studyTitle": "Cách học phù hợp",
+    "scoreTitle": "Điểm theo từng nhóm",
+    "secondType": "Nhóm gần thứ hai",
+    "recommendTitle": "Các ngành phù hợp tại Đại học Yeungnam",
+    "comboLabel": "Gợi ý theo tổ hợp {{a}} + {{b}}. Ngành hợp cả hai nhóm được xếp trước.",
+    "bothTypes": "Hợp cả hai nhóm",
+    "copyLink": "Sao chép liên kết kết quả",
+    "copied": "Đã sao chép liên kết!",
+    "retry": "Làm lại",
+    "moreTitle": "Muốn chọn chi tiết hơn theo lĩnh vực quan tâm và nghề nghiệp?",
+    "more": "Chọn chi tiết hơn",
+    "disclaimer": "Đây là bài trắc nghiệm beta đơn giản dựa trên mô hình sở thích nghề nghiệp Holland (RIASEC); kết quả chỉ mang tính tham khảo.",
+    "invalid": "Không tìm thấy kết quả. Hãy làm lại bài trắc nghiệm."
   },
   "translation": {
     "badge": "Hiển thị bằng {{lang}}"

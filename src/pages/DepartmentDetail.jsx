@@ -4,6 +4,7 @@ import { findDepartment, useDepartments } from '../hooks/useDepartments';
 import LocalizedText from '../components/LocalizedText';
 import AdmissionBadges from '../components/AdmissionBadges';
 import CoreTags from '../components/CoreTags';
+import { imageOf, imagePositionOf } from '../utils/fields';
 import { formatDate } from '../utils/localize';
 import { SOURCE_LANG } from '../i18n/languages';
 
@@ -83,6 +84,7 @@ export default function DepartmentDetail() {
   const hasDetail = !!(d.description?.ko || d.majorGuide?.ko || d.curriculum.length || d.careers.length);
   const related = college.departments.filter((x) => x.id !== d.id);
   const date = formatDate(data.meta?.crawledAt, lang);
+  const photo = imageOf(d);
 
   return (
     <article className="mx-auto max-w-3xl px-4 py-8">
@@ -94,6 +96,38 @@ export default function DepartmentDetail() {
       <AdmissionBadges admission={d.admission} className="mt-2" />
       <LocalizedText as="p" text={d.slogan} className="mt-3 text-lg text-slate-700" />
       <CoreTags department={d} size="lg" className="mt-3" />
+      {(d.links.homepage || d.links.official) && (
+        <div className="mt-4 flex flex-wrap gap-2">
+          {d.links.homepage && (
+            <a
+              href={d.links.homepage}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-xl bg-yu-dark px-4 py-2.5 text-sm font-bold text-white hover:bg-yu"
+            >
+              🏠 {t('department.homepage')} ↗
+            </a>
+          )}
+          {d.links.official && (
+            <a
+              href={d.links.official}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-xl border-2 border-slate-200 px-4 py-2 text-sm font-bold text-slate-700 hover:border-yu-dark hover:text-yu-dark"
+            >
+              {t('department.official')} ↗
+            </a>
+          )}
+        </div>
+      )}
+      {photo && (
+        <img
+          src={photo}
+          alt=""
+          className="mt-6 aspect-[16/7] w-full rounded-2xl object-cover"
+          style={{ objectPosition: imagePositionOf(d) }}
+        />
+      )}
 
       <Section title={t('admission.title')} show={!!d.admission}>
         <AdmissionInfo admission={d.admission} />

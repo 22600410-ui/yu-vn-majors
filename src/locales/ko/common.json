@@ -10,7 +10,8 @@
     "home": "홈",
     "departments": "학과 찾기",
     "recommend": "학과 추천",
-    "faq": "자주 묻는 질문"
+    "faq": "자주 묻는 질문",
+    "test": "전공 유형 테스트"
   },
   "header": {
     "searchPlaceholder": "학과 이름이나 핵심 키워드로 검색 (예: 중국어, 반도체)",
@@ -20,6 +21,7 @@
   "features": {
     "chat": { "badge": "베타", "headline": "나에게 맞는 학과,\n챗봇에게 물어보세요", "title": "전공 추천 챗봇", "sub": "질문 3개로 학과 추천" },
     "quiz": { "badge": "3분", "headline": "관심 분야로\n학과 찾기", "title": "질문지로 학과 추천", "sub": "관심 분야·희망 진로 선택" },
+    "test": { "badge": "베타", "headline": "나에게 맞는\n전공 유형은?", "title": "전공 유형 테스트", "sub": "12문항 · 약 2분" },
     "transfer": { "badge": "편입학", "headline": "편입으로 갈 수 있는\n학과는?", "title": "편입학 지원 가능 학과", "sub": "2·3학년 편입 모집 단위" },
     "faq": { "badge": "FAQ", "headline": "유학생이\n자주 묻는 질문", "title": "자주 묻는 질문", "sub": "지원·학과 선택·진로" }
   },
@@ -99,6 +101,7 @@
     "majors": "세부 전공",
     "official": "공식 학과소개 페이지",
     "homepage": "학과 홈페이지",
+    "homepageShort": "홈페이지",
     "phone": "연락처",
     "viewDetail": "자세히 보기",
     "sourceNote": "이 정보는 {{date}}에 영남대학교 홈페이지에서 수집했습니다. 최신 정보는 공식 페이지에서 확인하세요.",
@@ -153,6 +156,35 @@
     "close": "닫기",
     "faqLabel": "자주 묻는 질문",
     "faqSuggest": "자주 묻는 질문"
+  },
+  "test": {
+    "beta": "베타",
+    "title": "나에게 맞는 전공 유형은?",
+    "subtitle": "간단한 질문으로 나의 흥미 유형과 어울리는 영남대 학과를 찾아보세요.",
+    "meta1Value": "12문항",
+    "meta1Label": "보기 2개",
+    "meta2Value": "약 2분",
+    "meta2Label": "시간 제한 없음",
+    "meta3Value": "6유형",
+    "meta3Label": "홀랜드 흥미 유형",
+    "notice": "정답은 없어요. 깊이 고민하지 말고 먼저 떠오르는 쪽을 고르세요. 결과는 저장되지 않습니다.",
+    "start": "테스트 시작하기",
+    "back": "이전",
+    "resultIntro": "나의 전공 유형은",
+    "traitsTitle": "이런 특징이 있어요",
+    "studyTitle": "잘 맞는 공부 방식",
+    "scoreTitle": "유형별 점수",
+    "secondType": "두 번째로 가까운 유형",
+    "recommendTitle": "어울리는 영남대 학과",
+    "comboLabel": "{{a}} + {{b}} 조합으로 추천했어요. 두 유형에 모두 맞는 학과가 먼저 나옵니다.",
+    "bothTypes": "두 유형 모두 추천",
+    "copyLink": "결과 링크 복사",
+    "copied": "링크를 복사했어요!",
+    "retry": "다시 하기",
+    "moreTitle": "관심 분야와 희망 진로로 더 자세히 골라 보고 싶다면?",
+    "more": "더 자세히 고르기",
+    "disclaimer": "이 테스트는 홀랜드 직업흥미 유형(RIASEC)을 참고한 간단한 베타 검사이며, 결과는 참고용입니다.",
+    "invalid": "결과를 찾을 수 없어요. 테스트를 다시 해 보세요."
   },
   "translation": {
     "badge": "{{lang}}로 표시"

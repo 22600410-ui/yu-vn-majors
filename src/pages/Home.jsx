@@ -10,10 +10,9 @@ import UnderlineTabs from '../components/UnderlineTabs';
 import FaqSection from '../components/FaqSection';
 import { useChat } from '../components/RecommenderChat';
 
-// 상단 기능 카드 4개: 큰 글씨 헤드라인 + 아래 제목/설명
+// 상단 기능 카드: 큰 글씨 헤드라인 + 아래 제목/설명 (챗봇 카드는 보류 중이라 뺌)
 const FEATURES = [
-  { key: 'chat', action: 'chat', emoji: '🤖', bg: 'from-yu-dark via-yu to-sky-500', dark: true },
-  { key: 'quiz', to: '/recommend', emoji: '🧭', bg: 'from-amber-100 to-orange-200', dark: false },
+  { key: 'test', to: '/test', emoji: '🧩', bg: 'from-amber-100 to-orange-200', dark: false },
   { key: 'transfer', to: '/departments?track=transfer', emoji: '🎓', bg: 'from-emerald-100 to-teal-200', dark: false },
   { key: 'faq', to: '/faq', emoji: '💬', bg: 'from-indigo-700 to-violet-800', dark: true },
 ];
@@ -22,7 +21,7 @@ function FeatureCard({ f, onChat }) {
   const { t } = useTranslation();
   const body = (
     <>
-      <div className={`relative aspect-[16/11] overflow-hidden rounded-2xl bg-gradient-to-br p-4 sm:p-5 ${f.bg}`}>
+      <div className={`relative aspect-[16/7] overflow-hidden rounded-2xl bg-gradient-to-br p-4 sm:aspect-[16/11] sm:p-5 ${f.bg}`}>
         <span
           className={`inline-block rounded-full px-2.5 py-0.5 text-xs font-bold ${
             f.dark ? 'bg-white/20 text-white' : 'bg-white/70 text-slate-800'
@@ -83,7 +82,7 @@ export default function Home() {
     <div className="pb-24">
       {/* 상단 기능 카드 */}
       <section className="mx-auto max-w-6xl px-4 pt-6 sm:pt-8">
-        <div className="grid grid-cols-2 gap-x-3 gap-y-6 sm:gap-x-5 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-x-5 gap-y-6 sm:grid-cols-3">
           {FEATURES.map((f) => (
             <FeatureCard key={f.key} f={f} onChat={openChat} />
           ))}

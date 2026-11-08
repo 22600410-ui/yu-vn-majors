@@ -1,0 +1,169 @@
+{
+  "_comment": "전공 유형 테스트(베타). 홀랜드 직업흥미 유형(RIASEC) 6가지를 바탕으로 합니다. questions: 12문항, 보기 2개, 각 보기는 한 유형(type)에 1점. 각 유형이 보기에 4번씩 나오도록 짝을 맞춰 두었습니다(R-S, I-E, A-C 짝은 쓰지 않음). types.departments: 그 유형에 어울리는 학과(한국어 이름, 잘 맞는 순서). 결과 학과는 1위 유형 3점·2위 유형 2점 가중치로 합산해 고릅니다.",
+  "questions": [
+    {
+      "q": { "ko": "새 전자기기를 샀을 때 나는?", "vi": "Khi mua một thiết bị điện tử mới, bạn sẽ…" },
+      "options": [
+        { "type": "R", "text": { "ko": "설명서보다 일단 직접 만져 보고 조립한다", "vi": "Tự tay lắp ráp, mày mò thử trước khi đọc hướng dẫn" } },
+        { "type": "I", "text": { "ko": "어떤 원리로 작동하는지 궁금해서 찾아본다", "vi": "Tò mò tìm hiểu nó hoạt động theo nguyên lý nào" } }
+      ]
+    },
+    {
+      "q": { "ko": "주말에 시간이 생기면?", "vi": "Cuối tuần có thời gian rảnh, bạn sẽ…" },
+      "options": [
+        { "type": "R", "text": { "ko": "무언가를 직접 만들거나 고친다", "vi": "Tự tay làm hoặc sửa một món đồ" } },
+        { "type": "A", "text": { "ko": "새로운 장소·문화를 찾아가 사진과 글로 남긴다", "vi": "Khám phá nơi mới, văn hóa mới rồi lưu lại bằng ảnh và chữ" } }
+      ]
+    },
+    {
+      "q": { "ko": "학교 축제를 준비할 때 맡고 싶은 역할은?", "vi": "Chuẩn bị lễ hội của trường, bạn muốn nhận vai trò nào?" },
+      "options": [
+        { "type": "R", "text": { "ko": "무대와 장비를 설치하는 일", "vi": "Lắp đặt sân khấu và thiết bị" } },
+        { "type": "E", "text": { "ko": "홍보하고 후원을 받아 오는 일", "vi": "Quảng bá và tìm nhà tài trợ" } }
+      ]
+    },
+    {
+      "q": { "ko": "아르바이트를 고른다면?", "vi": "Nếu chọn việc làm thêm, bạn thích…" },
+      "options": [
+        { "type": "R", "text": { "ko": "몸을 움직이며 현장에서 일하는 곳", "vi": "Công việc vận động, làm tại hiện trường" } },
+        { "type": "C", "text": { "ko": "정해진 규칙대로 물건이나 자료를 관리하는 곳", "vi": "Công việc quản lý hàng hóa, dữ liệu theo quy trình rõ ràng" } }
+      ]
+    },
+    {
+      "q": { "ko": "과제 주제를 고를 수 있다면?", "vi": "Nếu được chọn đề tài bài tập, bạn chọn…" },
+      "options": [
+        { "type": "I", "text": { "ko": "데이터와 근거로 답을 찾아가는 주제", "vi": "Đề tài tìm câu trả lời bằng dữ liệu và bằng chứng" } },
+        { "type": "A", "text": { "ko": "상상력을 마음껏 펼칠 수 있는 주제", "vi": "Đề tài được thỏa sức tưởng tượng" } }
+      ]
+    },
+    {
+      "q": { "ko": "친구가 고민을 털어놓으면?", "vi": "Khi bạn bè tâm sự chuyện buồn, bạn sẽ…" },
+      "options": [
+        { "type": "I", "text": { "ko": "원인을 분석해서 해결 방법을 찾아 준다", "vi": "Phân tích nguyên nhân và tìm cách giải quyết" } },
+        { "type": "S", "text": { "ko": "먼저 이야기를 끝까지 들어 주고 공감한다", "vi": "Lắng nghe đến cùng và đồng cảm trước" } }
+      ]
+    },
+    {
+      "q": { "ko": "시험 공부를 할 때 나는?", "vi": "Khi ôn thi, bạn thường…" },
+      "options": [
+        { "type": "I", "text": { "ko": "왜 그런지 원리를 끝까지 파고든다", "vi": "Đào sâu đến cùng để hiểu vì sao" } },
+        { "type": "C", "text": { "ko": "계획표를 세우고 순서대로 정리한다", "vi": "Lập kế hoạch và ôn lần lượt theo thứ tự" } }
+      ]
+    },
+    {
+      "q": { "ko": "한국 생활 브이로그를 만든다면?", "vi": "Nếu làm vlog về cuộc sống ở Hàn Quốc, bạn sẽ…" },
+      "options": [
+        { "type": "A", "text": { "ko": "감성적인 영상미와 편집에 집중한다", "vi": "Tập trung vào hình ảnh đẹp và dựng video có cảm xúc" } },
+        { "type": "S", "text": { "ko": "베트남 친구들에게 도움이 되는 정보를 담는다", "vi": "Chia sẻ thông tin hữu ích cho các bạn Việt Nam" } }
+      ]
+    },
+    {
+      "q": { "ko": "학과 행사 포스터를 맡았다면?", "vi": "Được giao làm poster cho sự kiện của khoa, bạn sẽ…" },
+      "options": [
+        { "type": "A", "text": { "ko": "디자인과 색감을 직접 고민한다", "vi": "Tự nghĩ về thiết kế và màu sắc" } },
+        { "type": "E", "text": { "ko": "사람들이 많이 오게 할 홍보 전략을 짠다", "vi": "Lên chiến lược để thu hút thật nhiều người đến" } }
+      ]
+    },
+    {
+      "q": { "ko": "동아리에서 나는?", "vi": "Trong câu lạc bộ, bạn là người…" },
+      "options": [
+        { "type": "S", "text": { "ko": "회원들이 잘 어울리도록 챙기는 사람", "vi": "Quan tâm để mọi người hòa hợp với nhau" } },
+        { "type": "E", "text": { "ko": "새 활동을 기획하고 앞장서는 사람", "vi": "Lên kế hoạch hoạt động mới và dẫn dắt" } }
+      ]
+    },
+    {
+      "q": { "ko": "한국에 처음 온 후배를 도울 때 나는?", "vi": "Khi giúp đàn em mới sang Hàn Quốc, bạn sẽ…" },
+      "options": [
+        { "type": "S", "text": { "ko": "같이 다니면서 적응을 도와준다", "vi": "Đi cùng và giúp em ấy làm quen" } },
+        { "type": "C", "text": { "ko": "필요한 서류와 절차를 목록으로 정리해 준다", "vi": "Lập danh sách giấy tờ và thủ tục cần làm" } }
+      ]
+    },
+    {
+      "q": { "ko": "팀 과제에서 나는?", "vi": "Khi làm bài tập nhóm, bạn thường…" },
+      "options": [
+        { "type": "E", "text": { "ko": "발표하고 사람들을 설득한다", "vi": "Thuyết trình và thuyết phục mọi người" } },
+        { "type": "C", "text": { "ko": "자료를 정리하고 일정을 관리한다", "vi": "Sắp xếp tài liệu và quản lý tiến độ" } }
+      ]
+    }
+  ],
+  "types": [
+    {
+      "id": "R",
+      "emoji": "🛠️",
+      "holland": { "ko": "현실형", "vi": "Thực tế" },
+      "name": { "ko": "손으로 만드는 메이커형", "vi": "Người thợ chế tạo" },
+      "traits": [
+        { "ko": "직접 만들고 고치면서 배울 때 가장 신나요.", "vi": "Bạn hào hứng nhất khi được học bằng cách tự tay làm và sửa." },
+        { "ko": "말보다 결과물로 보여 주는 편이에요.", "vi": "Bạn thích chứng minh bằng sản phẩm hơn là lời nói." },
+        { "ko": "기계·장비·현장 일에 감각이 있어요.", "vi": "Bạn có năng khiếu với máy móc, thiết bị và công việc hiện trường." }
+      ],
+      "study": { "ko": "실습·실험·프로젝트처럼 몸으로 해 보는 수업이 잘 맞아요.", "vi": "Hợp với các môn thực hành, thí nghiệm và dự án tự tay làm." },
+      "departments": ["기계공학부", "미래자동차공학과", "로봇공학과", "전기공학과", "건설시스템공학과", "건축학부", "체육학부", "파이버시스템공학과", "원예생명과학과", "산림자원학과"]
+    },
+    {
+      "id": "I",
+      "emoji": "🔬",
+      "holland": { "ko": "탐구형", "vi": "Nghiên cứu" },
+      "name": { "ko": "호기심 많은 탐험가형", "vi": "Nhà khám phá tò mò" },
+      "traits": [
+        { "ko": "'왜?'라는 질문을 끝까지 파고들어요.", "vi": "Bạn luôn đào sâu câu hỏi 'Tại sao?' đến cùng." },
+        { "ko": "데이터와 근거로 판단하는 것을 좋아해요.", "vi": "Bạn thích đánh giá dựa trên dữ liệu và bằng chứng." },
+        { "ko": "혼자 깊이 생각하고 분석할 때 집중이 잘 돼요.", "vi": "Bạn tập trung tốt khi tự suy nghĩ và phân tích sâu." }
+      ],
+      "study": { "ko": "원리를 이해하고 문제를 풀어 가는 이론·실험 수업이 잘 맞아요.", "vi": "Hợp với các môn lý thuyết và thí nghiệm giúp hiểu nguyên lý, giải quyết vấn đề." },
+      "departments": ["컴퓨터학부", "차세대반도체학과", "전자공학과", "생명공학과", "의생명공학과", "화학공학부", "신소재공학부", "물리학과", "화학과", "생명과학과", "수학과", "식품공학과", "철학과", "역사학과"]
+    },
+    {
+      "id": "A",
+      "emoji": "🎨",
+      "holland": { "ko": "예술형", "vi": "Nghệ thuật" },
+      "name": { "ko": "상상력 넘치는 크리에이터형", "vi": "Nhà sáng tạo giàu trí tưởng tượng" },
+      "traits": [
+        { "ko": "나만의 방식으로 표현하는 것을 좋아해요.", "vi": "Bạn thích thể hiện theo cách riêng của mình." },
+        { "ko": "색·소리·이야기에 예민한 감각이 있어요.", "vi": "Bạn nhạy cảm với màu sắc, âm thanh và câu chuyện." },
+        { "ko": "정해진 틀보다 자유로운 환경에서 빛나요.", "vi": "Bạn tỏa sáng trong môi trường tự do hơn là khuôn khổ cố định." }
+      ],
+      "study": { "ko": "작품을 만들고 피드백을 받는 스튜디오·프로젝트 수업이 잘 맞아요.", "vi": "Hợp với các lớp studio, dự án sáng tác và nhận góp ý." },
+      "departments": ["시각디자인학과", "산업디자인학과", "회화과", "트랜스아트과", "음악학부", "생활제품디자인학과", "의류패션학과", "미디어커뮤니케이션학과", "건축학부", "조경학과", "주거환경학과"]
+    },
+    {
+      "id": "S",
+      "emoji": "🤝",
+      "holland": { "ko": "사회형", "vi": "Xã hội" },
+      "name": { "ko": "사람을 잇는 다리형", "vi": "Người kết nối" },
+      "traits": [
+        { "ko": "다른 사람을 돕고 가르칠 때 보람을 느껴요.", "vi": "Bạn thấy ý nghĩa khi giúp đỡ và hướng dẫn người khác." },
+        { "ko": "이야기를 잘 들어 주고 분위기를 편하게 만들어요.", "vi": "Bạn biết lắng nghe và tạo không khí thoải mái." },
+        { "ko": "언어와 문화의 차이를 이어 주는 일에 강해요.", "vi": "Bạn giỏi kết nối những khác biệt về ngôn ngữ và văn hóa." }
+      ],
+      "study": { "ko": "토론·발표·봉사처럼 사람과 함께하는 수업이 잘 맞아요.", "vi": "Hợp với các môn thảo luận, thuyết trình, tình nguyện cùng mọi người." },
+      "departments": ["글로벌교육학부", "심리학과", "휴먼서비스학과", "국어국문학과", "글로벌통번역학부", "중국언어문화학과", "일어일문학과", "영어영문학과", "유럽언어문화학부", "사회학과", "문화인류학과", "국제개발새마을학과", "식품영양학과"]
+    },
+    {
+      "id": "E",
+      "emoji": "🚀",
+      "holland": { "ko": "진취형", "vi": "Dám nghĩ dám làm" },
+      "name": { "ko": "앞장서는 리더형", "vi": "Nhà lãnh đạo tiên phong" },
+      "traits": [
+        { "ko": "목표를 정하면 사람들을 이끌고 앞장서요.", "vi": "Khi có mục tiêu, bạn dẫn dắt mọi người và đi đầu." },
+        { "ko": "설득하고 협상하는 일에 자신 있어요.", "vi": "Bạn tự tin khi thuyết phục và đàm phán." },
+        { "ko": "새로운 기회와 도전을 즐겨요.", "vi": "Bạn thích những cơ hội và thử thách mới." }
+      ],
+      "study": { "ko": "팀 프로젝트·사례 분석·발표 중심 수업이 잘 맞아요.", "vi": "Hợp với các môn dự án nhóm, phân tích tình huống và thuyết trình." },
+      "departments": ["경영학과", "글로벌비즈니스학과", "무역학부", "정치외교학과", "미디어커뮤니케이션학과", "식품경제외식학과", "경제금융학부", "행정학과", "국제개발새마을학과", "글로벌학부"]
+    },
+    {
+      "id": "C",
+      "emoji": "📋",
+      "holland": { "ko": "관습형", "vi": "Nề nếp" },
+      "name": { "ko": "꼼꼼한 설계자형", "vi": "Người tổ chức cẩn thận" },
+      "traits": [
+        { "ko": "계획을 세우고 차근차근 실행해요.", "vi": "Bạn lập kế hoạch và thực hiện từng bước." },
+        { "ko": "숫자와 자료를 정확하게 다루는 데 강해요.", "vi": "Bạn giỏi xử lý số liệu và tài liệu một cách chính xác." },
+        { "ko": "규칙이 분명한 일에서 안정감을 느껴요.", "vi": "Bạn thấy yên tâm với công việc có quy tắc rõ ràng." }
+      ],
+      "study": { "ko": "체계적으로 정리하고 연습 문제로 익히는 수업이 잘 맞아요.", "vi": "Hợp với các môn có hệ thống, luyện tập qua bài tập." },
+      "departments": ["회계세무학과", "통계학과", "경제금융학부", "행정학과", "무역학부", "도시공학과", "환경공학과", "수학과", "식품영양학과"]
+    }
+  ]
+}
