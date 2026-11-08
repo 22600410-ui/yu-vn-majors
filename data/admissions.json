@@ -32,7 +32,7 @@
       ],
       "생활과학대학": [
         "주거환경학과", "식품영양학과",
-        { "name": "체육학부", "id": "sports", "majors": ["체육학전공", "무용학전공"] },
+        { "name": "체육학부", "id": "sports", "homepage": "https://www.yu.ac.kr/pe/index.do", "majors": ["체육학전공", "무용학전공"] },
         "의류패션학과", "휴먼서비스학과"
       ],
       "예술대학": [
@@ -41,9 +41,9 @@
       ],
       "글로벌인재대학": [
         "중국언어문화학과", "국제개발새마을학과",
-        { "name": "글로벌교육학부", "id": "global-edu", "majors": ["국제한국어교육전공"] },
+        { "name": "글로벌교육학부", "id": "global-edu", "official": "https://www.yu.ac.kr/main/academics/koreanedu.do", "homepage": "https://www.yu.ac.kr/main/academics/koreanedu.do", "majors": ["국제한국어교육전공"] },
         "글로벌비즈니스학과",
-        { "name": "글로벌통번역학부", "id": "global-trans", "majors": ["응용중국어통번역전공"] }
+        { "name": "글로벌통번역학부", "id": "global-trans", "official": "https://www.yu.ac.kr/main/academics/trans.do", "homepage": "https://www.yu.ac.kr/main/academics/trans.do", "majors": ["응용중국어통번역전공"] }
       ]
     },
     "transfer": {

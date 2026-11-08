@@ -370,6 +370,10 @@ def apply_admissions(colleges: list[dict], adm: dict, keep_all: bool = False) ->
                     continue
                 if e.get("id"):  # 공식 링크가 없어 id가 x-해시로 생긴 학과에 읽기 쉬운 주소 부여
                     d["id"] = e["id"]
+                if e.get("homepage"):  # 목록 페이지에 홈페이지 링크가 없는 학과는 직접 적은 주소 사용
+                    d["links"]["homepage"] = e["homepage"]
+                if e.get("official"):  # 공식 학과소개 페이지를 직접 지정 → 다음 수집 때 상세 내용(소개·진로 등)을 가져옴
+                    d["links"]["official"] = e["official"]
                 info: dict[str, Any] = {"majors": [L(m) for m in e.get("majors", [])]}
                 if years:
                     info["years"] = years

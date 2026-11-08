@@ -12,10 +12,12 @@ import Faq from './pages/Faq';
 import MajorTest from './pages/MajorTest';
 import site from './data/site.json';
 import { ChatProvider, useChat } from './components/RecommenderChat';
+import { NoticeProvider, SafeRoutes } from './components/Notice';
 
 const NAV = [
   { to: '/', key: 'nav.home', end: true },
   { to: '/departments', key: 'nav.departments' },
+  { to: '/recommend', key: 'nav.recommend' },
   { to: '/test', key: 'nav.test' },
   { to: '/faq', key: 'nav.faq' },
 ];
@@ -166,23 +168,28 @@ function NotFound() {
 export default function App() {
   return (
     <HashRouter>
-      <ChatProvider>
-        <ScrollToTop />
-        <Header />
-        <main className="min-h-[70vh]">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/departments" element={<Departments />} />
-            <Route path="/department/:id" element={<DepartmentDetail />} />
-            <Route path="/recommend" element={<Recommend />} />
-            <Route path="/faq" element={<Faq />} />
-            <Route path="/test" element={<MajorTest />} />
-            <Route path="/test/result/:code" element={<MajorTest />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </main>
-        <Footer />
-      </ChatProvider>
+      <NoticeProvider>
+        <ChatProvider>
+          <ScrollToTop />
+          <Header />
+          <main className="min-h-[70vh]">
+            {/* 준비 중 페이지 차단 + 오류가 나면 직전 화면으로 되돌리는 안전장치 */}
+            <SafeRoutes>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/departments" element={<Departments />} />
+                <Route path="/department/:id" element={<DepartmentDetail />} />
+                <Route path="/recommend" element={<Recommend />} />
+                <Route path="/faq" element={<Faq />} />
+                <Route path="/test" element={<MajorTest />} />
+                <Route path="/test/result/:code" element={<MajorTest />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </SafeRoutes>
+          </main>
+          <Footer />
+        </ChatProvider>
+      </NoticeProvider>
     </HashRouter>
   );
 }

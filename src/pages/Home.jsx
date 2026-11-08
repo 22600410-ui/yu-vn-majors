@@ -9,6 +9,7 @@ import LocalizedText from '../components/LocalizedText';
 import UnderlineTabs from '../components/UnderlineTabs';
 import FaqSection from '../components/FaqSection';
 import { useChat } from '../components/RecommenderChat';
+import { isComingSoon } from '../components/Notice';
 
 // 상단 기능 카드: 큰 글씨 헤드라인 + 아래 제목/설명 (챗봇 카드는 보류 중이라 뺌)
 const FEATURES = [
@@ -112,10 +113,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 자주 묻는 질문 */}
-      <section className="mx-auto mt-16 max-w-6xl px-4">
-        <FaqSection limit={6} />
-      </section>
+      {/* 자주 묻는 질문 (site.json comingSoon 에 'faq' 가 있으면 숨김) */}
+      {!isComingSoon('faq') && (
+        <section className="mx-auto mt-16 max-w-6xl px-4">
+          <FaqSection limit={6} />
+        </section>
+      )}
 
       {/* 지원 전 확인 사항 */}
       <section className="mx-auto mt-14 max-w-6xl px-4">

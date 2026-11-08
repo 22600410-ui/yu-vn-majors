@@ -10,7 +10,7 @@ import { useChat } from './RecommenderChat';
 
 /** 카드 아래 출처 줄: 관련 학과가 있으면 [단과대학] 학과명, 없으면 [영남대학교] 분류 */
 function CardFooter({ item }) {
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
   const lang = i18n.resolvedLanguage;
   const first = item.related?.[0];
   const cat = FAQ_CATEGORIES.find((c) => c.id === item.category);
@@ -28,6 +28,47 @@ function CardFooter({ item }) {
           <span className="text-slate-700">{tr(cat?.label, lang)}</span>
         </span>
       )}
+      {item.official && (
+        <span className="ml-auto shrink-0 rounded-full bg-yu-light px-2 py-0.5 text-[12px] font-bold text-yu-dark">{t('faq.officialBadge')}</span>
+      )}
+    </div>
+  );
+}
+
+/** FAQ 답변 안의 표 (예: 졸업증명서 제출 방법). 칸은 기호 문자열 또는 {ko, vi, span} */
+function FaqTable({ table }) {
+  const { i18n } = useTranslation();
+  const lang = i18n.resolvedLanguage;
+  const cell = (c) => (typeof c === 'string' ? c : tr(c, lang));
+  return (
+    <div className="mt-4">
+      <div className="overflow-x-auto rounded-xl border border-slate-200">
+        <table className="w-full min-w-[520px] border-collapse text-center text-[14px]">
+          <thead>
+            <tr className="bg-yu-dark text-white">
+              {table.columns.map((h, i) => (
+                <th key={i} className="border border-white/20 px-2 py-2 font-semibold">{cell(h)}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {table.rows.map((row, r) => (
+              <tr key={r} className={r % 2 ? 'bg-slate-50' : 'bg-white'}>
+                {row.map((c, i) => (
+                  <td
+                    key={i}
+                    colSpan={typeof c === 'object' && c.span ? c.span : undefined}
+                    className={`border border-slate-200 px-2 py-2 ${i === 0 ? 'font-bold text-yu-dark' : ''} ${c === '○' ? 'text-emerald-700 font-bold' : ''} ${c === 'X' ? 'text-slate-400' : ''}`}
+                  >
+                    {cell(c)}
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      {table.note && <p className="mt-2 text-sm text-slate-600">{cell(table.note)}</p>}
     </div>
   );
 }
@@ -52,14 +93,16 @@ function FaqModal({ item, onClose }) {
         aria-modal="true"
         aria-label={q}
         onClick={(e) => e.stopPropagation()}
-        className="max-h-[85vh] w-full max-w-xl overflow-y-auto rounded-t-3xl bg-white p-6 shadow-2xl sm:rounded-3xl sm:p-8"
+        className="max-h-[85vh] w-full max-w-2xl overflow-y-auto rounded-t-3xl bg-white p-6 shadow-2xl sm:rounded-3xl sm:p-8"
       >
         <p className="text-sm font-bold text-yu">Q.</p>
         <h3 className="mt-1 text-xl font-extrabold leading-snug text-slate-900">{q}</h3>
         <div className="mt-5 rounded-2xl bg-slate-50 p-5">
           <p className="text-sm font-bold text-slate-500">A.</p>
           <p className="mt-1 whitespace-pre-line text-base leading-relaxed text-slate-800">{a}</p>
+          {item.table && <FaqTable table={item.table} />}
         </div>
+        {item.official && <p className="mt-3 text-sm text-slate-500">{t('faq.officialSource')}</p>}
 
         {item.related?.length > 0 && (
           <div className="mt-5">

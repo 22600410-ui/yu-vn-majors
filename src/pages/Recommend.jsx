@@ -5,8 +5,82 @@ import { useDepartments } from '../hooks/useDepartments';
 import { recommend, rules } from '../utils/recommend';
 import DepartmentCard from '../components/DepartmentCard';
 import LocalizedText from '../components/LocalizedText';
+import MajorCard from '../components/MajorCard';
+import { loadLastResult, parseCode, recommendByTypes } from '../utils/majorTest';
+import { tr } from '../utils/localize';
 
 const TRACK_OPTIONS = ['freshman', 'transfer', 'unsure'];
+const TRACK_FILTERS = ['all', 'freshman', 'transfer'];
+
+/** 전공 유형 테스트 결과로 추천: 테스트를 했으면 유형 + 추천 학과, 안 했으면 테스트 안내 */
+function TestResultSection({ data }) {
+  const { t, i18n } = useTranslation();
+  const lang = i18n.resolvedLanguage;
+  const [track, setTrack] = useState('all');
+  const last = useMemo(() => loadLastResult(), []);
+  const types = last ? parseCode(last.code) : null;
+  const recs = useMemo(() => (types ? recommendByTypes(data, types, { track, limit: 8 }) : []), [data, last?.code, track]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  if (!types) {
+    return (
+      <section className="mt-6 rounded-3xl bg-gradient-to-br from-amber-50 to-orange-100 p-6 text-center sm:p-10">
+        <p className="text-5xl" aria-hidden>🧩</p>
+        <h2 className="mt-3 text-xl font-extrabold text-slate-900 sm:text-2xl">{t('recommend.noTestTitle')}</h2>
+        <p className="mt-2 text-[15px] text-slate-700">{t('recommend.noTestText')}</p>
+        <Link to="/test" className="mt-5 inline-block rounded-2xl bg-yu-dark px-6 py-3 font-bold text-white hover:bg-yu">
+          {t('test.start')} →
+        </Link>
+      </section>
+    );
+  }
+
+  const [first, second] = types;
+  return (
+    <section className="mt-6">
+      <div className="flex flex-col gap-4 rounded-3xl bg-gradient-to-br from-yu-dark via-[#0a3a6e] to-[#06213f] p-6 text-white sm:flex-row sm:items-center sm:p-8">
+        <p className="text-6xl" aria-hidden>{first.emoji}</p>
+        <div className="flex-1">
+          <p className="text-sm text-white/80">{t('recommend.fromTest')}</p>
+          <p className="mt-1 text-2xl font-extrabold">{tr(first.name, lang)}</p>
+          <p className="mt-1 text-[15px] text-white/90">
+            {tr(first.holland, lang)}
+            {second && ` + ${tr(second.holland, lang)}`}
+          </p>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          <Link to={`/test/result/${last.code}`} className="rounded-xl bg-white px-4 py-2.5 text-sm font-bold text-yu-dark hover:bg-yu-light">
+            {t('recommend.viewResult')}
+          </Link>
+          <Link to="/test" className="rounded-xl border-2 border-white/70 px-4 py-2 text-sm font-bold text-white hover:bg-white/10">
+            ↺ {t('test.retry')}
+          </Link>
+        </div>
+      </div>
+
+      <div className="mt-5 flex flex-wrap items-center gap-2">
+        {TRACK_FILTERS.map((k) => (
+          <button
+            key={k}
+            type="button"
+            onClick={() => setTrack(k)}
+            aria-pressed={track === k}
+            className={`rounded-full border-2 px-3.5 py-1.5 text-sm transition ${
+              track === k ? 'border-yu-dark bg-yu-dark font-bold text-white ring-2 ring-yu-dark/25' : 'border-slate-200 bg-white text-slate-700 hover:border-yu-dark'
+            }`}
+          >
+            {t(`admission.${k}`)}
+          </button>
+        ))}
+      </div>
+      {recs.length === 0 && <p className="mt-6 text-slate-600">{t('search.noResult')}</p>}
+      <div className="mt-4 grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
+        {recs.map((r, i) => (
+          <MajorCard key={r.department.id} department={r.department} college={r.college} index={i} />
+        ))}
+      </div>
+    </section>
+  );
+}
 
 function Option({ selected, onClick, children, disabled = false }) {
   return (
@@ -54,8 +128,14 @@ export default function Recommend() {
   if (loading) return <p className="p-8 text-center">{t('common.loading')}</p>;
 
   return (
-    <div className="mx-auto max-w-4xl px-4 py-8">
-      <h1 className="text-2xl font-bold text-yu-dark">{t('recommend.title')}</h1>
+    <div className="mx-auto max-w-6xl px-4 pb-24 pt-8">
+      <h1 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">{t('recommend.title')}</h1>
+
+      {/* ① 전공 유형 테스트 결과로 추천 (이 브라우저에서 마지막으로 한 테스트) */}
+      <TestResultSection data={data} />
+
+      {/* ② 관심 분야·희망 진로를 직접 골라 추천 */}
+      <h2 className="mt-14 border-t pt-10 text-xl font-extrabold text-slate-900 sm:text-2xl">{t('recommend.manualTitle')}</h2>
       <p className="mt-1 text-slate-600">{t('recommend.intro')}</p>
 
       <section className="mt-8">

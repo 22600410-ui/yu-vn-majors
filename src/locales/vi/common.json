@@ -37,6 +37,8 @@
       "recommend": "Nhận gợi ý ngành",
       "departments": "Xem các ngành được đăng ký"
     },
+    "officialBadge": "FAQ tuyển sinh",
+    "officialSource": "Nguồn: FAQ tuyển sinh du học sinh của Đại học Yeungnam. Thông tin chi tiết vui lòng liên hệ Phòng tuyển sinh du học sinh (admission@yu.ac.kr).",
     "notFoundTitle": "Không thấy câu hỏi bạn cần?",
     "notFoundText": "Hãy nhập tên ngành hoặc từ khóa vào Chatbot gợi ý ngành."
   },
@@ -122,6 +124,11 @@
   },
   "recommend": {
     "title": "Gợi ý ngành",
+    "manualTitle": "Tự chọn theo lĩnh vực quan tâm",
+    "noTestTitle": "Bạn chưa làm trắc nghiệm chọn ngành",
+    "noTestText": "Hoàn thành bài trắc nghiệm 12 câu (khoảng 2 phút), các ngành phù hợp với bạn sẽ hiện ở đây.",
+    "fromTest": "Gợi ý theo kết quả trắc nghiệm của bạn",
+    "viewResult": "Xem chi tiết kết quả",
     "intro": "Trả lời 3 câu hỏi để nhận gợi ý các ngành phù hợp trong số các ngành dành cho du học sinh quốc tế.",
     "q1": "1. Bạn dự định nhập học theo hình thức nào?",
     "unsure": "Mình chưa biết",
@@ -185,6 +192,10 @@
     "more": "Chọn chi tiết hơn",
     "disclaimer": "Đây là bài trắc nghiệm beta đơn giản dựa trên mô hình sở thích nghề nghiệp Holland (RIASEC); kết quả chỉ mang tính tham khảo.",
     "invalid": "Không tìm thấy kết quả. Hãy làm lại bài trắc nghiệm."
+  },
+  "notice": {
+    "comingSoon": "Tính năng này đang được chuẩn bị. Bạn chờ thêm nhé!",
+    "recovered": "Đã xảy ra lỗi khi mở trang, bạn đã được đưa về trang trước."
   },
   "translation": {
     "badge": "Hiển thị bằng {{lang}}"

@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useDepartments } from '../hooks/useDepartments';
 import { recommend, rules } from '../utils/recommend';
 import { searchDepartments } from '../utils/search';
+import { isComingSoon, useNotice } from './Notice';
 import { buildFaqs, faqText, featuredFaqs, matchFaq } from '../utils/faq';
 import LocalizedText from './LocalizedText';
 import AdmissionBadges from './AdmissionBadges';
@@ -23,20 +24,26 @@ export const useChat = () => useContext(ChatContext);
 export function ChatProvider({ children }) {
   const [isOpen, setOpen] = useState(false);
   const [pending, setPending] = useState(null); // 다른 화면(FAQ 등)에서 챗봇에 보낸 질문
+  const { comingSoon } = useNotice();
+  const disabled = isComingSoon('chat'); // site.json comingSoon 에 'chat' 이 있으면 열지 않고 '준비 중' 안내만
   const value = useMemo(
     () => ({
       isOpen,
-      open: () => setOpen(true),
+      open: () => (disabled ? comingSoon() : setOpen(true)),
       close: () => setOpen(false),
-      toggle: () => setOpen((v) => !v),
+      toggle: () => (disabled ? comingSoon() : setOpen((v) => !v)),
       ask: (text) => {
+        if (disabled) {
+          comingSoon();
+          return;
+        }
         setOpen(true);
         setPending({ text, at: Date.now() });
       },
       pending,
       clearPending: () => setPending(null),
     }),
-    [isOpen, pending],
+    [isOpen, pending, disabled, comingSoon],
   );
   return (
     <ChatContext.Provider value={value}>

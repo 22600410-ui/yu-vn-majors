@@ -8531,10 +8531,7 @@
               }
             }
           ],
-          "links": {
-            "official": null,
-            "homepage": null
-          },
+          "links": { "official": null, "homepage": "https://www.yu.ac.kr/pe/index.do" },
           "phone": null,
           "slogan": {
             "ko": "",

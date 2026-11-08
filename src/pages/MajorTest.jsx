@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useDepartments } from '../hooks/useDepartments';
-import { QUESTIONS, TYPES, codeFromScores, parseCode, recommendByTypes, scoreAnswers } from '../utils/majorTest';
+import { QUESTIONS, TYPES, codeFromScores, parseCode, recommendByTypes, saveLastResult, scoreAnswers } from '../utils/majorTest';
 import { tr } from '../utils/localize';
 import MajorCard from '../components/MajorCard';
 
@@ -278,10 +278,12 @@ export default function MajorTest() {
     window.scrollTo(0, 0);
     if (step + 1 >= QUESTIONS.length) {
       const scores = scoreAnswers(next);
+      const code = codeFromScores(scores);
+      saveLastResult(code, scores); // '학과 추천' 메뉴에서 다시 보여 주기 위해 기억
       // 결과 화면에서 '다시 하기'로 돌아오면 시작 화면부터 보이도록 초기화
       setStep(-1);
       setAnswers([]);
-      navigate(`/test/result/${codeFromScores(scores)}`, { state: { scores } });
+      navigate(`/test/result/${code}`, { state: { scores } });
       return;
     }
     setAnswers(next);

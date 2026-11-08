@@ -2,11 +2,152 @@
   "_comment": "자주 묻는 질문. q(질문)·a(답변)는 ko 원문 + 번역. departments는 관련 학과(한국어 이름), action은 버튼(chat=추천 챗봇 열기, recommend, departments). keywords는 챗봇이 자유 질문을 FAQ와 연결할 때 쓰는 단어(대소문자·베트남어 성조 무시). featured=true 는 챗봇 첫 화면 추천 질문. careerDepartments 학과는 '졸업 후 진로' 질문을 수집 데이터로 자동 생성합니다. 입학 기준처럼 해마다 바뀌는 사실은 단정하지 말고 모집요강 확인을 안내하세요.",
   "categories": [
     { "id": "admission", "label": { "ko": "지원·입학", "vi": "Tuyển sinh" } },
+    { "id": "eligibility", "label": { "ko": "지원 자격", "vi": "Điều kiện dự tuyển" } },
+    { "id": "documents", "label": { "ko": "제출 서류", "vi": "Hồ sơ nộp" } },
+    { "id": "application", "label": { "ko": "원서 접수", "vi": "Nộp đơn" } },
     { "id": "choice", "label": { "ko": "학과 선택", "vi": "Chọn ngành" } },
     { "id": "career", "label": { "ko": "졸업 후 진로", "vi": "Nghề nghiệp" } }
   ],
   "careerDepartments": ["전자공학과", "기계공학부", "경영학과", "무역학부", "시각디자인학과", "국어국문학과"],
+  "_officialNote": "official=true 항목은 영남대학교 외국인 유학생 입학 FAQ(제출 서류 / 지원 / 지원 자격 관련) 자료를 옮긴 것입니다. 원문이 바뀌면 함께 고쳐 주세요.",
   "items": [
+    {
+      "id": "doc-original-once",
+      "category": "documents",
+      "official": true,
+      "q": { "ko": "고등학교 졸업증명서 원본 발급이 단 한 번만 가능하여 원본 제출이 불가능합니다.", "vi": "Bản gốc bằng/giấy chứng nhận tốt nghiệp THPT chỉ được cấp một lần nên tôi không thể nộp bản gốc." },
+      "a": { "ko": "아래의 표를 참고해 주시기 바랍니다.", "vi": "Vui lòng tham khảo bảng dưới đây." },
+      "table": {
+        "columns": [
+          { "ko": "졸업증명서", "vi": "Giấy tốt nghiệp" },
+          { "ko": "서류 발급 국가(언어)", "vi": "Quốc gia cấp (ngôn ngữ)" },
+          { "ko": "아포스티유/영사 인증(원본)", "vi": "Apostille / Hợp pháp hóa lãnh sự (bản gốc)" },
+          { "ko": "공증(원본)", "vi": "Công chứng (bản gốc)" },
+          { "ko": "영문 번역 공증(원본)", "vi": "Công chứng bản dịch tiếng Anh (bản gốc)" }
+        ],
+        "rows": [
+          [{ "ko": "원본", "vi": "Bản gốc" }, { "ko": "한국(한국어)", "vi": "Hàn Quốc (tiếng Hàn)" }, "X", "X", "X"],
+          [{ "ko": "원본", "vi": "Bản gốc" }, { "ko": "영어", "vi": "Tiếng Anh" }, "○", "X", "X"],
+          [{ "ko": "원본", "vi": "Bản gốc" }, { "ko": "그 외", "vi": "Khác" }, "○", "X", "○"],
+          [{ "ko": "사본", "vi": "Bản sao" }, { "ko": "한국(한국어)", "vi": "Hàn Quốc (tiếng Hàn)" }, { "span": 3, "ko": "한국 학교 발행 서류는 모두 원본이어야 함", "vi": "Giấy tờ do trường Hàn Quốc cấp phải là bản gốc" }],
+          [{ "ko": "사본", "vi": "Bản sao" }, { "ko": "영어", "vi": "Tiếng Anh" }, "○", "○", "X"],
+          [{ "ko": "사본", "vi": "Bản sao" }, { "ko": "그 외", "vi": "Khác" }, "○", "○", "○"]
+        ],
+        "note": { "ko": "※ 한국 외의 국가에서 한국어 또는 영어로 발행된 서류의 경우 번역 불필요", "vi": "※ Giấy tờ do quốc gia khác Hàn Quốc cấp bằng tiếng Hàn hoặc tiếng Anh thì không cần dịch." }
+      },
+      "keywords": ["졸업증명서", "원본", "한 번만", "발급", "bang tot nghiep", "ban goc", "giay chung nhan tot nghiep"]
+    },
+    {
+      "id": "doc-apostille-copy",
+      "category": "documents",
+      "official": true,
+      "q": { "ko": "원본 졸업장에 아포스티유를 발급 받았습니다. 사본으로 제출 가능한가요?", "vi": "Tôi đã có apostille trên bằng tốt nghiệp bản gốc. Tôi có thể nộp bản sao không?" },
+      "a": {
+        "ko": "단순 복사본(Photocopy)은 제출이 불가능합니다. 원본을 복사한 후, 그 복사본에 다음 중 한 가지의 인증을 새로 받아 제출해 주시기 바랍니다. (※ 한국어 또는 영어가 아닌 경우 번역공증 필수)\n· 대한민국 해외공관의 원본 인증\n· 아포스티유(사본에 대한 아포스티유)\n· 대사관 또는 영사관에서 영사확인 혹은 원본대조필 도장\n※ 제출된 모든 서류(아포스티유 원본 포함)는 합격 여부 및 비자 발급 등 어떠한 사유로도 절대 반환되지 않으므로 유의하시기 바랍니다. 추후 비자 발급 등에 필요한 여분의 서류는 본인이 사전에 별도로 준비해야 합니다.",
+        "vi": "Không được nộp bản photo thông thường. Hãy photo bản gốc rồi xin MỘT trong các xác nhận sau trên bản photo đó và nộp (※ nếu giấy tờ không phải tiếng Hàn hoặc tiếng Anh thì bắt buộc công chứng bản dịch):\n· Xác nhận bản gốc của cơ quan đại diện Hàn Quốc ở nước ngoài\n· Apostille (apostille cho bản sao)\n· Hợp pháp hóa lãnh sự hoặc dấu 'đã đối chiếu với bản gốc' của Đại sứ quán/Lãnh sự quán\n※ Tất cả hồ sơ đã nộp (kể cả bản gốc apostille) sẽ không được trả lại vì bất kỳ lý do gì, kể cả kết quả trúng tuyển hay cấp visa. Các bản dự phòng cần cho việc xin visa sau này bạn phải tự chuẩn bị trước."
+      },
+      "keywords": ["아포스티유", "사본", "복사본", "apostille", "ban sao", "photo"]
+    },
+    {
+      "id": "doc-notarization",
+      "category": "documents",
+      "official": true,
+      "q": { "ko": "사본공증 및 번역공증이 무엇인가요?", "vi": "Công chứng bản sao và công chứng bản dịch là gì?" },
+      "a": {
+        "ko": "원본 서류를 제출할 수 없는 경우 또는 영어로 번역이 필요한 서류의 경우, 공증 절차를 거쳐야 합니다. 공증 사무소를 통해 다음의 사실을 확인받아야 합니다.\n원본 제출이 불가하여 사본을 제출할 경우 '사본이 원본과 동일함(사본공증)'을, 영어로 번역할 경우 '번역본이 원본 내용과 일치함(번역공증)'을 명시해야 합니다. 예를 들어 다음과 같은 확인 문장이 있어야 합니다.\n\"I do hereby solemnly and sincerely declare that the attached certificate exactly corresponds to the original. I swear that the attached translation is true to the original.\"",
+        "vi": "Khi không thể nộp bản gốc hoặc khi giấy tờ cần dịch sang tiếng Anh, bạn phải làm thủ tục công chứng tại văn phòng công chứng để xác nhận:\nNếu nộp bản sao vì không thể nộp bản gốc: xác nhận 'bản sao giống với bản gốc' (công chứng bản sao). Nếu dịch sang tiếng Anh: xác nhận 'bản dịch đúng với nội dung bản gốc' (công chứng bản dịch). Ví dụ, phải có câu xác nhận như sau:\n\"I do hereby solemnly and sincerely declare that the attached certificate exactly corresponds to the original. I swear that the attached translation is true to the original.\""
+      },
+      "keywords": ["사본공증", "번역공증", "공증", "번역", "cong chung", "ban dich", "notarization"]
+    },
+    {
+      "id": "doc-validity",
+      "category": "documents",
+      "official": true,
+      "q": { "ko": "서류별 유효기간을 알고 싶습니다.", "vi": "Thời hạn hiệu lực của từng loại giấy tờ là bao lâu?" },
+      "a": { "ko": "공증 유효기간은 6개월, 아포스티유 인증서류는 유효기간에 제한이 없습니다.", "vi": "Giấy tờ công chứng có hiệu lực 6 tháng; giấy tờ chứng nhận apostille không giới hạn thời hạn hiệu lực." },
+      "keywords": ["유효기간", "기간", "6개월", "thoi han", "hieu luc"]
+    },
+    {
+      "id": "doc-bank-sibling",
+      "category": "documents",
+      "official": true,
+      "q": { "ko": "형제 명의의 은행잔고증명원을 제출하고 싶습니다.", "vi": "Tôi muốn nộp giấy xác nhận số dư ngân hàng đứng tên anh/chị/em ruột." },
+      "a": { "ko": "은행잔고증명서는 지원자 본인 또는 부모님 명의로만 제출할 수 있습니다. (형제, 자매, 친척 명의는 불가)", "vi": "Giấy xác nhận số dư ngân hàng chỉ được nộp nếu đứng tên chính người dự tuyển hoặc bố mẹ. (Không chấp nhận tên anh chị em hay họ hàng.)" },
+      "keywords": ["은행", "잔고", "잔고증명", "형제", "so du", "ngan hang", "chung minh tai chinh"]
+    },
+    {
+      "id": "doc-reuse",
+      "category": "documents",
+      "official": true,
+      "q": { "ko": "1차 모집에 지원 후 2차 모집에 재지원할 때, 1차 지원 시 제출했던 서류를 2차 때 재사용하고 싶습니다.", "vi": "Khi đăng ký lại ở đợt 2 sau khi đã nộp đợt 1, tôi có thể dùng lại hồ sơ đã nộp ở đợt 1 không?" },
+      "a": { "ko": "재지원 시, admission@yu.ac.kr로 문의 메일 송부바라며, 새로운 입학원서 및 기타 필요 서류(미비서류나 1차 기간 만료된 서류 등)를 별도 제출해 주셔야 합니다.", "vi": "Khi đăng ký lại, vui lòng gửi email hỏi đến admission@yu.ac.kr. Bạn cần nộp đơn nhập học mới và các giấy tờ cần thiết khác (giấy tờ còn thiếu, giấy tờ đã hết hạn từ đợt 1…)." },
+      "keywords": ["재지원", "2차", "재사용", "dot 2", "nop lai", "dung lai"]
+    },
+    {
+      "id": "doc-return",
+      "category": "documents",
+      "official": true,
+      "q": { "ko": "제출된 서류를 다시 받을 수 있나요?", "vi": "Tôi có thể nhận lại hồ sơ đã nộp không?" },
+      "a": { "ko": "제출된 모든 서류(아포스티유 원본 포함)는 합격 여부 및 비자 발급 등 어떠한 사유로도 절대 반환되지 않으므로 유의하시기 바랍니다. 추후 비자 발급 등에 필요한 여분의 서류는 본인이 사전에 별도로 준비해야 합니다.", "vi": "Tất cả hồ sơ đã nộp (kể cả bản gốc apostille) sẽ không được trả lại vì bất kỳ lý do gì, kể cả kết quả trúng tuyển hay cấp visa. Các bản dự phòng cần cho việc xin visa sau này bạn phải tự chuẩn bị trước." },
+      "keywords": ["반환", "돌려", "다시 받", "tra lai", "nhan lai"]
+    },
+    {
+      "id": "app-edit",
+      "category": "application",
+      "official": true,
+      "q": { "ko": "온라인 원서접수를 완료한 상태인데 수정해야 할 내용이 있습니다.", "vi": "Tôi đã nộp đơn trực tuyến xong nhưng có nội dung cần sửa." },
+      "a": { "ko": "원칙적으로 전형료 결제 완료 이후에는 원서 입력 사항을 임의로 수정할 수 없습니다. 단, 단순 오타 등 경미한 사항에 한하여 유학생입학팀 이메일(admission@yu.ac.kr)로 수험번호와 정정 내용을 보내주시면 확인 후 조치해 드립니다.\n(※ 단, '지원 학과' 및 '신/편입학 학년' 수정은 절대 불가하므로 접수 마감 전 취소 후 재접수해야 함)", "vi": "Về nguyên tắc, sau khi đã thanh toán lệ phí xét tuyển thì không thể tự ý sửa nội dung đơn. Tuy nhiên, với lỗi nhỏ như lỗi đánh máy, hãy gửi số báo danh và nội dung cần sửa đến email Phòng tuyển sinh du học sinh (admission@yu.ac.kr), trường sẽ kiểm tra và xử lý.\n(※ Riêng 'ngành đăng ký' và 'năm học nhập học/chuyển tiếp' tuyệt đối không thể sửa; bạn phải hủy đơn trước hạn chót và nộp lại.)" },
+      "keywords": ["수정", "정정", "오타", "원서", "sua", "chinh sua", "don"]
+    },
+    {
+      "id": "app-cancel",
+      "category": "application",
+      "official": true,
+      "q": { "ko": "온라인 원서접수 취소를 하고 싶습니다.", "vi": "Tôi muốn hủy đơn đăng ký trực tuyến." },
+      "a": { "ko": "온라인 원서접수 마감일 전까지 유웨이어플라이에서 접수 취소 신청하시면 5일 이내에 환불 처리됩니다.", "vi": "Nếu bạn yêu cầu hủy trên UwayApply trước ngày hết hạn nộp đơn trực tuyến, tiền sẽ được hoàn trong vòng 5 ngày." },
+      "keywords": ["취소", "접수 취소", "유웨이", "huy", "huy don", "uway"]
+    },
+    {
+      "id": "app-reject-reason",
+      "category": "application",
+      "official": true,
+      "q": { "ko": "불합격 사유를 알고 싶습니다.", "vi": "Tôi muốn biết lý do không trúng tuyển." },
+      "a": { "ko": "모든 지원자의 평가 내용 및 세부 불합격 사유는 개별적으로 안내해 드리지 않습니다.", "vi": "Trường không thông báo riêng nội dung đánh giá hay lý do không trúng tuyển chi tiết cho từng thí sinh." },
+      "keywords": ["불합격", "사유", "떨어", "khong trung tuyen", "ly do", "truot"]
+    },
+    {
+      "id": "app-refund",
+      "category": "application",
+      "official": true,
+      "q": { "ko": "불합격하여 온라인 원서접수 비용을 환불받고 싶습니다.", "vi": "Tôi không trúng tuyển, có được hoàn lệ phí nộp đơn không?" },
+      "a": { "ko": "불합격을 사유로 한 전형료 환불은 불가합니다. 전형료는 '원서접수 마감일 전에' 유웨이어플라이를 통해 접수 취소를 정상적으로 완료한 경우에 한하여 전액 환불받을 수 있습니다.", "vi": "Không hoàn lệ phí xét tuyển với lý do không trúng tuyển. Lệ phí chỉ được hoàn toàn bộ khi bạn đã hủy đơn thành công trên UwayApply 'trước ngày hết hạn nộp đơn'." },
+      "keywords": ["환불", "전형료", "hoan tien", "le phi"]
+    },
+    {
+      "id": "elig-parent-korean",
+      "category": "eligibility",
+      "official": true,
+      "featured": true,
+      "q": { "ko": "부모 중 한 분이 대한민국 국적입니다.", "vi": "Bố hoặc mẹ tôi có quốc tịch Hàn Quốc." },
+      "a": { "ko": "부모 모두 대한민국 국민이 아닌 외국 국적이어야 정원 외 외국인 전형에 지원 가능합니다.", "vi": "Chỉ khi cả bố và mẹ đều mang quốc tịch nước ngoài (không phải công dân Hàn Quốc) thì bạn mới được đăng ký diện tuyển sinh người nước ngoài ngoài chỉ tiêu." },
+      "keywords": ["부모", "국적", "한국 국적", "bo me", "quoc tich han"]
+    },
+    {
+      "id": "elig-nationality",
+      "category": "eligibility",
+      "official": true,
+      "q": { "ko": "외국 국적의 정확한 기준을 알고 싶습니다.", "vi": "Tiêu chuẩn chính xác về quốc tịch nước ngoài là gì?" },
+      "a": { "ko": "부모와 학생 본인 모두 선천적으로 외국 국적을 취득했거나, 해당 학생이 해당 국가 학제 기준 고등학교(High School) 과정에 진학하기 이전 시점에 본인과 부모 모두가 후천적으로 외국 국적을 취득(한국 국적 상실)한 경우에 한하여 지원 자격이 부여됩니다.", "vi": "Bạn đủ điều kiện dự tuyển khi cả bố mẹ và bạn đều có quốc tịch nước ngoài từ khi sinh ra, hoặc cả bạn và bố mẹ đã nhập quốc tịch nước ngoài (mất quốc tịch Hàn Quốc) trước thời điểm bạn vào bậc THPT (High School) theo hệ thống giáo dục của nước đó." },
+      "keywords": ["외국 국적", "기준", "국적", "quoc tich nuoc ngoai", "tieu chuan"]
+    },
+    {
+      "id": "elig-studied-korea",
+      "category": "eligibility",
+      "official": true,
+      "q": { "ko": "부모와 지원자 모두 외국인이나 학교를 대한민국에서 다닌 적이 있습니다.", "vi": "Bố mẹ và tôi đều là người nước ngoài nhưng tôi từng đi học ở Hàn Quốc." },
+      "a": { "ko": "대한민국에서 혹은 대한민국과 해외에서 교육을 받은 적이 있더라도 교육 기간이 총 12년을 충족했다면 지원할 수 있습니다.", "vi": "Dù bạn từng học ở Hàn Quốc, hoặc vừa học ở Hàn Quốc vừa học ở nước ngoài, bạn vẫn có thể đăng ký nếu tổng thời gian học đủ 12 năm." },
+      "keywords": ["한국에서", "학교", "12년", "hoc o han", "12 nam"]
+    },
     {
       "id": "which-departments",
       "category": "admission",
