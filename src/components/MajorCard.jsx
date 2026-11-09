@@ -182,10 +182,11 @@ export default function MajorCard({ department, college, index = 0 }) {
           {summary && (
             <LocalizedText as="p" text={summary} className="mt-2 line-clamp-2 text-sm leading-relaxed text-slate-700 sm:text-[15px]" showBadge={false} />
           )}
-          <div className="mt-auto flex gap-2 pt-4">
+          {/* 휴대폰(2열 좁은 카드): 버튼을 위아래로 쌓아 글자가 세로로 쪼개지지 않게 / 넓은 화면: 나란히 */}
+          <div className="mt-auto flex flex-col gap-2 pt-4 sm:flex-row">
             <Link
               to={`/department/${department.id}`}
-              className="flex flex-1 items-center justify-center rounded-xl bg-slate-100 py-2.5 text-sm font-bold text-slate-800 transition hover:bg-yu-dark hover:text-white"
+              className="flex items-center justify-center whitespace-nowrap rounded-xl bg-slate-100 px-2 py-2.5 text-sm font-bold text-slate-800 transition hover:bg-yu-dark hover:text-white sm:flex-1"
             >
               {t('department.viewDetail')}
             </Link>
@@ -195,7 +196,7 @@ export default function MajorCard({ department, college, index = 0 }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 title={t('department.homepage')}
-                className="flex shrink-0 items-center justify-center rounded-xl border-2 border-slate-200 px-2.5 py-2 text-[13px] font-bold text-slate-700 transition hover:border-yu-dark hover:text-yu-dark sm:px-3 sm:text-sm"
+                className="flex shrink-0 items-center justify-center whitespace-nowrap rounded-xl border-2 border-slate-200 px-2.5 py-2 text-[13px] font-bold text-slate-700 transition hover:border-yu-dark hover:text-yu-dark sm:px-3 sm:text-sm"
               >
                 {t('department.homepageShort')} ↗
               </a>
