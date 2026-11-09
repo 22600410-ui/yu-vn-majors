@@ -2,7 +2,7 @@
   "meta": {
     "schemaVersion": 2,
     "source": "https://www.yu.ac.kr/main/academics/university.do",
-    "crawledAt": "2026-11-08T10:18:58+00:00",
+    "crawledAt": "2026-11-09T00:43:30+00:00",
     "sourceLanguage": "ko",
     "languages": [
       "ko",
@@ -30,9 +30,9 @@
     },
     "copyright": "Nội dung gốc © Yeungnam University / 원문 저작권: 영남대학교",
     "untranslated": {
-      "vi": 290
+      "vi": 231
     },
-    "untranslatedCount": 290
+    "untranslatedCount": 231
   },
   "colleges": [
     {
@@ -9765,7 +9765,8 @@
           },
           "phone": null,
           "slogan": {
-            "ko": "지구촌에서 한국어로 교류하는 교육 전문가를 키웁니다."
+            "ko": "지구촌에서 한국어로 교류하는 교육 전문가를 키웁니다.",
+            "vi": "Đào tạo chuyên gia giáo dục giao lưu bằng tiếng Hàn khắp toàn cầu."
           },
           "tags": [
             {
@@ -9779,10 +9780,12 @@
             }
           ],
           "description": {
-            "ko": "국제\n- 국제화 시대, 세계라는 무대에서 활약해 볼까요?\n한국어\n- 한국어로 세계인의 스승이 되어 보세요\n교육\n- 교육 전문가로서 날개를 키웁니다."
+            "ko": "국제\n- 국제화 시대, 세계라는 무대에서 활약해 볼까요?\n한국어\n- 한국어로 세계인의 스승이 되어 보세요\n교육\n- 교육 전문가로서 날개를 키웁니다.",
+            "vi": "Quốc tế\n- Trong thời đại quốc tế hóa, hãy cùng tỏa sáng trên sân khấu thế giới!\nTiếng Hàn\n- Hãy trở thành người thầy của bạn bè khắp thế giới bằng tiếng Hàn\nGiáo dục\n- Chắp cánh để trở thành chuyên gia giáo dục."
           },
           "majorGuide": {
-            "ko": "국제한국어교육 전공에서는 세계인에게 한국어를 가르칠 전문가를 양성합니다. 한국어를 외국어로 배워야 하는 학습자들이 한국어교육 전문가를 기다립니다."
+            "ko": "국제한국어교육 전공에서는 세계인에게 한국어를 가르칠 전문가를 양성합니다. 한국어를 외국어로 배워야 하는 학습자들이 한국어교육 전문가를 기다립니다.",
+            "vi": "Chuyên ngành Giáo dục Ngôn ngữ Hàn Quốc quốc tế đào tạo chuyên gia dạy tiếng Hàn cho người dân khắp thế giới. Những người học tiếng Hàn như một ngoại ngữ đang chờ đợi các chuyên gia giáo dục tiếng Hàn."
           },
           "fields": [],
           "curriculum": [
@@ -9793,7 +9796,8 @@
                 "vi": "Năm 1"
               },
               "text": {
-                "ko": "기초 교양(의사소통의기술, 심리학의이해 등), 한국어교육론"
+                "ko": "기초 교양(의사소통의기술, 심리학의이해 등), 한국어교육론",
+                "vi": "Đại cương cơ bản (Kỹ năng giao tiếp, Hiểu tâm lý học…), Lý luận giáo dục tiếng Hàn"
               }
             },
             {
@@ -9803,7 +9807,8 @@
                 "vi": "Năm 2"
               },
               "text": {
-                "ko": "한국어교사를위한한국어의이해, 한국어교수법, 한국어이해교육론, 이중언어교육론, 한국의생활문화론"
+                "ko": "한국어교사를위한한국어의이해, 한국어교수법, 한국어이해교육론, 이중언어교육론, 한국의생활문화론",
+                "vi": "Hiểu tiếng Hàn dành cho giáo viên tiếng Hàn, Phương pháp giảng dạy tiếng Hàn, Lý luận dạy kỹ năng tiếp nhận tiếng Hàn, Lý luận giáo dục song ngữ, Văn hóa đời sống Hàn Quốc"
               }
             },
             {
@@ -9813,7 +9818,8 @@
                 "vi": "Năm 3"
               },
               "text": {
-                "ko": "한국어표현교육론, 외국어습득과오류분석, 한국어교육과정및교재론, 한국어발음교육론, 한국어문법교육론, 한국어평가론"
+                "ko": "한국어표현교육론, 외국어습득과오류분석, 한국어교육과정및교재론, 한국어발음교육론, 한국어문법교육론, 한국어평가론",
+                "vi": "Lý luận dạy kỹ năng diễn đạt tiếng Hàn, Thụ đắc ngoại ngữ và phân tích lỗi, Chương trình và giáo trình tiếng Hàn, Dạy phát âm tiếng Hàn, Dạy ngữ pháp tiếng Hàn, Đánh giá tiếng Hàn"
               }
             },
             {
@@ -9823,14 +9829,16 @@
                 "vi": "Năm 4"
               },
               "text": {
-                "ko": "한국어교육실습(1), 한국어교육실습(2), 한국어매체언어교육, 세계시민교육"
+                "ko": "한국어교육실습(1), 한국어교육실습(2), 한국어매체언어교육, 세계시민교육",
+                "vi": "Thực tập giảng dạy tiếng Hàn (1), Thực tập giảng dạy tiếng Hàn (2), Giáo dục ngôn ngữ truyền thông tiếng Hàn, Giáo dục công dân toàn cầu"
               }
             }
           ],
           "careers": [
             {
               "category": {
-                "ko": "국가 파견 국외 한국어교원"
+                "ko": "국가 파견 국외 한국어교원",
+                "vi": "Giáo viên tiếng Hàn được nhà nước cử ra nước ngoài"
               },
               "detail": {
                 "ko": ""
@@ -9838,7 +9846,8 @@
             },
             {
               "category": {
-                "ko": "국외 한국어 교수"
+                "ko": "국외 한국어 교수",
+                "vi": "Giảng viên tiếng Hàn ở nước ngoài"
               },
               "detail": {
                 "ko": ""
@@ -9846,7 +9855,8 @@
             },
             {
               "category": {
-                "ko": "국내 다양한 기관의 한국어교원"
+                "ko": "국내 다양한 기관의 한국어교원",
+                "vi": "Giáo viên tiếng Hàn tại nhiều cơ sở trong nước"
               },
               "detail": {
                 "ko": ""
@@ -9854,7 +9864,8 @@
             },
             {
               "category": {
-                "ko": "그 외"
+                "ko": "그 외",
+                "vi": "Khác"
               },
               "detail": {
                 "ko": ""
@@ -9863,27 +9874,34 @@
           ],
           "certificates": [
             {
-              "ko": "한국어교원자격증(2급, 3급)"
+              "ko": "한국어교원자격증(2급, 3급)",
+              "vi": "Chứng chỉ giáo viên tiếng Hàn (hạng 2, hạng 3)"
             }
           ],
           "programs": [
             {
-              "ko": "현재 107개국 대학에 한국어 수업이 열려 있습니다."
+              "ko": "현재 107개국 대학에 한국어 수업이 열려 있습니다.",
+              "vi": "Hiện có các lớp tiếng Hàn tại các trường đại học ở 107 quốc gia."
             },
             {
-              "ko": "우리 학과는 한국어 전공이 있는 국외 대학과 1:1로 교류합니다. 불가리아, 싱가폴, 영국, 터키, 태국, 키르키즈스탄 등지 한국어학과에 교환학생을 파견합니다."
+              "ko": "우리 학과는 한국어 전공이 있는 국외 대학과 1:1로 교류합니다. 불가리아, 싱가폴, 영국, 터키, 태국, 키르키즈스탄 등지 한국어학과에 교환학생을 파견합니다.",
+              "vi": "Khoa giao lưu 1:1 với các trường đại học nước ngoài có chuyên ngành tiếng Hàn, cử sinh viên trao đổi đến khoa tiếng Hàn ở Bulgaria, Singapore, Anh, Thổ Nhĩ Kỳ, Thái Lan, Kyrgyzstan…"
             },
             {
-              "ko": "우리 학과의 교수님은 한국국제교류재단의 지원을 받아 아시아, 유럽 등 5개국에 온라인 강좌를 송출 중입니다."
+              "ko": "우리 학과의 교수님은 한국국제교류재단의 지원을 받아 아시아, 유럽 등 5개국에 온라인 강좌를 송출 중입니다.",
+              "vi": "Với sự hỗ trợ của Quỹ Giao lưu Quốc tế Hàn Quốc, giảng viên của khoa đang phát các khóa học trực tuyến đến 5 quốc gia ở châu Á, châu Âu…"
             },
             {
-              "ko": "강좌가 송출 중인 학교에 인턴과 강의조교로 활동할 수 있습니다."
+              "ko": "강좌가 송출 중인 학교에 인턴과 강의조교로 활동할 수 있습니다.",
+              "vi": "Sinh viên có thể làm thực tập sinh và trợ giảng tại các trường đang nhận khóa học trực tuyến."
             },
             {
-              "ko": "한국어 교육자로서 실력을 더할 다양한 비교과활동을 운영합니다. 한국인 학생은 다양한 외국어와 문화를 익히고, 외국인 학생은 한국어 실력을 더할 교육 프로그램에 참여합니다."
+              "ko": "한국어 교육자로서 실력을 더할 다양한 비교과활동을 운영합니다. 한국인 학생은 다양한 외국어와 문화를 익히고, 외국인 학생은 한국어 실력을 더할 교육 프로그램에 참여합니다.",
+              "vi": "Khoa vận hành nhiều hoạt động ngoại khóa để nâng cao năng lực của nhà giáo dục tiếng Hàn. Sinh viên Hàn Quốc học nhiều ngoại ngữ và văn hóa, còn sinh viên quốc tế tham gia các chương trình nâng cao tiếng Hàn."
             },
             {
-              "ko": "한국어 전공은 한국어로 세계와 소통합니다. 멘토-멘티로 활동할 다양한 프로그램이 준비되어 있습니다."
+              "ko": "한국어 전공은 한국어로 세계와 소통합니다. 멘토-멘티로 활동할 다양한 프로그램이 준비되어 있습니다.",
+              "vi": "Chuyên ngành tiếng Hàn giao tiếp với thế giới bằng tiếng Hàn. Có nhiều chương trình mentor – mentee để bạn tham gia."
             }
           ],
           "admission": {
@@ -10075,7 +10093,8 @@
           },
           "phone": null,
           "slogan": {
-            "ko": "인간과 사회에 대한 통찰력을 갖춘, 외국어 의사소통 및 실무 전문가 양성\n- 지금이 바로 응용중국어통번역을 공부할 적기입니다. -"
+            "ko": "인간과 사회에 대한 통찰력을 갖춘, 외국어 의사소통 및 실무 전문가 양성\n- 지금이 바로 응용중국어통번역을 공부할 적기입니다. -",
+            "vi": "Đào tạo chuyên gia giao tiếp ngoại ngữ và thực tiễn có hiểu biết sâu sắc về con người và xã hội\n- Bây giờ chính là thời điểm thích hợp để học Biên phiên dịch tiếng Trung ứng dụng. -"
           },
           "tags": [
             {
@@ -10083,35 +10102,45 @@
             }
           ],
           "description": {
-            "ko": "인공지능의 출현으로 인해 지금까지의 외국어 학습과 교육은 완전히 바뀌어야 합니다. 영남대 응용중국어통번역전공에서는 실질적인 외국어 커뮤니케이션 및 분야별 실무 지식을 동시에 배움으로써, 사회가 필요로 하는 외국어 의사소통 전문가를 양성합니다. 응용중국어통번역의 교육과정은 인공지능번역(언어) 분야의 국내 권위자(공학) 및 통번역 분야 전문가의 자문과 협조를 거친 것으로, 4차산업혁명시대 경쟁력을 갖춘 외국어 전공자의 필수 교육 내용을 담고 있습니다."
+            "ko": "인공지능의 출현으로 인해 지금까지의 외국어 학습과 교육은 완전히 바뀌어야 합니다. 영남대 응용중국어통번역전공에서는 실질적인 외국어 커뮤니케이션 및 분야별 실무 지식을 동시에 배움으로써, 사회가 필요로 하는 외국어 의사소통 전문가를 양성합니다. 응용중국어통번역의 교육과정은 인공지능번역(언어) 분야의 국내 권위자(공학) 및 통번역 분야 전문가의 자문과 협조를 거친 것으로, 4차산업혁명시대 경쟁력을 갖춘 외국어 전공자의 필수 교육 내용을 담고 있습니다.",
+            "vi": "Với sự xuất hiện của trí tuệ nhân tạo, việc học và dạy ngoại ngữ cho đến nay cần thay đổi hoàn toàn. Chuyên ngành Biên phiên dịch tiếng Trung ứng dụng của Đại học Yeungnam đào tạo chuyên gia giao tiếp ngoại ngữ mà xã hội cần, bằng cách học đồng thời giao tiếp ngoại ngữ thực tế và kiến thức thực tiễn theo từng lĩnh vực. Chương trình học được xây dựng với sự tư vấn và hợp tác của chuyên gia hàng đầu trong nước về dịch máy trí tuệ nhân tạo (ngôn ngữ – kỹ thuật) và chuyên gia biên phiên dịch, chứa đựng nội dung thiết yếu cho người học ngoại ngữ có năng lực cạnh tranh trong thời đại Cách mạng công nghiệp 4.0."
           },
           "majorGuide": {
-            "ko": "각 분야 전문가에 의한 실무 교육으로, 전공 공부 따로 취업 공부 따로가 아니라, 전공 수업이 바로 취업 준비가 됩니다.\n뿐만 아니라 역사와 문화를 비롯하여 인공지능과 빅데이터 처리, 협상론 등 미래 인재로서 필요한 인문학적 기반 지식과 첨단 기술 이해를 위한 기초 지식도 눈높이 교육을 실시합니다."
+            "ko": "각 분야 전문가에 의한 실무 교육으로, 전공 공부 따로 취업 공부 따로가 아니라, 전공 수업이 바로 취업 준비가 됩니다.\n뿐만 아니라 역사와 문화를 비롯하여 인공지능과 빅데이터 처리, 협상론 등 미래 인재로서 필요한 인문학적 기반 지식과 첨단 기술 이해를 위한 기초 지식도 눈높이 교육을 실시합니다.",
+            "vi": "Với đào tạo thực tiễn do chuyên gia từng lĩnh vực giảng dạy, việc học chuyên ngành và chuẩn bị việc làm không tách rời: chính lớp học chuyên ngành là sự chuẩn bị cho việc làm.\nNgoài ra, khoa còn giảng dạy phù hợp trình độ các kiến thức nền tảng nhân văn và kiến thức cơ bản về công nghệ tiên tiến cần cho nhân tài tương lai, như lịch sử, văn hóa, trí tuệ nhân tạo, xử lý dữ liệu lớn, lý luận đàm phán."
           },
           "fields": [
             {
-              "ko": "기반 지식\n통번역과 커뮤니케이션, 중국의 역사와 문학의 이해, 중국의 경제와 사회, 한중협상론 등"
+              "ko": "기반 지식\n통번역과 커뮤니케이션, 중국의 역사와 문학의 이해, 중국의 경제와 사회, 한중협상론 등",
+              "vi": "Kiến thức nền tảng\nBiên phiên dịch và giao tiếp, Hiểu lịch sử và văn học Trung Quốc, Kinh tế và xã hội Trung Quốc, Lý luận đàm phán Hàn – Trung…"
             },
             {
-              "ko": "통번역과 커뮤니케이션, 중국의 역사와 문학의 이해, 중국의 경제와 사회, 한중협상론 등"
+              "ko": "통번역과 커뮤니케이션, 중국의 역사와 문학의 이해, 중국의 경제와 사회, 한중협상론 등",
+              "vi": "Biên phiên dịch và giao tiếp, Hiểu lịch sử và văn học Trung Quốc, Kinh tế và xã hội Trung Quốc, Lý luận đàm phán Hàn – Trung…"
             },
             {
-              "ko": "언어 습득\n기초종합응용중국어, 한중핵심어휘연습, 중국어종합문법 등"
+              "ko": "언어 습득\n기초종합응용중국어, 한중핵심어휘연습, 중국어종합문법 등",
+              "vi": "Thụ đắc ngôn ngữ\nTiếng Trung ứng dụng tổng hợp cơ bản, Luyện từ vựng cốt lõi Hàn – Trung, Ngữ pháp tổng hợp tiếng Trung…"
             },
             {
-              "ko": "기초종합응용중국어, 한중핵심어휘연습, 중국어종합문법 등"
+              "ko": "기초종합응용중국어, 한중핵심어휘연습, 중국어종합문법 등",
+              "vi": "Tiếng Trung ứng dụng tổng hợp cơ bản, Luyện từ vựng cốt lõi Hàn – Trung, Ngữ pháp tổng hợp tiếng Trung…"
             },
             {
-              "ko": "실무 + 통번역\n항공승무원통번역, 무역·통상통번역, 관광의료통번역, 게임 번역, 영상 번역, 문학번역 등"
+              "ko": "실무 + 통번역\n항공승무원통번역, 무역·통상통번역, 관광의료통번역, 게임 번역, 영상 번역, 문학번역 등",
+              "vi": "Thực tiễn + biên phiên dịch\nBiên phiên dịch cho tiếp viên hàng không, Biên phiên dịch thương mại – ngoại thương, Biên phiên dịch du lịch – y tế, Dịch game, Dịch video, Dịch văn học…"
             },
             {
-              "ko": "항공승무원통번역, 무역·통상통번역, 관광의료통번역, 게임 번역, 영상 번역, 문학번역 등"
+              "ko": "항공승무원통번역, 무역·통상통번역, 관광의료통번역, 게임 번역, 영상 번역, 문학번역 등",
+              "vi": "Biên phiên dịch cho tiếp viên hàng không, Biên phiên dịch thương mại – ngoại thương, Biên phiên dịch du lịch – y tế, Dịch game, Dịch video, Dịch văn học…"
             },
             {
-              "ko": "4차산업혁명시대 대비\n중국 빅데이터의 이해와 활용, AI & MTPE, CAT 등"
+              "ko": "4차산업혁명시대 대비\n중국 빅데이터의 이해와 활용, AI & MTPE, CAT 등",
+              "vi": "Chuẩn bị cho thời đại Cách mạng công nghiệp 4.0\nHiểu và ứng dụng dữ liệu lớn Trung Quốc, AI & MTPE, CAT…"
             },
             {
-              "ko": "중국 빅데이터의 이해와 활용, AI & MTPE, CAT 등"
+              "ko": "중국 빅데이터의 이해와 활용, AI & MTPE, CAT 등",
+              "vi": "Hiểu và ứng dụng dữ liệu lớn Trung Quốc, AI & MTPE, CAT…"
             }
           ],
           "curriculum": [
@@ -10122,7 +10151,8 @@
                 "vi": "Năm 1"
               },
               "text": {
-                "ko": "중국어 입문, 중국어통번역기초, 한중기초어휘와 필수 문형, 핵심어휘, 한중 경제와 사회 등"
+                "ko": "중국어 입문, 중국어통번역기초, 한중기초어휘와 필수 문형, 핵심어휘, 한중 경제와 사회 등",
+                "vi": "Nhập môn tiếng Trung, Biên phiên dịch tiếng Trung cơ bản, Từ vựng cơ bản và mẫu câu thiết yếu Hàn – Trung, Từ vựng cốt lõi, Kinh tế và xã hội Hàn – Trung…"
               }
             },
             {
@@ -10132,7 +10162,8 @@
                 "vi": "Năm 2"
               },
               "text": {
-                "ko": "중국의 역사와 문화지식1·2, 통번역과 커뮤니케이션, 중급중한번역, 통번역고급어휘 등"
+                "ko": "중국의 역사와 문화지식1·2, 통번역과 커뮤니케이션, 중급중한번역, 통번역고급어휘 등",
+                "vi": "Kiến thức lịch sử và văn hóa Trung Quốc 1·2, Biên phiên dịch và giao tiếp, Dịch Trung – Hàn trung cấp, Từ vựng biên phiên dịch nâng cao…"
               }
             },
             {
@@ -10142,7 +10173,8 @@
                 "vi": "Năm 3"
               },
               "text": {
-                "ko": "중한번역의 이론과 실제 1·2, 통역청취훈련, 한중무역통상통번역, 영상번역, MTPE&PE, CAT 등"
+                "ko": "중한번역의 이론과 실제 1·2, 통역청취훈련, 한중무역통상통번역, 영상번역, MTPE&PE, CAT 등",
+                "vi": "Lý thuyết và thực hành dịch Trung – Hàn 1·2, Luyện nghe phiên dịch, Biên phiên dịch thương mại – ngoại thương Hàn – Trung, Dịch video, MTPE & PE, CAT…"
               }
             },
             {
@@ -10152,7 +10184,8 @@
                 "vi": "Năm 4"
               },
               "text": {
-                "ko": "항공승무원통번역, 게임번역, 중한PT제작과 실습 등"
+                "ko": "항공승무원통번역, 게임번역, 중한PT제작과 실습 등",
+                "vi": "Biên phiên dịch cho tiếp viên hàng không, Dịch game, Làm và thực hành thuyết trình Trung – Hàn…"
               }
             }
           ],
@@ -10162,7 +10195,8 @@
                 "ko": ""
               },
               "detail": {
-                "ko": "경찰(외국어·안보수사외국어 분야), 공무원, 법원, 의료기관"
+                "ko": "경찰(외국어·안보수사외국어 분야), 공무원, 법원, 의료기관",
+                "vi": "Cảnh sát (lĩnh vực ngoại ngữ, ngoại ngữ điều tra an ninh), công chức, tòa án, cơ sở y tế"
               }
             },
             {
@@ -10170,7 +10204,8 @@
                 "ko": ""
               },
               "detail": {
-                "ko": "공무원(국제교류, 다문화, 통상직 등)"
+                "ko": "공무원(국제교류, 다문화, 통상직 등)",
+                "vi": "Công chức (giao lưu quốc tế, đa văn hóa, ngạch thương mại…)"
               }
             },
             {
@@ -10178,7 +10213,8 @@
                 "ko": ""
               },
               "detail": {
-                "ko": "항공사 승무원 및 지상직"
+                "ko": "항공사 승무원 및 지상직",
+                "vi": "Tiếp viên hàng không và nhân viên mặt đất của hãng hàng không"
               }
             },
             {
@@ -10186,7 +10222,8 @@
                 "ko": ""
               },
               "detail": {
-                "ko": "대학 및 시·도 국제교류 담당 직원"
+                "ko": "대학 및 시·도 국제교류 담당 직원",
+                "vi": "Nhân viên phụ trách giao lưu quốc tế của trường đại học và chính quyền tỉnh, thành phố"
               }
             },
             {
@@ -10194,7 +10231,8 @@
                 "ko": ""
               },
               "detail": {
-                "ko": "대기업, 중견기업, 은행, 금융권"
+                "ko": "대기업, 중견기업, 은행, 금융권",
+                "vi": "Tập đoàn lớn, doanh nghiệp vừa, ngân hàng, ngành tài chính"
               }
             },
             {
@@ -10202,7 +10240,8 @@
                 "ko": ""
               },
               "detail": {
-                "ko": "중국인(외국인) 대상 한국어 교사(국가 공인 한국어 교사 자격증 취득)"
+                "ko": "중국인(외국인) 대상 한국어 교사(국가 공인 한국어 교사 자격증 취득)",
+                "vi": "Giáo viên dạy tiếng Hàn cho người Trung Quốc (người nước ngoài) (lấy chứng chỉ giáo viên tiếng Hàn được nhà nước công nhận)"
               }
             },
             {
@@ -10210,7 +10249,8 @@
                 "ko": ""
               },
               "detail": {
-                "ko": "국내외 한·중국인 대상 한중·중한 통번역 교육 분야(세종학당 중한 한중 통번역 교사 등)"
+                "ko": "국내외 한·중국인 대상 한중·중한 통번역 교육 분야(세종학당 중한 한중 통번역 교사 등)",
+                "vi": "Lĩnh vực đào tạo biên phiên dịch Hàn – Trung, Trung – Hàn cho người Hàn và người Trung Quốc trong và ngoài nước (giáo viên biên phiên dịch Trung – Hàn tại Viện King Sejong…)"
               }
             },
             {
@@ -10218,7 +10258,8 @@
                 "ko": ""
               },
               "detail": {
-                "ko": "국내 유수 통번역대학원 진학"
+                "ko": "국내 유수 통번역대학원 진학",
+                "vi": "Học tại các trường cao học biên phiên dịch danh tiếng trong nước"
               }
             },
             {
@@ -10226,7 +10267,8 @@
                 "ko": ""
               },
               "detail": {
-                "ko": "중국어 교육 분야"
+                "ko": "중국어 교육 분야",
+                "vi": "Lĩnh vực giáo dục tiếng Trung"
               }
             },
             {
@@ -10234,7 +10276,8 @@
                 "ko": ""
               },
               "detail": {
-                "ko": "통번역사, 외교, 국방통역, 문학번역, 기술번역, 영상번역 등"
+                "ko": "통번역사, 외교, 국방통역, 문학번역, 기술번역, 영상번역 등",
+                "vi": "Biên phiên dịch viên, ngoại giao, phiên dịch quốc phòng, dịch văn học, dịch kỹ thuật, dịch video…"
               }
             },
             {
@@ -10242,7 +10285,8 @@
                 "ko": ""
               },
               "detail": {
-                "ko": "대학 교수"
+                "ko": "대학 교수",
+                "vi": "Giảng viên đại học"
               }
             },
             {
@@ -10250,54 +10294,69 @@
                 "ko": ""
               },
               "detail": {
-                "ko": "외교관(통번역대학원 졸업 후 특채 등), 언론사(중화권 특파원 등)"
+                "ko": "외교관(통번역대학원 졸업 후 특채 등), 언론사(중화권 특파원 등)",
+                "vi": "Nhà ngoại giao (tuyển đặc biệt sau khi tốt nghiệp cao học biên phiên dịch…), cơ quan báo chí (phóng viên thường trú khu vực Hoa ngữ…)"
               }
             }
           ],
           "certificates": [
             {
-              "ko": "HSK, TSC(중국어 말하기), BCT(비즈니스 중국어), OPIC(중국어 말하기)"
+              "ko": "HSK, TSC(중국어 말하기), BCT(비즈니스 중국어), OPIC(중국어 말하기)",
+              "vi": "HSK, TSC (nói tiếng Trung), BCT (tiếng Trung thương mại), OPIc (nói tiếng Trung)"
             },
             {
-              "ko": "관광통역안내사, TCT(번역능력인증시험), ITT(통번역인증시험)"
+              "ko": "관광통역안내사, TCT(번역능력인증시험), ITT(통번역인증시험)",
+              "vi": "Hướng dẫn viên du lịch phiên dịch, TCT (kỳ thi chứng nhận năng lực biên dịch), ITT (kỳ thi chứng nhận biên phiên dịch)"
             },
             {
-              "ko": "국가 공인 한국어 교사 자격증, TCTSOL(중국 교육부 국제 중문 교사 자격) 등"
+              "ko": "국가 공인 한국어 교사 자격증, TCTSOL(중국 교육부 국제 중문 교사 자격) 등",
+              "vi": "Chứng chỉ giáo viên tiếng Hàn được nhà nước công nhận, TCTSOL (chứng chỉ giáo viên tiếng Trung quốc tế của Bộ Giáo dục Trung Quốc)…"
             }
           ],
           "programs": [
             {
-              "ko": "일반 공무원(국제교류, 다문화 등) 트랙"
+              "ko": "일반 공무원(국제교류, 다문화 등) 트랙",
+              "vi": "Lộ trình công chức thông thường (giao lưu quốc tế, đa văn hóa…)"
             },
             {
-              "ko": "외사경찰(외국어·안보수사외국어), 해양경찰, 법무직 트랙"
+              "ko": "외사경찰(외국어·안보수사외국어), 해양경찰, 법무직 트랙",
+              "vi": "Lộ trình cảnh sát đối ngoại (ngoại ngữ, ngoại ngữ điều tra an ninh), cảnh sát biển, ngạch tư pháp"
             },
             {
-              "ko": "항공승무원, 항공사(지상직) 트랙"
+              "ko": "항공승무원, 항공사(지상직) 트랙",
+              "vi": "Lộ trình tiếp viên hàng không, hãng hàng không (nhân viên mặt đất)"
             },
             {
-              "ko": "호텔, 관광, 문화 트랙"
+              "ko": "호텔, 관광, 문화 트랙",
+              "vi": "Lộ trình khách sạn, du lịch, văn hóa"
             },
             {
-              "ko": "무역, 통상, 국제교류 트랙"
+              "ko": "무역, 통상, 국제교류 트랙",
+              "vi": "Lộ trình thương mại, ngoại thương, giao lưu quốc tế"
             },
             {
-              "ko": "게임번역, 영상번역, OTT 번역, 웹툰, 웹소설 번역 트랙"
+              "ko": "게임번역, 영상번역, OTT 번역, 웹툰, 웹소설 번역 트랙",
+              "vi": "Lộ trình dịch game, dịch video, dịch OTT, dịch webtoon, web novel"
             },
             {
-              "ko": "문학번역 트랙"
+              "ko": "문학번역 트랙",
+              "vi": "Lộ trình dịch văn học"
             },
             {
-              "ko": "세종학당 중한통번역 교사 및 한국어 교사 트랙(국가 공인 한국어 교사 자격 취득)"
+              "ko": "세종학당 중한통번역 교사 및 한국어 교사 트랙(국가 공인 한국어 교사 자격 취득)",
+              "vi": "Lộ trình giáo viên biên phiên dịch Trung – Hàn tại Viện King Sejong và giáo viên tiếng Hàn (lấy chứng chỉ giáo viên tiếng Hàn được nhà nước công nhận)"
             },
             {
-              "ko": "국내외 유수 통번역대학원(한국외대, 이화여대 등) 트랙"
+              "ko": "국내외 유수 통번역대학원(한국외대, 이화여대 등) 트랙",
+              "vi": "Lộ trình cao học biên phiên dịch danh tiếng trong và ngoài nước (Đại học Ngoại ngữ Hankuk, Đại học Nữ Ewha…)"
             },
             {
-              "ko": "국내외 유수 일반대학원 트랙"
+              "ko": "국내외 유수 일반대학원 트랙",
+              "vi": "Lộ trình cao học thông thường danh tiếng trong và ngoài nước"
             },
             {
-              "ko": "학생 자율 설계 트랙 트랙 등"
+              "ko": "학생 자율 설계 트랙 트랙 등",
+              "vi": "Lộ trình do sinh viên tự thiết kế…"
             }
           ],
           "admission": {
