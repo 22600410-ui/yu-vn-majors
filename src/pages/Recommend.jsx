@@ -6,6 +6,7 @@ import { recommend, rules } from '../utils/recommend';
 import DepartmentCard from '../components/DepartmentCard';
 import LocalizedText from '../components/LocalizedText';
 import MajorCard from '../components/MajorCard';
+import KoreanLevel, { hasKoreanLevel } from '../components/KoreanLevel';
 import { loadLastResult, parseCode, recommendByTypes } from '../utils/majorTest';
 import { tr } from '../utils/localize';
 
@@ -206,6 +207,8 @@ export default function Recommend() {
             <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {results.map((r) => (
                 <DepartmentCard key={r.department.id} department={r.department}>
+                  {/* 공식 한국어 기준이 등록된 경우에만 표시 (src/data/language-requirements.json) */}
+                  {hasKoreanLevel(r.department) && <KoreanLevel department={r.department} variant="compact" className="mt-3" />}
                   <div className="mt-3 rounded-lg bg-slate-50 p-2 text-xs text-slate-600">
                     <span className="font-medium">{t('recommend.reasons')}: </span>
                     {r.reasons.map((x, i) => (

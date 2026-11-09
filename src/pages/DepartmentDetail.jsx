@@ -4,6 +4,8 @@ import { findDepartment, useDepartments } from '../hooks/useDepartments';
 import LocalizedText from '../components/LocalizedText';
 import AdmissionBadges from '../components/AdmissionBadges';
 import CoreTags from '../components/CoreTags';
+import SaveButton from '../components/SaveButton';
+import KoreanLevel from '../components/KoreanLevel';
 import { imageOf, imagePositionOf } from '../utils/fields';
 import { dedupeLocalized, mapLocalized, tidy, titleAndBody } from '../utils/text';
 
@@ -114,8 +116,9 @@ export default function DepartmentDetail() {
       <AdmissionBadges admission={d.admission} className="mt-2" />
       <LocalizedText as="p" text={d.slogan} className="mt-3 text-lg text-slate-700" />
       <CoreTags department={d} size="lg" className="mt-3" />
-      {(d.links.homepage || d.links.official) && (
+      {
         <div className="mt-4 flex flex-wrap gap-2">
+          <SaveButton department={d} variant="pill" />
           {d.links.homepage && (
             <a
               href={d.links.homepage}
@@ -137,7 +140,7 @@ export default function DepartmentDetail() {
             </a>
           )}
         </div>
-      )}
+      }
       {photo && (
         <img
           src={photo}
@@ -149,6 +152,10 @@ export default function DepartmentDetail() {
 
       <Section title={t('admission.title')} show={!!d.admission}>
         <AdmissionInfo admission={d.admission} />
+      </Section>
+
+      <Section title={t('korean.title')} show={!!d.admission}>
+        <KoreanLevel department={d} />
       </Section>
 
       {!hasDetail && (

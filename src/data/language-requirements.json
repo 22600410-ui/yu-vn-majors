@@ -1,0 +1,11 @@
+{
+  "_comment": "학과별 '필요한 한국어 수준'(TOPIK 등). 영남대학교 외국인 유학생 모집요강의 공식 기준만 적으세요. confirmed=false 인 동안에는 화면에 '모집요강에서 확인' 안내만 나오고 급수는 표시되지 않습니다. 기준을 넣는 방법: default 에 모든 학과 공통 기준을 적고, 학과마다 다르면 departments 에 '한국어 학과 이름' 으로 추가합니다. 각 기준은 { \"level\": { \"ko\": \"TOPIK 3급 이상\", \"vi\": \"TOPIK cấp 3 trở lên\" }, \"note\": { \"ko\": \"보충 설명(선택)\", \"vi\": \"...\" } } 형식이고, freshman(신입학) / transfer(편입학) 로 나눠 적습니다. track 에 null 이면 그 유형은 '모집요강 확인'으로 표시됩니다. year 는 기준이 나온 모집요강 학년도, source 는 출처 문서 이름입니다.",
+  "confirmed": false,
+  "year": null,
+  "source": null,
+  "default": {
+    "freshman": null,
+    "transfer": null
+  },
+  "departments": {}
+}

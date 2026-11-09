@@ -1,0 +1,194 @@
+{
+  "_comment": "지원 준비 체크리스트. tracks: 이 항목을 보여 줄 입학 유형(freshman 신입학 / transfer 편입학). official=true 는 영남대학교 외국인 유학생 입학 FAQ(faq.json 의 official 항목)에 근거한 내용, false 는 일반적인 준비 안내(정확한 목록·금액은 모집요강 확인). faq: 관련 FAQ 항목 id(참고용). link: 눌러서 이동할 사이트 안 주소. 모집요강을 받으면 일반 안내 항목을 공식 내용으로 바꿔 주세요.",
+  "groups": [
+    {
+      "id": "eligibility",
+      "icon": "🪪",
+      "label": { "ko": "지원 자격 확인", "vi": "Kiểm tra điều kiện dự tuyển" },
+      "items": [
+        {
+          "id": "nationality",
+          "tracks": ["freshman", "transfer"],
+          "official": true,
+          "faq": "elig-parent-korean",
+          "text": { "ko": "나와 부모님 모두 외국 국적인가요?", "vi": "Bạn và bố mẹ đều mang quốc tịch nước ngoài?" },
+          "hint": {
+            "ko": "부모 중 한 분이라도 대한민국 국적이면 외국인 전형에 지원할 수 없습니다. 외국 국적을 나중에 취득했다면 고등학교 입학 전에 본인과 부모 모두 취득했어야 합니다.",
+            "vi": "Nếu bố hoặc mẹ có quốc tịch Hàn Quốc thì không thể đăng ký diện người nước ngoài. Nếu nhập quốc tịch nước ngoài sau khi sinh, cả bạn và bố mẹ phải nhập trước khi bạn vào THPT."
+          }
+        },
+        {
+          "id": "twelve-years",
+          "tracks": ["freshman"],
+          "official": true,
+          "faq": "elig-studied-korea",
+          "text": { "ko": "초·중·고 교육 과정 총 12년을 마쳤나요?", "vi": "Bạn đã hoàn thành tổng cộng 12 năm học phổ thông?" },
+          "hint": {
+            "ko": "한국에서 다닌 기간이 있어도 교육 기간이 총 12년이면 지원할 수 있습니다.",
+            "vi": "Dù từng học ở Hàn Quốc, bạn vẫn có thể đăng ký nếu tổng thời gian học đủ 12 năm."
+          }
+        },
+        {
+          "id": "transfer-credits",
+          "tracks": ["transfer"],
+          "official": false,
+          "faq": "freshman-vs-transfer",
+          "text": { "ko": "다른 대학에서 편입에 필요한 학기·학점을 마쳤나요?", "vi": "Bạn đã hoàn thành số học kỳ/tín chỉ cần thiết để chuyển tiếp ở trường đại học khác?" },
+          "hint": {
+            "ko": "2학년·3학년 편입에 필요한 이수 학기와 학점은 모집요강에서 확인하세요.",
+            "vi": "Số học kỳ và tín chỉ cần có để chuyển tiếp vào năm 2 hoặc năm 3, vui lòng xem Hướng dẫn tuyển sinh."
+          }
+        },
+        {
+          "id": "department-open",
+          "tracks": ["freshman", "transfer"],
+          "official": false,
+          "link": "/departments",
+          "text": { "ko": "가고 싶은 학과가 내 입학 유형으로 모집하는지 확인했나요?", "vi": "Bạn đã kiểm tra ngành mình muốn có tuyển theo hình thức nhập học của bạn không?" },
+          "hint": {
+            "ko": "학과 찾기에서 신입학·편입학을 골라 지원 가능한 학과를 볼 수 있습니다. 일부 학부는 지원 가능한 전공이 정해져 있습니다.",
+            "vi": "Trong mục Tìm ngành, chọn Nhập học năm 1 hoặc Chuyển tiếp để xem các ngành được đăng ký. Một số khoa chỉ nhận một số chuyên ngành nhất định."
+          }
+        },
+        {
+          "id": "korean-level",
+          "tracks": ["freshman", "transfer"],
+          "official": false,
+          "faq": "topik",
+          "text": { "ko": "필요한 한국어 능력(TOPIK 등) 기준을 확인했나요?", "vi": "Bạn đã kiểm tra yêu cầu năng lực tiếng Hàn (TOPIK…) chưa?" },
+          "hint": {
+            "ko": "필요한 급수와 대체 시험 인정 여부는 지원하는 학년도 모집요강에서 확인하세요.",
+            "vi": "Cấp độ cần có và việc chấp nhận chứng chỉ thay thế, vui lòng xem Hướng dẫn tuyển sinh của năm bạn đăng ký."
+          }
+        }
+      ]
+    },
+    {
+      "id": "documents",
+      "icon": "📄",
+      "label": { "ko": "제출 서류 준비", "vi": "Chuẩn bị hồ sơ" },
+      "items": [
+        {
+          "id": "hs-documents",
+          "tracks": ["freshman", "transfer"],
+          "official": false,
+          "text": { "ko": "고등학교 졸업증명서와 성적증명서", "vi": "Bằng/giấy chứng nhận tốt nghiệp THPT và bảng điểm THPT" },
+          "hint": {
+            "ko": "한국 학교에서 발급한 서류는 모두 원본이어야 합니다. 원본 발급이 한 번뿐이라면 자주 묻는 질문의 표를 참고하세요.",
+            "vi": "Giấy tờ do trường Hàn Quốc cấp phải là bản gốc. Nếu bản gốc chỉ được cấp một lần, hãy xem bảng trong mục Câu hỏi thường gặp."
+          }
+        },
+        {
+          "id": "univ-documents",
+          "tracks": ["transfer"],
+          "official": false,
+          "text": { "ko": "대학 재학·수료(졸업)증명서와 대학 성적증명서", "vi": "Giấy xác nhận đang học/hoàn thành (tốt nghiệp) đại học và bảng điểm đại học" },
+          "hint": {
+            "ko": "편입학은 고등학교 서류와 함께 지금 다니는(다녔던) 대학의 서류가 필요합니다. 정확한 서류 이름은 모집요강에서 확인하세요.",
+            "vi": "Với chuyển tiếp, ngoài hồ sơ THPT bạn cần giấy tờ của trường đại học đang/đã học. Tên giấy tờ chính xác vui lòng xem Hướng dẫn tuyển sinh."
+          }
+        },
+        {
+          "id": "apostille",
+          "tracks": ["freshman", "transfer"],
+          "official": true,
+          "faq": "doc-apostille-copy",
+          "text": { "ko": "학력 서류에 아포스티유 또는 영사확인을 받았나요?", "vi": "Hồ sơ học tập đã có apostille hoặc hợp pháp hóa lãnh sự chưa?" },
+          "hint": {
+            "ko": "단순 복사본은 낼 수 없습니다. 사본을 낸다면 사본에 아포스티유·영사확인·해외공관 원본 인증 중 하나를 새로 받아야 합니다. 아포스티유는 유효기간 제한이 없습니다.",
+            "vi": "Không được nộp bản photo thông thường. Nếu nộp bản sao, bản sao phải có apostille, hợp pháp hóa lãnh sự hoặc xác nhận bản gốc của cơ quan đại diện Hàn Quốc. Apostille không giới hạn thời hạn."
+          }
+        },
+        {
+          "id": "translation",
+          "tracks": ["freshman", "transfer"],
+          "official": true,
+          "faq": "doc-notarization",
+          "text": { "ko": "한국어·영어가 아닌 서류는 영문 번역공증을 받았나요?", "vi": "Giấy tờ không phải tiếng Hàn/tiếng Anh đã được công chứng bản dịch tiếng Anh chưa?" },
+          "hint": {
+            "ko": "한국 외 국가에서 한국어나 영어로 발행된 서류는 번역이 필요 없습니다. 공증 서류의 유효기간은 6개월입니다.",
+            "vi": "Giấy tờ do nước ngoài cấp bằng tiếng Hàn hoặc tiếng Anh thì không cần dịch. Giấy tờ công chứng có hiệu lực 6 tháng."
+          }
+        },
+        {
+          "id": "bank",
+          "tracks": ["freshman", "transfer"],
+          "official": true,
+          "faq": "doc-bank-sibling",
+          "text": { "ko": "은행 잔고증명서 (본인 또는 부모님 명의)", "vi": "Giấy xác nhận số dư ngân hàng (đứng tên bạn hoặc bố mẹ)" },
+          "hint": {
+            "ko": "형제·자매·친척 명의는 인정되지 않습니다. 필요한 금액은 모집요강에서 확인하세요.",
+            "vi": "Không chấp nhận tên anh chị em hay họ hàng. Số tiền cần có vui lòng xem Hướng dẫn tuyển sinh."
+          }
+        },
+        {
+          "id": "identity",
+          "tracks": ["freshman", "transfer"],
+          "official": false,
+          "text": { "ko": "여권 사본과 가족관계(부모 국적) 증명 서류", "vi": "Bản sao hộ chiếu và giấy tờ chứng minh quan hệ gia đình (quốc tịch bố mẹ)" },
+          "hint": {
+            "ko": "본인과 부모님이 외국 국적임을 확인하는 서류입니다. 필요한 서류 종류는 모집요강에서 확인하세요.",
+            "vi": "Giấy tờ xác nhận bạn và bố mẹ mang quốc tịch nước ngoài. Loại giấy tờ cần nộp vui lòng xem Hướng dẫn tuyển sinh."
+          }
+        },
+        {
+          "id": "language-score",
+          "tracks": ["freshman", "transfer"],
+          "official": false,
+          "text": { "ko": "한국어 능력 성적표 (TOPIK 등, 해당하는 경우)", "vi": "Bảng điểm năng lực tiếng Hàn (TOPIK…, nếu có)" }
+        },
+        {
+          "id": "spare-copies",
+          "tracks": ["freshman", "transfer"],
+          "official": true,
+          "faq": "doc-return",
+          "text": { "ko": "비자 신청 등에 쓸 여분 서류를 따로 준비했나요?", "vi": "Bạn đã chuẩn bị thêm bản dự phòng để xin visa… chưa?" },
+          "hint": {
+            "ko": "제출한 서류(아포스티유 원본 포함)는 어떤 이유로도 돌려받을 수 없습니다.",
+            "vi": "Hồ sơ đã nộp (kể cả bản gốc apostille) sẽ không được trả lại vì bất kỳ lý do gì."
+          }
+        }
+      ]
+    },
+    {
+      "id": "application",
+      "icon": "🖱️",
+      "label": { "ko": "원서 접수", "vi": "Nộp đơn" },
+      "items": [
+        {
+          "id": "schedule",
+          "tracks": ["freshman", "transfer"],
+          "official": false,
+          "faq": "schedule-docs",
+          "text": { "ko": "원서 접수 기간과 서류 제출 마감일을 확인했나요?", "vi": "Bạn đã kiểm tra thời gian nộp đơn và hạn nộp hồ sơ chưa?" },
+          "hint": {
+            "ko": "일정은 영남대학교 홈페이지의 외국인 유학생 모집요강에서 확인하세요.",
+            "vi": "Lịch tuyển sinh vui lòng xem Hướng dẫn tuyển sinh du học sinh trên trang chủ Đại học Yeungnam."
+          }
+        },
+        {
+          "id": "check-before-pay",
+          "tracks": ["freshman", "transfer"],
+          "official": true,
+          "faq": "app-edit",
+          "text": { "ko": "결제 전에 지원 학과와 입학 학년을 다시 확인했나요?", "vi": "Trước khi thanh toán, bạn đã kiểm tra lại ngành đăng ký và năm học nhập học chưa?" },
+          "hint": {
+            "ko": "전형료 결제 후에는 지원 학과와 신입·편입 학년을 고칠 수 없습니다. 바꾸려면 마감 전에 취소하고 다시 접수해야 합니다.",
+            "vi": "Sau khi thanh toán lệ phí, không thể sửa ngành đăng ký và năm học. Muốn đổi, bạn phải hủy trước hạn chót và nộp lại."
+          }
+        },
+        {
+          "id": "uway",
+          "tracks": ["freshman", "transfer"],
+          "official": true,
+          "faq": "app-cancel",
+          "text": { "ko": "유웨이어플라이에서 온라인 원서 접수와 전형료 결제를 마쳤나요?", "vi": "Bạn đã nộp đơn trực tuyến và thanh toán lệ phí trên UwayApply chưa?" },
+          "hint": {
+            "ko": "마감일 전에 유웨이어플라이에서 취소하면 5일 이내에 환불됩니다. 불합격을 이유로 한 환불은 되지 않습니다.",
+            "vi": "Nếu hủy trên UwayApply trước hạn chót, tiền được hoàn trong 5 ngày. Không hoàn lệ phí vì lý do không trúng tuyển."
+          }
+        }
+      ]
+    }
+  ]
+}

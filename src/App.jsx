@@ -10,6 +10,9 @@ import DepartmentDetail from './pages/DepartmentDetail';
 import Recommend from './pages/Recommend';
 import Faq from './pages/Faq';
 import MajorTest from './pages/MajorTest';
+import Saved from './pages/Saved';
+import Checklist from './pages/Checklist';
+import { useSaved } from './utils/saved';
 import site from './data/site.json';
 import { ChatProvider, useChat } from './components/RecommenderChat';
 import { NoticeProvider, SafeRoutes, isHidden } from './components/Notice';
@@ -19,8 +22,21 @@ const NAV = [
   { to: '/departments', key: 'nav.departments' },
   { to: '/recommend', key: 'nav.recommend' },
   { to: '/test', key: 'nav.test' },
+  { to: '/saved', key: 'nav.saved', badge: 'saved' },
+  { to: '/checklist', key: 'nav.checklist' },
   { to: '/faq', key: 'nav.faq' },
 ];
+
+/** 메뉴 '관심 학과' 옆 저장 개수 */
+function SavedCount() {
+  const { ids } = useSaved();
+  if (!ids.length) return null;
+  return (
+    <span className="ml-1.5 inline-flex min-w-[1.25rem] items-center justify-center rounded-full bg-rose-500 px-1.5 text-xs font-bold leading-5 text-white">
+      {ids.length}
+    </span>
+  );
+}
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -138,11 +154,9 @@ function Header() {
               }
             >
               {t(n.key)}
+              {n.badge === 'saved' && <SavedCount />}
             </NavLink>
           ))}
-          <Link to="/faq" className="ml-auto hidden shrink-0 text-sm font-semibold text-yu hover:underline lg:block">
-            {t('header.helpLink')} →
-          </Link>
         </nav>
       </div>
     </header>
@@ -196,6 +210,8 @@ export default function App() {
                 <Route path="/faq" element={<Faq />} />
                 <Route path="/test" element={<MajorTest />} />
                 <Route path="/test/result/:code" element={<MajorTest />} />
+                <Route path="/saved" element={<Saved />} />
+                <Route path="/checklist" element={<Checklist />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </SafeRoutes>

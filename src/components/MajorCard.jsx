@@ -4,6 +4,8 @@ import { useTranslation } from 'react-i18next';
 import LocalizedText from './LocalizedText';
 import AdmissionBadges from './AdmissionBadges';
 import CoreTags from './CoreTags';
+import SaveButton from './SaveButton';
+import KoreanLevel, { hasKoreanLevel } from './KoreanLevel';
 import { fieldOf, imageOf, imagePositionOf, summaryOf } from '../utils/fields';
 import { tr } from '../utils/localize';
 import { tidy } from '../utils/text';
@@ -120,7 +122,7 @@ export default function MajorCard({ department, college, index = 0 }) {
   };
   // 요약 카드가 열린 상태에서 누르면, 그 아래 숨은 버튼 대신 항상 학과 상세로 이동
   const onClickCapture = (e) => {
-    if (!open) return;
+    if (!open || e.target.closest?.('[data-save]')) return; // ♡ 버튼은 그대로 동작
     e.preventDefault();
     e.stopPropagation();
     setOpen(false);
@@ -135,7 +137,7 @@ export default function MajorCard({ department, college, index = 0 }) {
       onClickCapture={onClickCapture}
     >
       <article
-        className={`flex h-full flex-col overflow-hidden rounded-2xl border bg-white transition
+        className={`relative flex h-full flex-col overflow-hidden rounded-2xl border bg-white transition
           ${open ? 'cursor-pointer' : ''}
           border-slate-200 group-hover:border-yu-dark group-hover:ring-2 group-hover:ring-yu-dark
           focus-within:border-yu-dark focus-within:ring-[3px] focus-within:ring-yu-dark active:ring-[3px] active:ring-yu-dark`}
@@ -159,16 +161,18 @@ export default function MajorCard({ department, college, index = 0 }) {
           ) : (
             // 사진이 없으면 계열 색 + 아이콘 + 학과 이름으로 썸네일 생성
             <div className={`relative flex aspect-[16/10] items-end bg-gradient-to-br p-3 sm:p-4 ${field?.color ?? 'from-slate-400 to-slate-600'}`}>
-              <span className="absolute right-3 top-2 text-3xl sm:text-4xl">{field?.icon ?? '🎓'}</span>
+              <span className="absolute bottom-2 right-3 text-3xl sm:text-4xl">{field?.icon ?? '🎓'}</span>
               {field && (
                 <span className="absolute left-3 top-3 rounded-full bg-black/25 px-2 py-0.5 text-[11px] font-semibold text-white sm:left-4 sm:text-xs">
                   {tr(field.label, i18n.resolvedLanguage)}
                 </span>
               )}
-              <span className="line-clamp-2 text-[15px] font-extrabold leading-snug text-white drop-shadow sm:text-lg">{name}</span>
+              <span className="line-clamp-2 pr-10 text-[15px] font-extrabold leading-snug text-white drop-shadow sm:text-lg">{name}</span>
             </div>
           )}
         </Link>
+        {/* 관심 학과 저장 ♡ (사진 오른쪽 위) */}
+        <SaveButton department={department} className="absolute right-2 top-2 z-10" />
 
         <div className="flex flex-1 flex-col p-3.5 sm:p-4">
           <LocalizedText as="p" text={college.name} className="truncate text-[13px] font-medium text-slate-500" showBadge={false} />
@@ -179,6 +183,8 @@ export default function MajorCard({ department, college, index = 0 }) {
           </h3>
           <CoreTags department={department} className="mt-2" />
           <AdmissionBadges admission={department.admission} className="mt-2" />
+          {/* 공식 한국어 기준이 등록된 경우에만 표시 */}
+          {hasKoreanLevel(department) && <KoreanLevel department={department} variant="compact" className="mt-2 text-[13px]" />}
           {summary && (
             <LocalizedText as="p" text={summary} className="mt-2 line-clamp-2 text-sm leading-relaxed text-slate-700 sm:text-[15px]" showBadge={false} />
           )}

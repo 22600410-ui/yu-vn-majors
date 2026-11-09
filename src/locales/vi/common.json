@@ -11,7 +11,9 @@
     "departments": "Tìm ngành",
     "recommend": "Gợi ý ngành",
     "faq": "Câu hỏi thường gặp",
-    "test": "Trắc nghiệm chọn ngành"
+    "test": "Trắc nghiệm chọn ngành",
+    "saved": "Ngành quan tâm",
+    "checklist": "Chuẩn bị hồ sơ"
   },
   "header": {
     "brand": "Đại học Yeungnam",
@@ -204,6 +206,50 @@
   },
   "translation": {
     "badge": "Hiển thị bằng {{lang}}"
+  },
+  "saved": {
+    "title": "Ngành quan tâm",
+    "intro": "Bấm ♡ trên thẻ ngành để lưu vào đây. Chọn tối đa {{max}} ngành để so sánh cạnh nhau. Dữ liệu chỉ lưu trên điện thoại (trình duyệt) này, không cần đăng nhập.",
+    "add": "Lưu ngành quan tâm",
+    "remove": "Bỏ khỏi ngành quan tâm",
+    "savedLabel": "Đã lưu vào ngành quan tâm",
+    "added": "Đã lưu vào ngành quan tâm ♥",
+    "removed": "Đã bỏ khỏi ngành quan tâm",
+    "emptyTitle": "Bạn chưa lưu ngành nào",
+    "emptyText": "Bấm ♡ ở góc trên bên phải ảnh của thẻ ngành để lưu các ngành bạn quan tâm.",
+    "listTitle": "Ngành đã lưu",
+    "clear": "Xóa tất cả",
+    "open": "Xem"
+  },
+  "compare": {
+    "title": "So sánh ngành",
+    "needTwo": "Hãy đánh dấu ít nhất 2 ngành trong danh sách trên để so sánh.",
+    "swipe": "Vuốt bảng sang ngang để xem các ngành khác →",
+    "admission": "Hình thức được đăng ký",
+    "tags": "Từ khóa chính",
+    "summary": "Giới thiệu ngắn",
+    "korean": "Trình độ tiếng Hàn cần có",
+    "none": "Chưa có thông tin"
+  },
+  "korean": {
+    "title": "Trình độ tiếng Hàn cần có",
+    "checkGuide": "Xem Hướng dẫn tuyển sinh",
+    "pendingTitle": "Yêu cầu năng lực tiếng Hàn (TOPIK) vui lòng xem trong Hướng dẫn tuyển sinh",
+    "pendingText": "Cấp độ cần có và việc chấp nhận chứng chỉ thay thế có thể thay đổi theo từng năm. Khi có tiêu chuẩn chính thức, thông tin sẽ được hiển thị tại đây.",
+    "faqLink": "Xem câu hỏi thường gặp",
+    "sourceNote": "Theo {{source}} {{year}}. Vui lòng kiểm tra Hướng dẫn tuyển sinh mới nhất trước khi nộp hồ sơ."
+  },
+  "checklist": {
+    "title": "Danh sách chuẩn bị hồ sơ",
+    "intro": "Chọn hình thức nhập học và đánh dấu từng mục bạn đã chuẩn bị. Dữ liệu được lưu trên điện thoại (trình duyệt) này.",
+    "progress": "Hoàn thành {{done}}/{{total}} mục",
+    "complete": "Bạn đã chuẩn bị đủ các mục! Hãy kiểm tra lại Hướng dẫn tuyển sinh trước khi nộp.",
+    "generalBadge": "Hướng dẫn chung",
+    "seeFaq": "Xem chi tiết trong Câu hỏi thường gặp",
+    "goDepartments": "Kiểm tra trong Tìm ngành",
+    "reset": "Bỏ chọn tất cả",
+    "savedNote": "Trạng thái đánh dấu được lưu riêng cho nhập học năm 1 và chuyển tiếp.",
+    "disclaimer": "Nhãn 'FAQ tuyển sinh' là nội dung từ FAQ tuyển sinh du học sinh của Đại học Yeungnam; 'Hướng dẫn chung' là các mục chung giúp bạn chuẩn bị. Hồ sơ và lịch chính xác vui lòng xem Hướng dẫn tuyển sinh của năm đăng ký, và liên hệ Phòng tuyển sinh du học sinh nếu có thắc mắc."
   },
   "common": {
     "loading": "Đang tải…",
