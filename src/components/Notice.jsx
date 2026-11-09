@@ -11,6 +11,10 @@ const ROUTE_FEATURE = { '/faq': 'faq', '/test': 'test', '/recommend': 'recommend
 
 export const isComingSoon = (feature) => COMING_SOON.has(feature);
 
+/** 화면에서 아예 숨길 기능 (site.json 의 hidden) */
+const HIDDEN = new Set(site.hidden ?? []);
+export const isHidden = (feature) => HIDDEN.has(feature);
+
 /** 주소(#/faq, /test/result/IA …)가 준비 중 기능이면 그 이름, 아니면 null */
 export function comingSoonFeatureOf(path = '') {
   const clean = path.replace(/^#/, '').split('?')[0];

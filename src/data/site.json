@@ -1,7 +1,8 @@
 {
-  "_comment": "헤더 로고: public/images/ 폴더의 로고 파일 이름(지금은 YU 심볼만 잘라 낸 yu-symbol.png). logoIncludesName: 로고 그림에 학교 이름 글자가 들어 있으면 true(옆의 학교 이름 글자를 숨김), 심볼만 있으면 false. 파일이 없거나 이름이 다르면 자동으로 'YU' 배지로 표시됩니다. comingSoon: 아직 공개하지 않을 기능. 여기 적힌 기능의 메뉴·버튼·링크를 누르면 페이지가 바뀌지 않고 '준비 중' 안내만 잠깐 뜹니다. 쓸 수 있는 이름: chat(전공 추천 챗봇), faq(자주 묻는 질문), test(전공 유형 테스트), recommend(질문지 추천), departments(학과 찾기). 공개하려면 목록에서 지우면 됩니다.",
+  "_comment": "헤더 로고: public/images/ 폴더의 로고 파일 이름(지금은 YU 심볼만 잘라 낸 yu-symbol.png). logoIncludesName: 로고 그림에 학교 이름 글자가 들어 있으면 true(옆의 학교 이름 글자를 숨김), 심볼만 있으면 false. 파일이 없거나 이름이 다르면 자동으로 'YU' 배지로 표시됩니다. comingSoon: 아직 공개하지 않을 기능. 여기 적힌 기능의 메뉴·버튼·링크를 누르면 페이지가 바뀌지 않고 '준비 중' 안내만 잠깐 뜹니다. 쓸 수 있는 이름: chat(전공 추천 챗봇), faq(자주 묻는 질문), test(전공 유형 테스트), recommend(질문지 추천), departments(학과 찾기). 공개하려면 목록에서 지우면 됩니다. hidden: 화면에서 아예 숨길 기능(버튼·창 자체가 보이지 않음). 지금은 chat(전공 추천 챗봇)만 쓸 수 있습니다. 다시 보이게 하려면 hidden 에서 지우세요.",
   "logo": "yu-symbol.png",
   "logoIncludesName": false,
   "logoAlt": "Yeungnam University",
-  "comingSoon": ["chat"]
+  "comingSoon": ["chat"],
+  "hidden": ["chat"]
 }

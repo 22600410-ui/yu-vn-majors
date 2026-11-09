@@ -151,7 +151,7 @@ export default function Recommend() {
 
       <section className="mt-8">
         <h2 className="font-semibold">{t('recommend.q2', { max: rules.maxInterests })}</h2>
-        <div className="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
           {rules.interests.map((i) => {
             const selected = interests.includes(i.id);
             return (
@@ -171,7 +171,7 @@ export default function Recommend() {
 
       <section className="mt-8">
         <h2 className="font-semibold">{t('recommend.q3')}</h2>
-        <div className="mt-3 grid gap-2 sm:grid-cols-2">
+        <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2">
           {rules.careers.map((c) => (
             <Option key={c.id} selected={career === c.id} onClick={() => setCareer(career === c.id ? null : c.id)}>
               <span className="mr-2" aria-hidden>{c.icon}</span>
@@ -203,7 +203,7 @@ export default function Recommend() {
           {results.length === 0 ? (
             <p className="mt-4 text-slate-600">{t('recommend.resultsEmpty')}</p>
           ) : (
-            <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {results.map((r) => (
                 <DepartmentCard key={r.department.id} department={r.department}>
                   <div className="mt-3 rounded-lg bg-slate-50 p-2 text-xs text-slate-600">

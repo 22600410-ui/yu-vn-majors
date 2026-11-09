@@ -141,7 +141,7 @@ function Result({ code }) {
         </p>
       </section>
 
-      <div className="mx-auto mt-8 grid max-w-4xl gap-5 md:grid-cols-2">
+      <div className="mx-auto mt-8 grid max-w-4xl grid-cols-1 gap-5 md:grid-cols-2">
         <section className="rounded-2xl border border-slate-200 p-6">
           <h2 className="text-lg font-extrabold text-slate-900">{t('test.traitsTitle')}</h2>
           <ul className="mt-3 space-y-2 text-[16px] leading-relaxed text-slate-800">

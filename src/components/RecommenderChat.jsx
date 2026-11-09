@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useDepartments } from '../hooks/useDepartments';
 import { recommend, rules } from '../utils/recommend';
 import { searchDepartments } from '../utils/search';
-import { isComingSoon, useNotice } from './Notice';
+import { isComingSoon, isHidden, useNotice } from './Notice';
 import { buildFaqs, faqText, featuredFaqs, matchFaq } from '../utils/faq';
 import LocalizedText from './LocalizedText';
 import AdmissionBadges from './AdmissionBadges';
@@ -48,8 +48,13 @@ export function ChatProvider({ children }) {
   return (
     <ChatContext.Provider value={value}>
       {children}
-      <ChatLauncher />
-      <ChatPanel />
+      {/* site.json hidden 에 'chat' 이 있으면 오른쪽 아래 버튼과 챗봇 창을 아예 그리지 않음 */}
+      {!isHidden('chat') && (
+        <>
+          <ChatLauncher />
+          <ChatPanel />
+        </>
+      )}
     </ChatContext.Provider>
   );
 }

@@ -6,6 +6,7 @@ import AdmissionBadges from './AdmissionBadges';
 import CoreTags from './CoreTags';
 import { fieldOf, imageOf, imagePositionOf, summaryOf } from '../utils/fields';
 import { tr } from '../utils/localize';
+import { tidy } from '../utils/text';
 
 /** 학과 홈페이지 주소 (없으면 영남대 공식 학과소개 페이지) */
 export const homepageOf = (department) => department.links?.homepage || department.links?.official || null;
@@ -17,7 +18,7 @@ const canPreview = () => window.matchMedia('(hover: hover) and (min-width: 1024p
 
 /** 소개 글 앞부분 2문장 (미리보기용) */
 function introOf(department, lang) {
-  const text = tr(department.description, lang) || tr(department.majorGuide, lang);
+  const text = tidy(tr(department.description, lang) || tr(department.majorGuide, lang));
   if (!text) return '';
   return text.split(/(?<=[.!?。])\s+|\n/).filter(Boolean).slice(0, 2).join(' ');
 }

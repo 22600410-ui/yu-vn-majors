@@ -5,6 +5,20 @@ import LocalizedText from '../components/LocalizedText';
 import AdmissionBadges from '../components/AdmissionBadges';
 import CoreTags from '../components/CoreTags';
 import { imageOf, imagePositionOf } from '../utils/fields';
+import { dedupeLocalized, mapLocalized, tidy, titleAndBody } from '../utils/text';
+
+/** "짧은 제목\n설명" 형태 글을 굵은 제목 + 설명으로 표시 (언어마다 따로 나눔) */
+function TitledText({ text }) {
+  const title = mapLocalized(text, (s) => titleAndBody(s).title);
+  const body = mapLocalized(text, (s) => titleAndBody(s).body);
+  const hasTitle = Object.values(title ?? {}).some(Boolean);
+  return (
+    <>
+      {hasTitle && <LocalizedText as="p" text={title} className="font-bold text-slate-900" showBadge={false} />}
+      <LocalizedText as="p" text={body} className={`whitespace-pre-line text-slate-700 ${hasTitle ? 'mt-1' : ''}`} />
+    </>
+  );
+}
 import { formatDate } from '../utils/localize';
 import { SOURCE_LANG } from '../i18n/languages';
 
@@ -12,7 +26,7 @@ function AdmissionInfo({ admission }) {
   const { t } = useTranslation();
   if (!admission) return null;
   return (
-    <div className="grid gap-3 sm:grid-cols-2">
+    <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
       {['freshman', 'transfer'].map((track) => {
         const info = admission[track];
         return (
@@ -85,6 +99,10 @@ export default function DepartmentDetail() {
   const related = college.departments.filter((x) => x.id !== d.id);
   const date = formatDate(data.meta?.crawledAt, lang);
   const photo = imageOf(d);
+  // 중복 수집된 항목 제거 ("제목+내용"과 "내용만"이 함께 들어온 경우)
+  const fields = dedupeLocalized(d.fields);
+  const certificates = dedupeLocalized(d.certificates);
+  const programs = dedupeLocalized(d.programs);
 
   return (
     <article className="mx-auto max-w-3xl px-4 py-8">
@@ -140,36 +158,44 @@ export default function DepartmentDetail() {
         </Section>
       )}
 
+      {/* 본문: 원문의 문장 중간 줄바꿈을 정리(tidy)해서 표시 */}
       <Section title={t('department.description')} show={!!d.description?.ko}>
-        <LocalizedText as="p" text={d.description} className="whitespace-pre-line leading-relaxed" />
+        <LocalizedText as="p" text={mapLocalized(d.description, tidy)} className="whitespace-pre-line text-[16px] leading-[1.8] text-slate-800" />
       </Section>
 
       <Section title={t('department.majorGuide')} show={!!d.majorGuide?.ko}>
-        <LocalizedText as="p" text={d.majorGuide} className="whitespace-pre-line leading-relaxed" />
+        <LocalizedText as="p" text={mapLocalized(d.majorGuide, tidy)} className="whitespace-pre-line text-[16px] leading-[1.8] text-slate-800" />
       </Section>
 
       <Section title={t('department.majors')} show={d.majors.length > 0}>
-        <ul className="list-disc pl-5">
-          {d.majors.map((m) => <li key={m.name.ko}><LocalizedText text={m.name} /></li>)}
+        <ul className="flex flex-wrap gap-2">
+          {d.majors.map((m) => (
+            <li key={m.name.ko} className="rounded-lg bg-slate-100 px-3 py-1.5 text-[15px] leading-snug">
+              <LocalizedText text={m.name} />
+            </li>
+          ))}
         </ul>
       </Section>
 
-      <Section title={t('department.fields')} show={d.fields.length > 0}>
-        <ul className="grid gap-2 sm:grid-cols-2">
-          {d.fields.map((f) => (
-            <li key={f.ko} className="rounded-lg bg-yu-light px-3 py-2"><LocalizedText text={f} /></li>
+      <Section title={t('department.fields')} show={fields.length > 0}>
+        <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+          {fields.map((f) => (
+            <li key={f.ko} className="rounded-lg bg-yu-light px-3.5 py-2.5 text-[15px] leading-relaxed">
+              <LocalizedText text={mapLocalized(f, tidy)} />
+            </li>
           ))}
         </ul>
       </Section>
 
       <Section title={t('department.curriculum')} show={d.curriculum.length > 0}>
-        <ol className="space-y-2">
+        <ol className="divide-y divide-slate-100 rounded-xl border border-slate-200">
           {d.curriculum.map((c, i) => (
-            <li key={i} className="flex gap-3">
-              <span className="w-16 shrink-0 font-semibold text-yu">
-                {c.year ? t('department.yearN', { n: c.year }) : <LocalizedText text={c.label} />}
+            // 휴대폰: 학년 아래에 내용 / 넓은 화면: 학년 옆에 내용 (학년 칸 너비를 맞춰 줄이 가지런하게)
+            <li key={i} className="flex flex-col gap-1 px-4 py-3 sm:flex-row sm:gap-4">
+              <span className="shrink-0 text-[15px] font-bold text-yu-dark sm:w-24">
+                {c.year ? t('department.yearN', { n: c.year }) : <LocalizedText text={mapLocalized(c.label, tidy)} />}
               </span>
-              <LocalizedText text={c.text} />
+              <LocalizedText text={mapLocalized(c.text, tidy)} className="min-w-0 whitespace-pre-line text-[15px] leading-relaxed text-slate-800" />
             </li>
           ))}
         </ol>
@@ -178,25 +204,31 @@ export default function DepartmentDetail() {
       <Section title={t('department.careers')} show={d.careers.length > 0}>
         <ul className="space-y-3">
           {d.careers.map((c, i) => (
-            <li key={i} className="rounded-lg border border-slate-200 p-3">
-              <LocalizedText as="h3" text={c.category} className="font-semibold" />
-              <LocalizedText as="p" text={c.detail} className="text-sm text-slate-600" />
+            <li key={i} className="rounded-xl border border-slate-200 p-4">
+              <LocalizedText as="h3" text={mapLocalized(c.category, tidy)} className="text-[16px] font-bold text-slate-900" />
+              <LocalizedText as="p" text={mapLocalized(c.detail, tidy)} className="mt-1 whitespace-pre-line text-[15px] leading-relaxed text-slate-700" />
             </li>
           ))}
         </ul>
       </Section>
 
-      <Section title={t('department.certificates')} show={d.certificates.length > 0}>
-        <ul className="flex flex-wrap gap-2">
-          {d.certificates.map((c) => (
-            <li key={c.ko} className="rounded-full border px-3 py-1 text-sm"><LocalizedText text={c} /></li>
+      <Section title={t('department.certificates')} show={certificates.length > 0}>
+        <ul className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+          {certificates.map((c) => (
+            <li key={c.ko} className="rounded-lg border border-slate-200 px-3.5 py-2.5 text-[15px] leading-relaxed">
+              <TitledText text={c} />
+            </li>
           ))}
         </ul>
       </Section>
 
-      <Section title={t('department.programs')} show={d.programs.length > 0}>
-        <ul className="list-disc space-y-1 pl-5">
-          {d.programs.map((p) => <li key={p.ko} className="whitespace-pre-line"><LocalizedText text={p} /></li>)}
+      <Section title={t('department.programs')} show={programs.length > 0}>
+        <ul className="space-y-3">
+          {programs.map((p) => (
+            <li key={p.ko} className="rounded-xl bg-slate-50 p-4 text-[15px] leading-relaxed">
+              <TitledText text={p} />
+            </li>
+          ))}
         </ul>
       </Section>
 

@@ -4,14 +4,14 @@
     "slogan": { "ko": "소프트웨어와 AI로 미래를 만드는 컴퓨터 인재", "vi": "Nhân tài máy tính kiến tạo tương lai bằng phần mềm và AI" },
     "description": {
       "ko": "컴퓨터학부는 컴퓨터공학전공, 정보통신공학전공, 소프트웨어융합전공으로 이루어져 있으며, 2027학년도에 소프트웨어보안전공과 AI융합전공이 새로 생깁니다. 프로그래밍과 컴퓨터 구조, 네트워크, 소프트웨어 개발을 기초부터 배우고, 전공에 따라 정보통신, 보안, 인공지능 등으로 전문성을 넓힙니다.",
-      "vi": "Khoa Máy tính gồm chuyên ngành Kỹ thuật máy tính, Kỹ thuật thông tin – viễn thông và Phần mềm hội tụ; từ năm học 2027 sẽ mở thêm chuyên ngành Bảo mật phần mềm và AI hội tụ. Sinh viên học từ nền tảng lập trình, kiến trúc máy tính, mạng và phát triển phần mềm, rồi mở rộng chuyên môn sang viễn thông, bảo mật hoặc trí tuệ nhân tạo tùy chuyên ngành."
+      "vi": "Khoa học Máy tính gồm ngành Kỹ thuật Máy tính, ngành Kỹ thuật Thông tin và Truyền thông và Tích hợp Phần mềm; từ năm học 2027 sẽ mở thêm Bảo an phần mềm và ngành tích hợp AI. Sinh viên học từ nền tảng lập trình, kiến trúc máy tính, mạng và phát triển phần mềm, rồi mở rộng chuyên môn sang viễn thông, bảo mật hoặc trí tuệ nhân tạo tùy chuyên ngành."
     }
   },
   "체육학부": {
     "slogan": { "ko": "몸으로 배우고 과학으로 이해하는 체육·무용 인재", "vi": "Học bằng cơ thể, hiểu bằng khoa học – nhân tài thể thao và múa" },
     "description": {
       "ko": "체육학부는 체육학전공과 무용학전공으로 이루어져 있습니다. 체육학전공에서는 스포츠와 신체 활동을 과학적 이론과 실기로 함께 배우고, 무용학전공에서는 무용 실기와 창작, 공연을 깊이 있게 공부합니다.",
-      "vi": "Khoa Thể dục gồm chuyên ngành Thể dục thể thao và chuyên ngành Múa. Chuyên ngành Thể dục thể thao học về thể thao và vận động qua cả lý thuyết khoa học lẫn thực hành; chuyên ngành Múa học chuyên sâu về kỹ năng múa, sáng tác và biểu diễn."
+      "vi": "Khoa Giáo dục Thể chất gồm Chuyên ngành Giáo dục Thể chất và Chuyên ngành Vũ công. Chuyên ngành Giáo dục Thể chất học về thể thao và vận động qua cả lý thuyết khoa học lẫn thực hành; Chuyên ngành Vũ công học chuyên sâu về kỹ năng múa, sáng tác và biểu diễn."
     },
     "links": { "homepage": "https://www.yu.ac.kr/pe/index.do" }
   },
@@ -19,14 +19,14 @@
     "slogan": { "ko": "연주와 창작으로 음악의 꿈을 키우는 곳", "vi": "Nơi nuôi dưỡng ước mơ âm nhạc qua biểu diễn và sáng tác" },
     "description": {
       "ko": "음악학부는 국악·작곡, 성악, 피아노, 관현악 분야로 이루어져 있으며, 전공 실기와 음악 이론을 함께 배우며 연주자와 창작자로 성장하는 것을 목표로 합니다. 2027학년도부터는 국악·작곡·성악전공과 관현악및피아노전공으로 개편됩니다.",
-      "vi": "Khoa Âm nhạc gồm các lĩnh vực Quốc nhạc – Sáng tác, Thanh nhạc, Piano và Nhạc cụ giao hưởng. Sinh viên học song song thực hành chuyên ngành và lý thuyết âm nhạc để trở thành nghệ sĩ biểu diễn và người sáng tác. Từ năm học 2027, khoa được tổ chức lại thành chuyên ngành Quốc nhạc – Sáng tác – Thanh nhạc và chuyên ngành Nhạc cụ giao hưởng & Piano."
+      "vi": "Khoa Âm nhạc gồm các lĩnh vực Âm nhạc Truyền thống và Sáng tác, Thanh nhạc, Piano và Nhạc giao hưởng. Sinh viên học song song thực hành chuyên ngành và lý thuyết âm nhạc để trở thành nghệ sĩ biểu diễn và người sáng tác. Từ năm học 2027, khoa được tổ chức lại thành hai chuyên ngành: Âm nhạc truyền thống và sáng tác, thanh nhạc; Nhạc cụ phương Tây và Piano."
     }
   },
   "글로벌교육학부": {
     "slogan": { "ko": "세계에 한국어와 한국 문화를 전하는 교육 전문가", "vi": "Chuyên gia giáo dục mang tiếng Hàn và văn hóa Hàn ra thế giới" },
     "description": {
       "ko": "글로벌교육학부 국제한국어교육전공에서는 외국인에게 한국어와 한국 문화를 가르치는 방법을 배웁니다. 한국어의 구조와 한국어 교육 이론, 한국 문화 교육을 공부하며 국내외 한국어 교육 현장에서 활동할 인재를 기릅니다.",
-      "vi": "Chuyên ngành Giáo dục tiếng Hàn quốc tế của Khoa Giáo dục toàn cầu dạy phương pháp giảng dạy tiếng Hàn và văn hóa Hàn cho người nước ngoài. Sinh viên học cấu trúc tiếng Hàn, lý thuyết giáo dục tiếng Hàn và giáo dục văn hóa Hàn để làm việc trong lĩnh vực giảng dạy tiếng Hàn trong và ngoài nước."
+      "vi": "Chuyên ngành Giáo dục Ngôn ngữ Hàn Quốc quốc tế của Khoa Giáo dục Toàn cầu dạy phương pháp giảng dạy tiếng Hàn và văn hóa Hàn cho người nước ngoài. Sinh viên học cấu trúc tiếng Hàn, lý thuyết giáo dục tiếng Hàn và giáo dục văn hóa Hàn để làm việc trong lĩnh vực giảng dạy tiếng Hàn trong và ngoài nước."
     },
     "links": {
       "homepage": "https://www.yu.ac.kr/main/academics/koreanedu.do",
@@ -37,7 +37,7 @@
     "slogan": { "ko": "언어로 세계를 잇는 통번역 전문가", "vi": "Chuyên gia biên phiên dịch kết nối thế giới bằng ngôn ngữ" },
     "description": {
       "ko": "글로벌통번역학부는 영어통번역전공과 응용중국어통번역전공으로 이루어져 있으며, 외국어 실력을 바탕으로 통역과 번역 실무 능력을 기릅니다. 외국인 유학생은 응용중국어통번역전공에 지원할 수 있습니다.",
-      "vi": "Khoa Biên phiên dịch toàn cầu gồm chuyên ngành Biên phiên dịch tiếng Anh và chuyên ngành Biên phiên dịch tiếng Trung ứng dụng, giúp sinh viên phát triển kỹ năng phiên dịch và biên dịch thực tế dựa trên năng lực ngoại ngữ. Du học sinh quốc tế có thể đăng ký chuyên ngành Biên phiên dịch tiếng Trung ứng dụng."
+      "vi": "Khoa Biên phiên dịch Toàn cầu gồm chuyên ngành Biên phiên dịch tiếng Anh và chuyên ngành Biên phiên dịch tiếng Trung ứng dụng, giúp sinh viên phát triển kỹ năng phiên dịch và biên dịch thực tế dựa trên năng lực ngoại ngữ. Du học sinh quốc tế có thể đăng ký chuyên ngành Biên phiên dịch tiếng Trung ứng dụng."
     },
     "links": {
       "homepage": "https://www.yu.ac.kr/main/academics/trans.do",

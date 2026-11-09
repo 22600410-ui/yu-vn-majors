@@ -12,7 +12,7 @@ import Faq from './pages/Faq';
 import MajorTest from './pages/MajorTest';
 import site from './data/site.json';
 import { ChatProvider, useChat } from './components/RecommenderChat';
-import { NoticeProvider, SafeRoutes } from './components/Notice';
+import { NoticeProvider, SafeRoutes, isHidden } from './components/Notice';
 
 const NAV = [
   { to: '/', key: 'nav.home', end: true },
@@ -91,13 +91,16 @@ function SearchBox({ className = '' }) {
           className="min-w-0 flex-1 bg-transparent px-3 py-2.5 text-base text-slate-900 placeholder:text-slate-400 focus:outline-none"
         />
       </form>
-      <button
-        type="button"
-        onClick={openChat}
-        className="shrink-0 rounded-full bg-gradient-to-r from-yu to-sky-500 px-4 py-3 text-sm font-bold text-white shadow-md transition hover:brightness-110 sm:px-5 sm:text-base"
-      >
-        ✦ {t('header.aiButton')}
-      </button>
+      {/* 추천 챗봇이 숨김(site.json hidden)이면 버튼도 숨김 */}
+      {!isHidden('chat') && (
+        <button
+          type="button"
+          onClick={openChat}
+          className="shrink-0 rounded-full bg-gradient-to-r from-yu to-sky-500 px-4 py-3 text-sm font-bold text-white shadow-md transition hover:brightness-110 sm:px-5 sm:text-base"
+        >
+          ✦ {t('header.aiButton')}
+        </button>
+      )}
     </div>
   );
 }

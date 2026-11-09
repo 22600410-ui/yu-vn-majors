@@ -15,7 +15,7 @@ function Chip({ active, onClick, children }) {
       type="button"
       onClick={onClick}
       aria-pressed={active}
-      className={`whitespace-nowrap rounded-full border-2 px-3.5 py-1.5 text-sm transition ${
+      className={`max-w-full rounded-full border-2 px-3.5 py-1.5 text-left text-sm leading-snug transition ${
         active
           ? 'border-yu-dark bg-yu-dark font-bold text-white ring-2 ring-yu-dark/25'
           : 'border-slate-200 bg-white text-slate-700 hover:border-yu-dark'
@@ -90,15 +90,16 @@ export default function Departments() {
 
       <div className="mt-4 space-y-3">
         <div className="flex flex-wrap items-center gap-2">
-          <span className="w-20 shrink-0 text-sm font-semibold text-slate-600">{t('admission.filterLabel')}</span>
+          <span className="w-full shrink-0 text-sm font-semibold text-slate-600 sm:w-20">{t('admission.filterLabel')}</span>
           {TRACKS.map((k) => (
             <Chip key={k} active={track === k} onClick={() => update('track', k, 'all')}>
               {t(`admission.${k}`)}
             </Chip>
           ))}
         </div>
-        <div className="flex items-start gap-2">
-          <span className="w-20 shrink-0 pt-1.5 text-sm font-semibold text-slate-600">{t('departments.collegeFilter')}</span>
+        {/* 휴대폰: 제목 아래에 버튼 / 넓은 화면: 제목 옆에 버튼 */}
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-start">
+          <span className="shrink-0 text-sm font-semibold text-slate-600 sm:w-20 sm:pt-1.5">{t('departments.collegeFilter')}</span>
           <div className="flex flex-wrap gap-2">
             <Chip active={collegeId === 'all'} onClick={() => update('college', 'all', 'all')}>
               {t('departments.allColleges')}

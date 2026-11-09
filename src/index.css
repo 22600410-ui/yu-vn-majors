@@ -8,6 +8,13 @@
 html {
   -webkit-text-size-adjust: 100%;
 }
+/* 안전장치: 어떤 요소가 화면보다 넓어져도 휴대폰 브라우저가 페이지 전체를 축소(PC 배율)하지 않도록
+   가로 넘침을 잘라 냄. clip 은 스크롤 영역을 만들지 않아 상단 고정 헤더(sticky)에 영향이 없음 */
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip;
+}
 body {
   @apply bg-white font-sans text-base leading-relaxed text-slate-800 antialiased;
   word-break: keep-all;

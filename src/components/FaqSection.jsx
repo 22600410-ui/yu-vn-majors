@@ -182,7 +182,7 @@ export default function FaqSection({ limit, title = true }) {
         <UnderlineTabs items={tabs} value={category} onChange={setCategory} label={t('faq.title')} />
       </div>
 
-      <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
         {shown.map((item) => {
           const { q, a } = faqText(item, t, lang);
           return (
@@ -190,7 +190,7 @@ export default function FaqSection({ limit, title = true }) {
               key={item.id}
               type="button"
               onClick={() => setOpen(item)}
-              className="flex h-full flex-col gap-4 rounded-2xl border border-slate-200 bg-white p-4 text-left transition hover:border-yu-dark hover:shadow-lg hover:ring-2 hover:ring-yu-dark focus-visible:ring-[3px] active:ring-[3px] active:ring-yu-dark"
+              className="flex h-full min-w-0 flex-col gap-4 rounded-2xl border border-slate-200 bg-white p-4 text-left transition hover:border-yu-dark hover:shadow-lg hover:ring-2 hover:ring-yu-dark focus-visible:ring-[3px] active:ring-[3px] active:ring-yu-dark"
             >
               <div className="w-full rounded-xl bg-slate-50 p-4 sm:p-5">
                 <p className="line-clamp-2 text-[17px] font-bold leading-snug text-slate-900">{q}</p>
