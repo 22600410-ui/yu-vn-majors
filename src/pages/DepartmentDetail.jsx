@@ -158,6 +158,18 @@ export default function DepartmentDetail() {
         <KoreanLevel department={d} />
       </Section>
 
+      {/* 등록금·장학금 모의 계산으로 이동 (이 학과가 미리 선택됨) */}
+      <Link
+        to={`/tuition?dept=${d.id}`}
+        className="mt-6 flex items-center justify-between gap-3 rounded-2xl bg-emerald-50 px-5 py-4 transition hover:bg-emerald-100"
+      >
+        <span className="min-w-0">
+          <span className="block font-bold text-emerald-900">💰 {t('tuition.ctaTitle')}</span>
+          <span className="mt-0.5 block text-sm text-emerald-800">{t('tuition.ctaText')}</span>
+        </span>
+        <span aria-hidden className="shrink-0 text-xl text-emerald-700">→</span>
+      </Link>
+
       {!hasDetail && (
         <Section title={t('department.description')}>
           <p className="text-slate-600">{t('department.noDetail')}</p>

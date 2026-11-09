@@ -1,0 +1,44 @@
+{
+  "_comment": "등록금·장학금 모의 계산 데이터. 출처: 영남대학교 외국인 유학생 안내 자료(등록금 표, 학부 입학생 장학금 표) — 2026학년도 2학기 기준이며 2027학년도 1학기 등록금은 바뀔 수 있음. 해마다 표가 바뀌면 groups 의 first/later 금액과 basis 를 고쳐 주세요. first=첫째 학기, later=둘째 학기부터. 학과→계열 연결은 departments 에 있고(한국어 학과 이름), 학교 표에 학과가 직접 나오지 않아 단과대학으로 추정한 학과는 estimated 에 적어 두었습니다(화면에 '추정' 표시).",
+  "basis": { "ko": "2026학년도 2학기 기준", "vi": "Theo học kỳ 2 năm học 2026" },
+  "groups": [
+    { "id": "humanities", "label": { "ko": "인문사회", "vi": "Nhân văn – Xã hội" }, "first": 3689400, "later": 3547000 },
+    { "id": "mathstat", "label": { "ko": "수학, 통계", "vi": "Toán, Thống kê" }, "first": 4398400, "later": 4256000 },
+    { "id": "humanservice", "label": { "ko": "휴먼서비스학과", "vi": "Ngành Dịch vụ Con người" }, "first": 4404400, "later": 4262000 },
+    { "id": "science", "label": { "ko": "이학(Science), 체육, 공학", "vi": "Khoa học tự nhiên, Thể dục, Kỹ thuật" }, "first": 5104400, "later": 4962000 },
+    { "id": "semiconductor", "label": { "ko": "차세대반도체학과", "vi": "Khoa Bán dẫn Thế hệ mới" }, "first": 5622400, "later": 5480000 },
+    { "id": "arts", "label": { "ko": "예능(Arts)", "vi": "Nghệ thuật (Arts)" }, "first": 5638400, "later": 5496000 }
+  ],
+  "colleges": {
+    "liberalart": "humanities",
+    "politics": "humanities",
+    "sob": "humanities",
+    "gl": "humanities",
+    "sci": "science",
+    "eng": "science",
+    "digital": "science",
+    "life": "science",
+    "chek": "science",
+    "arts": "arts"
+  },
+  "departments": {
+    "수학과": "mathstat",
+    "통계학과": "mathstat",
+    "휴먼서비스학과": "humanservice",
+    "차세대반도체학과": "semiconductor"
+  },
+  "estimated": ["식품경제외식학과", "주거환경학과", "식품영양학과", "의류패션학과", "조경학과", "글로벌학부"],
+  "scholarship": {
+    "_comment": "학부 입학생 장학금(첫째 학기만 적용, 수업료 면제). levels 의 rate 는 면제 비율(%). yuBonus: 영남대 한국어·국제언어교육원 1년 이상 이수 + TOPIK 3급 수준 인정 시 한 단계 위 혜택.",
+    "levels": [
+      { "id": "topik6", "label": { "ko": "TOPIK 6급", "vi": "TOPIK cấp 6" }, "rate": 100, "name": { "ko": "외국인 장학금 1", "vi": "Học bổng người nước ngoài 1" } },
+      { "id": "topik5", "label": { "ko": "TOPIK 5급", "vi": "TOPIK cấp 5" }, "rate": 100, "name": { "ko": "외국인 장학금 1", "vi": "Học bổng người nước ngoài 1" } },
+      { "id": "topik4", "label": { "ko": "TOPIK 4급", "vi": "TOPIK cấp 4" }, "rate": 80, "name": { "ko": "외국인 장학금 2", "vi": "Học bổng người nước ngoài 2" } },
+      { "id": "sejong", "label": { "ko": "세종학당 한국어 중급2 이수", "vi": "Hoàn thành Trung cấp 2 tiếng Hàn tại Viện King Sejong" }, "rate": 80, "name": { "ko": "외국인 장학금 2", "vi": "Học bổng người nước ngoài 2" } },
+      { "id": "topik3", "label": { "ko": "TOPIK 3급", "vi": "TOPIK cấp 3" }, "rate": 60, "name": { "ko": "외국인 장학금 3", "vi": "Học bổng người nước ngoài 3" } },
+      { "id": "other", "label": { "ko": "그 외 한국어 성적 (TOPIK 1·2급 등)", "vi": "Chứng chỉ tiếng Hàn khác (TOPIK cấp 1·2…)" }, "rate": 50, "name": { "ko": "외국인 장학금 4", "vi": "Học bổng người nước ngoài 4" }, "conditional": true },
+      { "id": "none", "label": { "ko": "한국어 성적 없음", "vi": "Chưa có chứng chỉ tiếng Hàn" }, "rate": 0, "name": null }
+    ],
+    "steps": [50, 60, 80, 100]
+  }
+}

@@ -12,6 +12,7 @@ import Faq from './pages/Faq';
 import MajorTest from './pages/MajorTest';
 import Saved from './pages/Saved';
 import Checklist from './pages/Checklist';
+import Tuition from './pages/Tuition';
 import { useSaved } from './utils/saved';
 import site from './data/site.json';
 import { ChatProvider, useChat } from './components/RecommenderChat';
@@ -24,6 +25,7 @@ const NAV = [
   { to: '/test', key: 'nav.test' },
   { to: '/saved', key: 'nav.saved', badge: 'saved' },
   { to: '/checklist', key: 'nav.checklist' },
+  { to: '/tuition', key: 'nav.tuition' },
   { to: '/faq', key: 'nav.faq' },
 ];
 
@@ -212,6 +214,7 @@ export default function App() {
                 <Route path="/test/result/:code" element={<MajorTest />} />
                 <Route path="/saved" element={<Saved />} />
                 <Route path="/checklist" element={<Checklist />} />
+                <Route path="/tuition" element={<Tuition />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </SafeRoutes>

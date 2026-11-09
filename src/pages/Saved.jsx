@@ -10,6 +10,7 @@ import LocalizedText from '../components/LocalizedText';
 import AdmissionBadges from '../components/AdmissionBadges';
 import CoreTags from '../components/CoreTags';
 import KoreanLevel from '../components/KoreanLevel';
+import { tuitionGroupOf, won } from '../utils/tuition';
 
 const MAX_LIST = 5; // 비교표 칸마다 보여 줄 최대 항목 수
 
@@ -35,7 +36,8 @@ const certificatesOf = (d) => dedupeLocalized(d.certificates ?? []).map((c) => m
 
 /** 2~3개 학과를 나란히 놓은 비교표 (휴대폰에서는 표 안에서만 옆으로 밀어 봄) */
 function CompareTable({ items }) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const lang = i18n.resolvedLanguage;
   // 칸 하나 최소 9.5rem → 휴대폰에서 3개면 표가 화면보다 넓어지고, 표 상자 안에서만 옆으로 밀림
   const cols = { gridTemplateColumns: `repeat(${items.length}, minmax(0, 1fr))`, minWidth: `${items.length * 10.5}rem` };
   const full = { gridColumn: '1 / -1' };
@@ -49,6 +51,21 @@ function CompareTable({ items }) {
       render: (x) => <LocalizedText as="p" text={summaryOf(x.department)} className="text-sm leading-relaxed text-slate-800" showBadge={false} />,
     },
     { key: 'korean', label: t('compare.korean'), render: (x) => <KoreanLevel department={x.department} variant="compact" /> },
+    {
+      key: 'tuition',
+      label: t('compare.tuition'),
+      render: (x) => {
+        const { group } = tuitionGroupOf(x.department, x.college);
+        return (
+          <div className="text-sm">
+            <p className="font-bold tabular-nums text-slate-900">{won(group.first, lang)}</p>
+            <Link to={`/tuition?dept=${x.department.id}`} className="mt-1 inline-block font-semibold text-emerald-700 hover:underline">
+              {t('compare.tuitionLink')} →
+            </Link>
+          </div>
+        );
+      },
+    },
     { key: 'careers', label: t('department.careers'), render: (x) => <ShortList items={careersOf(x.department)} empty={t('compare.none')} /> },
     { key: 'certs', label: t('department.certificates'), render: (x) => <ShortList items={certificatesOf(x.department)} empty={t('compare.none')} /> },
   ];
