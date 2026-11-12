@@ -30,8 +30,9 @@ i18n
     nonExplicitSupportedLngs: true, // vi-VN → vi, ko-KR → ko
     interpolation: { escapeValue: false },
     detection: {
-      // ?lang=vi 로 공유 가능, 선택은 localStorage에 기억. 브라우저 언어는 보지 않고 기본 언어로 시작.
-      order: ['querystring', 'localStorage'],
+      // 순서: ① 주소의 ?lang=vi → ② 학생이 전에 고른 언어(localStorage) → ③ 휴대폰·브라우저 언어
+      // 휴대폰 언어가 베트남어(vi, vi-VN)면 처음부터 베트남어, 지원하지 않는 언어(예: 영어)면 기본 언어(config/languages.json 의 default)
+      order: ['querystring', 'localStorage', 'navigator'],
       lookupQuerystring: 'lang',
       caches: ['localStorage'],
     },

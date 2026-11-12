@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { findDepartment, useDepartments } from '../hooks/useDepartments';
 import LocalizedText from '../components/LocalizedText';
 import { tr } from '../utils/localize';
-import { LEVELS, TUITION, simulate, tuitionGroupOf, won } from '../utils/tuition';
+import { CURRENCIES, LEVELS, TUITION, convert, defaultCurrency, simulate, tuitionGroupOf, won } from '../utils/tuition';
 
 function Step({ n, title, children }) {
   return (
@@ -18,17 +18,44 @@ function Step({ n, title, children }) {
   );
 }
 
-function Row({ label, value, sub, strong = false, minus = false }) {
+function Row({ label, value, alt, sub, strong = false, minus = false }) {
   return (
     <div className="flex items-start justify-between gap-3 py-2">
       <div className="min-w-0">
         <p className={strong ? 'font-bold text-slate-900' : 'text-slate-700'}>{label}</p>
         {sub && <p className="text-xs leading-snug text-slate-500">{sub}</p>}
       </div>
-      <p className={`shrink-0 text-right tabular-nums ${minus ? 'font-bold text-rose-600' : strong ? 'font-bold text-slate-900' : 'text-slate-800'}`}>
-        {minus && '− '}
-        {value}
-      </p>
+      <div className="shrink-0 text-right tabular-nums">
+        <p className={minus ? 'font-bold text-rose-600' : strong ? 'font-bold text-slate-900' : 'text-slate-800'}>
+          {minus && '− '}
+          {value}
+        </p>
+        {alt && <p className="text-xs text-slate-500">≈ {minus && '− '}{alt}</p>}
+      </div>
+    </div>
+  );
+}
+
+/** 외화 고르기 (VND · USD · CNY) */
+function CurrencyPicker({ value, onChange }) {
+  const { t, i18n } = useTranslation();
+  return (
+    <div className="flex flex-wrap items-center gap-2">
+      <span className="text-sm font-semibold text-slate-600">{t('tuition.currency')}</span>
+      {CURRENCIES.map((c) => (
+        <button
+          key={c.code}
+          type="button"
+          onClick={() => onChange(c.code)}
+          aria-pressed={value === c.code}
+          title={tr(c.label, i18n.resolvedLanguage)}
+          className={`rounded-full border-2 px-3 py-1 text-sm font-bold transition ${
+            value === c.code ? 'border-yu-dark bg-yu-dark text-white' : 'border-slate-200 bg-white text-slate-700 hover:border-yu-dark'
+          }`}
+        >
+          {c.code}
+        </button>
+      ))}
     </div>
   );
 }
@@ -41,6 +68,9 @@ export default function Tuition() {
   const deptId = params.get('dept') ?? '';
   const [level, setLevel] = useState('none');
   const [yuBonus, setYuBonus] = useState(false);
+  const [picked, setPicked] = useState(null); // 학생이 고른 외화 (안 고르면 언어별 기본값)
+  const currency = picked ?? defaultCurrency(lang);
+  const fx = (krw) => convert(krw, currency, lang);
 
   const found = useMemo(() => (deptId ? findDepartment(data, deptId) : null), [data, deptId]);
   const info = found ? tuitionGroupOf(found.department, found.college) : null;
@@ -117,17 +147,22 @@ export default function Tuition() {
         {!result ? (
           <p className="rounded-2xl bg-slate-50 p-6 text-center text-[15px] text-slate-600">{t('tuition.needDept')}</p>
         ) : (
+          <>
+          <div className="mb-3">
+            <CurrencyPicker value={currency} onChange={setPicked} />
+          </div>
           <div className="overflow-hidden rounded-3xl border-2 border-yu-dark">
             <div className="bg-yu-dark px-5 py-4 text-white">
               <p className="text-sm text-white/80">{tr(found.college.name, lang)}</p>
               <p className="text-xl font-extrabold">{tr(found.department.name, lang)}</p>
             </div>
             <div className="divide-y divide-slate-100 px-5 py-3 text-[15px]">
-              <Row label={t('tuition.firstFee')} value={won(result.first, lang)} sub={t('tuition.firstFeeSub', { tuition: won(result.tuition, lang), extra: won(result.extra, lang) })} />
+              <Row label={t('tuition.firstFee')} value={won(result.first, lang)} alt={fx(result.first)} sub={t('tuition.firstFeeSub', { tuition: won(result.tuition, lang), extra: won(result.extra, lang) })} />
               {result.rate > 0 ? (
                 <Row
                   label={`${tr(result.scholarshipName, lang)} · ${t('tuition.exempt', { rate: result.rate })}`}
                   value={won(result.discount, lang)}
+                  alt={fx(result.discount)}
                   sub={result.bonusApplied ? t('tuition.bonusApplied') : null}
                   minus
                 />
@@ -136,14 +171,21 @@ export default function Tuition() {
               )}
               <div className="flex items-end justify-between gap-3 py-4">
                 <p className="font-extrabold text-slate-900">{t('tuition.payFirst')}</p>
-                <p className="text-right text-2xl font-extrabold tabular-nums text-yu-dark sm:text-3xl">{won(result.pay, lang)}</p>
+                <div className="text-right tabular-nums">
+                  <p className="text-2xl font-extrabold text-yu-dark sm:text-3xl">{won(result.pay, lang)}</p>
+                  <p className="mt-0.5 text-[15px] font-bold text-slate-600">≈ {fx(result.pay)}</p>
+                </div>
               </div>
-              <Row label={t('tuition.later')} value={won(result.later, lang)} sub={t('tuition.laterSub')} />
+              <Row label={t('tuition.later')} value={won(result.later, lang)} alt={fx(result.later)} sub={t('tuition.laterSub')} />
             </div>
             {result.conditional && (
               <p className="border-t border-amber-200 bg-amber-50 px-5 py-3 text-sm text-amber-900">{t('tuition.conditional')}</p>
             )}
+            <p className="border-t border-slate-100 bg-slate-50 px-5 py-2.5 text-xs text-slate-500">
+              ≈ <LocalizedText text={TUITION.currencies.asOf} showBadge={false} /> · {t('tuition.fxNote')}
+            </p>
           </div>
+          </>
         )}
       </section>
 

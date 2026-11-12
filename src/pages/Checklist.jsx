@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import LocalizedText from '../components/LocalizedText';
+import DdayBanner from '../components/DdayBanner';
 import checklist from '../data/checklist.json';
 import { useChecklistState } from '../utils/saved';
 
@@ -57,6 +58,9 @@ export default function Checklist() {
     <div className="mx-auto max-w-3xl px-4 pb-24 pt-8">
       <h1 className="text-2xl font-extrabold text-slate-900 sm:text-3xl">{t('checklist.title')}</h1>
       <p className="mt-2 text-[15px] text-slate-600">{t('checklist.intro')}</p>
+      <div className="mt-4">
+        <DdayBanner />
+      </div>
 
       {/* 입학 유형 고르기 */}
       <div className="mt-6 grid grid-cols-2 gap-2" role="group" aria-label={t('admission.filterLabel')}>

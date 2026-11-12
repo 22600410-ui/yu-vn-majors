@@ -1,0 +1,104 @@
+{
+  "_comment": "캠퍼스·생활 안내. 주소·교통은 영남대학교 홈페이지 오시는 길 안내를 참고했습니다. 요금·시간·운행 노선은 바뀔 수 있으니 확인되면 고쳐 주세요. routes 의 steps 는 순서대로 화살표로 이어서 표시됩니다.",
+  "address": {
+    "ko": "경상북도 경산시 대학로 280 (우편번호 38541)",
+    "vi": "280 Daehak-ro, Gyeongsan-si, Gyeongsangbuk-do, Hàn Quốc (mã bưu chính 38541)"
+  },
+  "mapQuery": "Yeungnam University Gyeongsan",
+  "kakaoMap": "https://map.kakao.com/?q=%EC%98%81%EB%82%A8%EB%8C%80%ED%95%99%EA%B5%90",
+  "googleMap": "https://www.google.com/maps/search/?api=1&query=Yeungnam+University+Gyeongsan",
+  "admissionLink": "https://www.yu.ac.kr/isa/index.do",
+  "facts": [
+    { "icon": "🚇", "text": { "ko": "대구 지하철 2호선 종점 '영남대역'이 학교 정문 앞에 있어요.", "vi": "Ga cuối tuyến tàu điện ngầm số 2 Daegu là 'ga Yeungnam University', ngay trước cổng chính." } },
+    { "icon": "🏙️", "text": { "ko": "대구 시내(반월당·동성로)까지 지하철 2호선으로 갈아타지 않고 갈 수 있어요.", "vi": "Có thể đi thẳng vào trung tâm Daegu (Banwoldang, Dongseong-ro) bằng tuyến số 2, không cần đổi tuyến." } },
+    { "icon": "🚄", "text": { "ko": "KTX가 서는 동대구역에서 지하철로 약 1시간 거리예요.", "vi": "Cách ga Dongdaegu (có tàu KTX) khoảng 1 tiếng đi tàu điện ngầm." } }
+  ],
+  "routes": [
+    {
+      "id": "subway",
+      "icon": "🚇",
+      "title": { "ko": "지하철로 학교 오기", "vi": "Đến trường bằng tàu điện ngầm" },
+      "steps": [
+        { "ko": "2호선 영남대역 하차", "vi": "Xuống ga Yeungnam University (tuyến 2)" },
+        { "ko": "2번 출구로 나와 오른쪽, 또는 3번 출구", "vi": "Ra cửa số 2 rồi rẽ phải, hoặc ra cửa số 3" },
+        { "ko": "학교 정문", "vi": "Cổng chính của trường" }
+      ]
+    },
+    {
+      "id": "dongdaegu",
+      "icon": "🚄",
+      "title": { "ko": "동대구역(KTX)에서", "vi": "Từ ga Dongdaegu (KTX)" },
+      "time": { "ko": "지하철 약 1시간 · 택시 약 40분", "vi": "Tàu điện ngầm khoảng 1 tiếng · Taxi khoảng 40 phút" },
+      "steps": [
+        { "ko": "동대구역에서 지하철 1호선", "vi": "Tuyến 1 tại ga Dongdaegu" },
+        { "ko": "반월당역에서 2호선으로 환승", "vi": "Đổi sang tuyến 2 tại ga Banwoldang" },
+        { "ko": "영남대역 하차", "vi": "Xuống ga Yeungnam University" }
+      ]
+    },
+    {
+      "id": "incheon",
+      "icon": "✈️",
+      "title": { "ko": "인천국제공항에서", "vi": "Từ sân bay quốc tế Incheon" },
+      "steps": [
+        { "ko": "공항철도 또는 KTX로 서울역 이동", "vi": "Đi tàu sân bay (AREX) hoặc KTX đến ga Seoul" },
+        { "ko": "KTX로 동대구역", "vi": "Đi KTX đến ga Dongdaegu" },
+        { "ko": "지하철 1호선 → 반월당 환승 → 2호선 영남대역", "vi": "Tuyến 1 → đổi tại Banwoldang → tuyến 2 đến ga Yeungnam University" }
+      ],
+      "note": { "ko": "공항에서 대구로 가는 리무진 버스도 있어요. 시간표와 요금은 출발 전에 확인하세요.", "vi": "Cũng có xe buýt limousine từ sân bay đi Daegu. Hãy kiểm tra lịch chạy và giá vé trước khi đi." }
+    },
+    {
+      "id": "schoolbus",
+      "icon": "🚌",
+      "title": { "ko": "학교 스쿨버스", "vi": "Xe buýt của trường" },
+      "steps": [
+        { "ko": "지하철 1호선 반야월역 · 2호선 사월역", "vi": "Ga Banyawol (tuyến 1) · ga Sawol (tuyến 2)" },
+        { "ko": "영남대학교", "vi": "Đại học Yeungnam" }
+      ],
+      "note": { "ko": "운행 시간은 학기와 학교 사정에 따라 바뀌어요.", "vi": "Giờ chạy có thể thay đổi theo học kỳ và tình hình của trường." }
+    }
+  ],
+  "dorm": {
+    "text": {
+      "ko": "캠퍼스 안에 생활관(기숙사)이 있고, 외국인 유학생도 신청할 수 있어요. 방 종류, 비용, 신청 기간은 해마다 바뀌므로 합격 후 안내되는 생활관 공지에서 확인하세요. 학교 정문 주변에는 원룸 등 자취방도 많아요.",
+      "vi": "Trong khuôn viên trường có ký túc xá, du học sinh cũng có thể đăng ký. Loại phòng, chi phí và thời gian đăng ký thay đổi theo từng năm, vì vậy hãy xem thông báo ký túc xá sau khi trúng tuyển. Quanh cổng chính cũng có nhiều phòng trọ (one-room)."
+    }
+  },
+  "settle": [
+    {
+      "id": "arc",
+      "icon": "🪪",
+      "title": { "ko": "외국인 등록", "vi": "Đăng ký người nước ngoài" },
+      "text": {
+        "ko": "한국에 90일 넘게 머무르면 입국 후 90일 안에 출입국·외국인관서에서 외국인 등록을 해야 해요. 외국인등록증은 은행·휴대폰 개통에도 필요해요.",
+        "vi": "Nếu ở Hàn Quốc trên 90 ngày, bạn phải đăng ký người nước ngoài tại cơ quan xuất nhập cảnh trong vòng 90 ngày sau khi nhập cảnh. Thẻ đăng ký người nước ngoài cũng cần khi mở tài khoản ngân hàng hay đăng ký điện thoại."
+      }
+    },
+    {
+      "id": "phone",
+      "icon": "📱",
+      "title": { "ko": "휴대폰 개통", "vi": "Đăng ký điện thoại" },
+      "text": {
+        "ko": "처음에는 여권으로 쓸 수 있는 선불 유심을 쓰고, 외국인등록증이 나오면 일반 요금제로 바꾸는 학생이 많아요.",
+        "vi": "Nhiều bạn dùng SIM trả trước (đăng ký bằng hộ chiếu) lúc đầu, rồi chuyển sang gói cước thông thường khi đã có thẻ đăng ký người nước ngoài."
+      }
+    },
+    {
+      "id": "bank",
+      "icon": "🏦",
+      "title": { "ko": "은행 계좌", "vi": "Tài khoản ngân hàng" },
+      "text": {
+        "ko": "등록금·생활비를 받으려면 한국 은행 계좌가 있으면 편해요. 여권, 외국인등록증, 재학 확인 서류 등을 가져가세요. 필요한 서류는 은행마다 달라요.",
+        "vi": "Có tài khoản ngân hàng Hàn Quốc sẽ tiện cho việc nhận tiền học phí, sinh hoạt phí. Hãy mang hộ chiếu, thẻ đăng ký người nước ngoài, giấy xác nhận sinh viên… Giấy tờ cần thiết tùy từng ngân hàng."
+      }
+    },
+    {
+      "id": "health",
+      "icon": "🏥",
+      "title": { "ko": "건강보험·병원", "vi": "Bảo hiểm y tế & bệnh viện" },
+      "text": {
+        "ko": "외국인 유학생도 국민건강보험에 가입해요. 보험이 있으면 병원·약국 비용이 크게 줄어요. 가입 시기와 보험료는 국민건강보험공단 안내를 확인하세요.",
+        "vi": "Du học sinh cũng tham gia Bảo hiểm Y tế Quốc dân. Có bảo hiểm thì chi phí khám bệnh, mua thuốc giảm đáng kể. Thời điểm tham gia và mức phí, vui lòng xem hướng dẫn của Cơ quan Bảo hiểm Y tế Quốc dân."
+      }
+    }
+  ]
+}

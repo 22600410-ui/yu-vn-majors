@@ -1,0 +1,190 @@
+{
+  "_comment": "대학원 외국인 신입생·편입생 모집 (출처: 2027학년도 전기 영남대학교 대학원 외국인 신입생 및 편입생 모집 요강, 2차). new = 신입학 과정(M 석사, D 박사, I 석·박사 통합), tr = 편입학 과정(M, D), alt = 논문대체 학위취득제도, lang = 수업 언어 표시(entrack 영어트랙, en 영어 강의 개설, zh 중국어 강의, ja 일본어 강의 / 없으면 한국어 수업), fee = 등록금 계열(없으면 계열 기본값). 요강이 바뀌면 이 파일만 고치면 됩니다.",
+  "source": { "ko": "2027학년도 전기 대학원 외국인 신입생 및 편입생 모집 요강", "vi": "Hướng dẫn tuyển sinh sau đại học cho người nước ngoài – học kỳ đầu năm 2027" },
+  "link": "https://engraduate.yu.ac.kr",
+  "contact": { "team": { "ko": "대학원국제팀", "vi": "Phòng Quốc tế Sau đại học" }, "tel": "053-810-3755~7, 3782", "email": "graduate@yu.ac.kr", "visit": { "ko": "영남대학교(경산캠퍼스) 대학원(법학전문대학원) 1층 111호", "vi": "Phòng 111, tầng 1, tòa Sau đại học (Trường Luật), cơ sở Gyeongsan" } },
+
+  "schedule": {
+    "term": { "ko": "2027학년도 전기 대학원 외국인 모집", "vi": "Tuyển sinh sau đại học cho người nước ngoài – học kỳ đầu 2027" },
+    "link": "https://engraduate.yu.ac.kr",
+    "events": [
+      { "id": "grad-apply-2nd", "label": { "ko": "대학원 2차 원서 접수", "vi": "Nộp đơn sau đại học đợt 2" }, "start": "2026-11-16", "end": "2026-12-11" },
+      { "id": "grad-register-2nd", "label": { "ko": "대학원 2차 합격자 등록", "vi": "Đăng ký nhập học (trúng tuyển đợt 2)" }, "start": "2027-01-12", "end": "2027-01-14" }
+    ],
+    "rows": [
+      { "label": { "ko": "온라인 접수·전형료 납부", "vi": "Nộp đơn trực tuyến & lệ phí" }, "first": "2026.9.14 ~ 10.16 17:00", "second": "2026.11.16 ~ 12.11 17:00" },
+      { "label": { "ko": "서류 접수 (방문·우편)", "vi": "Nộp hồ sơ (trực tiếp / bưu điện)" }, "first": "2026.9.14 ~ 10.23 17:00", "second": "2026.11.16 ~ 12.18 17:00" },
+      { "label": { "ko": "학과 심사 (면접 가능)", "vi": "Khoa xét tuyển (có thể phỏng vấn)" }, "first": { "ko": "2026년 11월 중", "vi": "Trong tháng 11/2026" }, "second": { "ko": "2027년 1월 중", "vi": "Trong tháng 1/2027" } },
+      { "label": { "ko": "합격자 발표", "vi": "Công bố kết quả" }, "first": "2026.11.16", "second": "2027.1.11" },
+      { "label": { "ko": "합격자 등록", "vi": "Đăng ký nhập học" }, "first": "2026.11.17 ~ 11.19 16:00", "second": "2027.1.12 ~ 1.14 16:00" }
+    ],
+    "notes": [
+      { "ko": "전형료 100,000원 · 원서 접수는 온라인(UwayApply)으로만 가능", "vi": "Lệ phí 100.000 won · Chỉ nộp đơn trực tuyến (UwayApply)" },
+      { "ko": "편입학 전형은 2차 모집에서만 실시", "vi": "Tuyển chuyển tiếp chỉ có ở đợt 2" },
+      { "ko": "여러 모집단위에 함께 지원할 수 없음 · 전형료 결제 후에는 취소·변경 불가", "vi": "Không được nộp nhiều ngành · Sau khi thanh toán lệ phí không thể hủy hoặc thay đổi" }
+    ]
+  },
+
+  "eligibility": {
+    "common": [
+      { "ko": "부모 모두 외국인인 외국인, 또는 외국에서 한국의 초·중·고 및 대학 교육과정을 전부 이수한 외국인", "vi": "Người nước ngoài có cả bố và mẹ là người nước ngoài, hoặc đã hoàn thành toàn bộ chương trình tiểu học, trung học và đại học ở nước ngoài" },
+      { "ko": "석사·석박사 통합: 학사 학위 (입학 전 취득 예정 포함) · 박사: 석사 학위 (입학 전 취득 예정 포함)", "vi": "Thạc sĩ / Liên thông thạc sĩ–tiến sĩ: có bằng cử nhân (kể cả dự kiến tốt nghiệp trước khi nhập học) · Tiến sĩ: có bằng thạc sĩ" },
+      { "ko": "전공이 달라도 지원 가능 (의학과 임상의학 분야는 의학사·치의학사만)", "vi": "Có thể đăng ký dù khác chuyên ngành (riêng y học lâm sàng chỉ dành cho cử nhân y khoa / nha khoa)" }
+    ],
+    "language": [
+      { "ko": "한국어능력시험(TOPIK) 3급 이상", "vi": "TOPIK cấp 3 trở lên" },
+      { "ko": "TOEFL iBT 71 · IELTS 5.5 · CEFR B2 · TOEIC 700 이상", "vi": "TOEFL iBT 71 · IELTS 5.5 · CEFR B2 · TOEIC 700 trở lên" },
+      { "ko": "세종학당 중급1 이상 이수", "vi": "Hoàn thành Viện Sejong trình độ Trung cấp 1 trở lên" },
+      { "ko": "법무부 사회통합프로그램 3단계 이수 또는 사전평가 61점 이상", "vi": "Hoàn thành KIIP (Chương trình hội nhập xã hội) cấp 3 hoặc bài đánh giá đầu vào từ 61 điểm" },
+      { "ko": "공인 어학 성적은 없지만 학과 심사에서 수학 가능하다고 판단된 경우 (입학 후 한국어 특강 수강 필수)", "vi": "Không có chứng chỉ nhưng được khoa đánh giá đủ khả năng học (phải học lớp tiếng Hàn đặc biệt sau khi nhập học)" }
+    ],
+    "englishTrack": { "ko": "영어트랙 지원자는 TOEFL iBT 71점 이상 소지자만 지원할 수 있습니다. (2026년 1월 2일 이후 응시한 TOEFL iBT는 3.5 이상)", "vi": "Ứng viên chương trình tiếng Anh chỉ cần có TOEFL iBT từ 71 điểm (TOEFL iBT thi từ ngày 2/1/2026: từ 3.5)." }
+  },
+
+  "tuition": {
+    "basis": { "ko": "2026학년도 기준 (변동 가능)", "vi": "Theo mức năm học 2026 (có thể thay đổi)" },
+    "admissionFee": 863000,
+    "groups": [
+      { "id": "hum", "label": { "ko": "인문·사회", "vi": "Nhân văn – Xã hội" }, "master": 4232000, "doctor": 5080000 },
+      { "id": "humanservice", "label": { "ko": "휴먼서비스학과", "vi": "Khoa Dịch vụ con người" }, "master": 5114000, "doctor": null },
+      { "id": "math", "label": { "ko": "수학·통계·수학교육", "vi": "Toán – Thống kê – Sư phạm Toán" }, "master": 5080000, "doctor": 6090000 },
+      { "id": "sci", "label": { "ko": "이학·체육·공학", "vi": "Khoa học tự nhiên – Thể dục – Kỹ thuật" }, "master": 5925000, "doctor": 7108000 },
+      { "id": "arts", "label": { "ko": "예능", "vi": "Nghệ thuật" }, "master": 6559000, "doctor": 7873000 },
+      { "id": "pharm", "label": { "ko": "약학", "vi": "Dược" }, "master": 6648000, "doctor": 7975000 },
+      { "id": "med", "label": { "ko": "의학", "vi": "Y" }, "master": 8003000, "doctor": 9605000 }
+    ],
+    "fieldDefault": { "hum": "hum", "sci": "sci", "eng": "sci", "arts": "arts", "med": "med" }
+  },
+
+  "scholarship": {
+    "_comment": "입학 첫 학기 장학금. 수업료에만 적용(입학금 제외). rateNew = 신입생, rateTransfer = 편입생.",
+    "levels": [
+      { "id": "s1", "label": { "ko": "TOPIK 6급 · IELTS 7 · TOEFL iBT 100 · TOEIC 900", "vi": "TOPIK 6 · IELTS 7 · TOEFL iBT 100 · TOEIC 900" }, "rateNew": 100, "rateTransfer": 80 },
+      { "id": "s2", "label": { "ko": "TOPIK 5급 · IELTS 6.5 · TOEFL iBT 90 · TOEIC 850", "vi": "TOPIK 5 · IELTS 6.5 · TOEFL iBT 90 · TOEIC 850" }, "rateNew": 80, "rateTransfer": 60 },
+      { "id": "s3", "label": { "ko": "TOPIK 4급 · IELTS 5.5 · TOEFL iBT 71 · TOEIC 700", "vi": "TOPIK 4 · IELTS 5.5 · TOEFL iBT 71 · TOEIC 700" }, "rateNew": 60, "rateTransfer": 40 },
+      { "id": "s4", "label": { "ko": "영어 모국어 국가 출신, 또는 영어 공용어 국가에서 대학 4년을 영어로 교육받음", "vi": "Đến từ nước nói tiếng Anh bản ngữ, hoặc học đại học 4 năm bằng tiếng Anh ở nước có tiếng Anh là ngôn ngữ chính thức" }, "rateNew": 40, "rateTransfer": 20 },
+      { "id": "s5", "label": { "ko": "TOPIK 3급", "vi": "TOPIK 3" }, "rateNew": 30, "rateTransfer": 20 },
+      { "id": "none", "label": { "ko": "해당 없음", "vi": "Không có" }, "rateNew": 0, "rateTransfer": 0 }
+    ],
+    "notes": [
+      { "ko": "모든 장학금은 장학 심사를 통과해야 합니다. 두 번째 학기부터는 TOPIK·영어 성적과 직전 학기 평점으로 다시 정해집니다.", "vi": "Mọi học bổng đều phải qua xét duyệt. Từ học kỳ 2, học bổng được xét lại theo TOPIK / tiếng Anh và điểm trung bình học kỳ trước." },
+      { "ko": "장학금은 수업료에만 적용되고 입학금(863,000원)에는 적용되지 않습니다.", "vi": "Học bổng chỉ áp dụng cho học phí, không áp dụng cho phí nhập học (863.000 won)." },
+      { "ko": "신입생 중 위 기준에 해당하지 않아도 학과 추천을 받으면 20% 장학금(신입생장학6)을 받을 수 있습니다.", "vi": "Tân sinh viên không đạt các mức trên vẫn có thể nhận học bổng 20% nếu được khoa đề cử." },
+      { "ko": "국민건강보험과 유학생 건강보험 가입이 필수이며, 매 학기 보험 자격을 유지해야 장학금을 받을 수 있습니다.", "vi": "Bắt buộc tham gia bảo hiểm y tế quốc dân và bảo hiểm du học sinh, duy trì mỗi học kỳ để được nhận học bổng." }
+    ]
+  },
+
+  "fields": [
+    {
+      "id": "hum",
+      "label": { "ko": "인문사회 계열", "vi": "Khối Nhân văn – Xã hội" },
+      "departments": [
+        { "id": "korean-lit", "name": { "ko": "국어국문학과", "vi": "Ngữ văn Hàn Quốc" }, "majors": { "ko": "국어국문학", "vi": "Ngữ văn Hàn Quốc" }, "new": "MD", "tr": "MD", "alt": true },
+        { "id": "english-lit", "name": { "ko": "영어영문학과", "vi": "Ngôn ngữ & Văn học Anh" }, "majors": { "ko": "영어학, 영문학", "vi": "Ngôn ngữ học Anh, Văn học Anh" }, "new": "MDI", "tr": "MD", "alt": true, "lang": ["en"] },
+        { "id": "chinese", "name": { "ko": "중국언어문화학과", "vi": "Ngôn ngữ & Văn hóa Trung Quốc" }, "majors": { "ko": "중어중문학, 글로벌중국어교육", "vi": "Ngữ văn Trung Quốc, Giáo dục tiếng Trung toàn cầu" }, "new": "MDI", "tr": "MD", "alt": true, "lang": ["zh"], "note": { "ko": "글로벌중국어교육 전공은 전체 수업이 중국어로 진행 · 지도 시 중국어 지원, 중국어 논문 작성 가능", "vi": "Chuyên ngành Giáo dục tiếng Trung toàn cầu học hoàn toàn bằng tiếng Trung · Hướng dẫn bằng tiếng Trung, có thể viết luận văn bằng tiếng Trung" } },
+        { "id": "japanese", "name": { "ko": "일어일문학과", "vi": "Ngữ văn Nhật Bản" }, "majors": { "ko": "일어일문학", "vi": "Ngữ văn Nhật Bản" }, "new": "MD", "tr": "MD", "alt": true, "lang": ["ja"] },
+        { "id": "philosophy", "name": { "ko": "철학과", "vi": "Triết học" }, "majors": { "ko": "동양철학, 서양철학", "vi": "Triết học phương Đông, Triết học phương Tây" }, "new": "MDI", "tr": "MD", "alt": false },
+        { "id": "history", "name": { "ko": "역사학과", "vi": "Lịch sử" }, "majors": { "ko": "국사학, 동양사·서양사", "vi": "Lịch sử Hàn Quốc, Lịch sử phương Đông – phương Tây" }, "new": "MDI", "tr": "MD", "alt": true, "lang": ["en", "zh"], "note": { "ko": "석·박사 통합과정은 동양사·서양사 전공만", "vi": "Liên thông thạc sĩ–tiến sĩ chỉ có ở chuyên ngành Lịch sử phương Đông – phương Tây" } },
+        { "id": "anthropology", "name": { "ko": "문화인류학과", "vi": "Nhân học văn hóa" }, "majors": { "ko": "고고학, 사회인류학및민속학", "vi": "Khảo cổ học, Nhân học xã hội & Dân tộc học" }, "new": "MD", "tr": "MD", "alt": true },
+        { "id": "education", "name": { "ko": "교육학과", "vi": "Giáo dục học" }, "majors": { "ko": "교육학", "vi": "Giáo dục học" }, "new": "MDI", "tr": "", "alt": true },
+        { "id": "law", "name": { "ko": "법학과", "vi": "Luật" }, "majors": { "ko": "공법, 사법", "vi": "Luật công, Luật tư" }, "new": "MDI", "tr": "", "alt": true },
+        { "id": "public-admin", "name": { "ko": "행정학과", "vi": "Hành chính công" }, "majors": { "ko": "행정학", "vi": "Hành chính công" }, "new": "MDI", "tr": "MD", "alt": true },
+        { "id": "politics", "name": { "ko": "정치외교학과", "vi": "Chính trị & Ngoại giao" }, "majors": { "ko": "정치외교학", "vi": "Chính trị & Ngoại giao" }, "new": "MDI", "tr": "", "alt": true },
+        { "id": "community-welfare", "name": { "ko": "지역사회개발및복지학과", "vi": "Phát triển cộng đồng & Phúc lợi xã hội" }, "majors": { "ko": "지역사회개발학, 사회복지학", "vi": "Phát triển cộng đồng, Công tác xã hội" }, "new": "MDI", "tr": "MD", "alt": true },
+        { "id": "economics", "name": { "ko": "경제학과", "vi": "Kinh tế học" }, "majors": { "ko": "경제학", "vi": "Kinh tế học" }, "new": "MD", "tr": "", "alt": true },
+        { "id": "business", "name": { "ko": "경영학과", "vi": "Quản trị kinh doanh" }, "majors": { "ko": "인사조직, 운영관리, 경영정보관리, 재무금융, 마케팅", "vi": "Nhân sự & Tổ chức, Quản trị vận hành, Hệ thống thông tin quản lý, Tài chính, Marketing" }, "new": "MDI", "tr": "MD", "alt": true },
+        { "id": "accounting", "name": { "ko": "회계세무학과", "vi": "Kế toán & Thuế" }, "majors": { "ko": "회계학", "vi": "Kế toán" }, "new": "MDI", "tr": "MD", "alt": true },
+        { "id": "trade", "name": { "ko": "무역학과", "vi": "Thương mại quốc tế" }, "majors": { "ko": "국제통상, 국제경영및무역상무", "vi": "Thương mại quốc tế, Kinh doanh quốc tế & Nghiệp vụ ngoại thương" }, "new": "MD", "tr": "", "alt": true },
+        { "id": "food-econ", "name": { "ko": "식품자원경제학과", "vi": "Kinh tế tài nguyên thực phẩm" }, "majors": { "ko": "식품자원경제학", "vi": "Kinh tế tài nguyên thực phẩm" }, "new": "MD", "tr": "MD", "alt": false },
+        { "id": "sociology", "name": { "ko": "사회학과", "vi": "Xã hội học" }, "majors": { "ko": "사회학", "vi": "Xã hội học" }, "new": "MD", "tr": "MD", "alt": true },
+        { "id": "media", "name": { "ko": "미디어커뮤니케이션학과", "vi": "Truyền thông & Báo chí" }, "majors": { "ko": "미디어커뮤니케이션학", "vi": "Truyền thông" }, "new": "MDI", "tr": "MD", "alt": true },
+        { "id": "korean-edu", "name": { "ko": "국어교육학과", "vi": "Sư phạm Ngữ văn Hàn Quốc" }, "majors": { "ko": "국어교육학", "vi": "Sư phạm Ngữ văn Hàn Quốc" }, "new": "MDI", "tr": "MD", "alt": true },
+        { "id": "human-service", "name": { "ko": "휴먼서비스학과", "vi": "Dịch vụ con người" }, "majors": { "ko": "휴먼서비스", "vi": "Dịch vụ con người" }, "new": "MDI", "tr": "M", "alt": false, "fee": "humanservice", "note": { "ko": "박사·석박사 통합과정은 새로 생긴 과정이라 등록금은 고지서에서 확인", "vi": "Tiến sĩ và liên thông là chương trình mới, học phí xem trên giấy báo học phí" } },
+        { "id": "intl-korean-edu", "name": { "ko": "국제한국어교육학과", "vi": "Giáo dục tiếng Hàn quốc tế" }, "majors": { "ko": "외국어로서의한국어교육, 국제한국어교육", "vi": "Giảng dạy tiếng Hàn như ngoại ngữ, Giáo dục tiếng Hàn quốc tế" }, "new": "MDI", "tr": "", "alt": false },
+        { "id": "cn-interpret", "name": { "ko": "응용중국어통번역학과", "vi": "Biên phiên dịch tiếng Trung ứng dụng" }, "majors": { "ko": "응용중한통번역", "vi": "Biên phiên dịch Trung – Hàn ứng dụng" }, "new": "M", "tr": "", "alt": false }
+      ]
+    },
+    {
+      "id": "sci",
+      "label": { "ko": "자연과학 계열", "vi": "Khối Khoa học tự nhiên" },
+      "departments": [
+        { "id": "math", "name": { "ko": "수학과", "vi": "Toán học" }, "majors": { "ko": "수학, 응용수학", "vi": "Toán học, Toán ứng dụng" }, "new": "MDI", "tr": "", "alt": true, "fee": "math" },
+        { "id": "statistics", "name": { "ko": "통계학과", "vi": "Thống kê" }, "majors": { "ko": "통계학", "vi": "Thống kê" }, "new": "MDI", "tr": "", "alt": false, "fee": "math" },
+        { "id": "physics", "name": { "ko": "물리학과", "vi": "Vật lý" }, "majors": { "ko": "물리학", "vi": "Vật lý" }, "new": "MDI", "tr": "MD", "alt": true, "lang": ["en"], "note": { "ko": "대학에서 물리학을 전공한 학생의 지원을 원함", "vi": "Ưu tiên ứng viên đã học chuyên ngành Vật lý ở đại học" } },
+        { "id": "chemistry", "name": { "ko": "화학과", "vi": "Hóa học" }, "majors": { "ko": "화학", "vi": "Hóa học" }, "new": "MDI", "tr": "", "alt": false, "lang": ["en"], "note": { "ko": "학사 및 논문 지도 시 외국어 지원", "vi": "Hỗ trợ ngoại ngữ khi hướng dẫn học tập và luận văn" } },
+        { "id": "life-science", "name": { "ko": "생명과학과", "vi": "Khoa học sự sống" }, "majors": { "ko": "생명과학", "vi": "Khoa học sự sống" }, "new": "MDI", "tr": "MD", "alt": false },
+        { "id": "forestry", "name": { "ko": "산림자원학과", "vi": "Tài nguyên rừng" }, "majors": { "ko": "산림자원학, 산림이용학", "vi": "Tài nguyên rừng, Sử dụng tài nguyên rừng" }, "new": "MD", "tr": "", "alt": false, "lang": ["en"], "note": { "ko": "학사 및 논문 지도 시 외국어 지원", "vi": "Hỗ trợ ngoại ngữ khi hướng dẫn học tập và luận văn" } },
+        { "id": "horticulture", "name": { "ko": "원예학과", "vi": "Làm vườn" }, "majors": { "ko": "원예학", "vi": "Làm vườn" }, "new": "MDI", "tr": "", "alt": true },
+        { "id": "food-science", "name": { "ko": "식품과학과", "vi": "Khoa học thực phẩm" }, "majors": { "ko": "식품공학, 외식산업학", "vi": "Công nghệ thực phẩm, Ngành dịch vụ ăn uống" }, "new": "MDI", "tr": "", "alt": true },
+        { "id": "housing", "name": { "ko": "가족주거학과", "vi": "Gia đình & Nhà ở" }, "majors": { "ko": "실내환경디자인", "vi": "Thiết kế môi trường nội thất" }, "new": "MDI", "tr": "MD", "alt": true },
+        { "id": "fashion", "name": { "ko": "의류패션학과", "vi": "May mặc & Thời trang" }, "majors": { "ko": "의류패션", "vi": "May mặc & Thời trang" }, "new": "MDI", "tr": "MD", "alt": true, "lang": ["en"], "note": { "ko": "의류설계생산·의류소재 분야 전공자 지원 원함", "vi": "Ưu tiên ứng viên chuyên ngành thiết kế – sản xuất may mặc hoặc vật liệu dệt may" } },
+        { "id": "nutrition", "name": { "ko": "식품영양학과", "vi": "Dinh dưỡng thực phẩm" }, "majors": { "ko": "식품영양학", "vi": "Dinh dưỡng thực phẩm" }, "new": "MDI", "tr": "", "alt": true },
+        { "id": "pharmacy", "name": { "ko": "약학과", "vi": "Dược học" }, "majors": { "ko": "약학", "vi": "Dược học" }, "new": "MDI", "tr": "MD", "alt": false, "lang": ["entrack", "en"], "fee": "pharm", "note": { "ko": "한국어 과정과 영어트랙을 함께 모집 (영어트랙은 TOEFL iBT 71점 이상)", "vi": "Tuyển cả chương trình tiếng Hàn và chương trình tiếng Anh (chương trình tiếng Anh cần TOEFL iBT từ 71)" } },
+        { "id": "biotech", "name": { "ko": "생명공학과", "vi": "Công nghệ sinh học" }, "majors": { "ko": "생명공학", "vi": "Công nghệ sinh học" }, "new": "MDI", "tr": "", "alt": false, "lang": ["en"] },
+        { "id": "math-edu", "name": { "ko": "수학교육과", "vi": "Sư phạm Toán" }, "majors": { "ko": "수학교육학", "vi": "Sư phạm Toán" }, "new": "D", "tr": "", "alt": false, "fee": "math" },
+        { "id": "biomed-eng", "name": { "ko": "의생명공학과", "vi": "Kỹ thuật y sinh" }, "majors": { "ko": "의생명공학", "vi": "Kỹ thuật y sinh" }, "new": "MDI", "tr": "", "alt": false, "lang": ["en"] }
+      ]
+    },
+    {
+      "id": "eng",
+      "label": { "ko": "공학 계열", "vi": "Khối Kỹ thuật" },
+      "departments": [
+        { "id": "civil", "name": { "ko": "건설시스템공학과", "vi": "Kỹ thuật hệ thống xây dựng" }, "majors": { "ko": "스마트구조공학, 스마트수자원·환경공학, 스마트토질·도로공학", "vi": "Kết cấu thông minh, Tài nguyên nước & Môi trường thông minh, Địa kỹ thuật & Đường bộ thông minh" }, "new": "MDI", "tr": "", "alt": true, "lang": ["en"] },
+        { "id": "architecture", "name": { "ko": "건축학과", "vi": "Kiến trúc" }, "majors": { "ko": "건축공학, 건축학", "vi": "Kỹ thuật kiến trúc, Kiến trúc" }, "new": "MDI", "tr": "MD", "alt": true, "note": { "ko": "석·박사 통합과정은 건축공학 전공만", "vi": "Liên thông thạc sĩ–tiến sĩ chỉ có ở chuyên ngành Kỹ thuật kiến trúc" } },
+        { "id": "urban", "name": { "ko": "도시공학과", "vi": "Kỹ thuật đô thị" }, "majors": { "ko": "도시·환경계획, 교통공학", "vi": "Quy hoạch đô thị & Môi trường, Kỹ thuật giao thông" }, "new": "MDI", "tr": "MD", "alt": true },
+        { "id": "mechanical", "name": { "ko": "기계공학과", "vi": "Kỹ thuật cơ khí" }, "majors": { "ko": "기계공학", "vi": "Kỹ thuật cơ khí" }, "new": "MDI", "tr": "", "alt": false, "note": { "ko": "학사 및 논문 지도 시 외국어 지원", "vi": "Hỗ trợ ngoại ngữ khi hướng dẫn học tập và luận văn" } },
+        { "id": "materials", "name": { "ko": "신소재공학과", "vi": "Kỹ thuật vật liệu mới" }, "majors": { "ko": "신소재공학", "vi": "Kỹ thuật vật liệu mới" }, "new": "MDI", "tr": "MD", "alt": true, "lang": ["en"] },
+        { "id": "electrical", "name": { "ko": "전기공학과", "vi": "Kỹ thuật điện" }, "majors": { "ko": "에너지및환경전자, 제어및기기·전력변환", "vi": "Điện tử năng lượng & môi trường, Điều khiển – thiết bị & Biến đổi điện năng" }, "new": "MDI", "tr": "", "alt": false, "lang": ["en"] },
+        { "id": "electronic", "name": { "ko": "전자공학과", "vi": "Kỹ thuật điện tử" }, "majors": { "ko": "전자공학", "vi": "Kỹ thuật điện tử" }, "new": "MDI", "tr": "", "alt": true },
+        { "id": "ict", "name": { "ko": "정보통신공학과", "vi": "Kỹ thuật thông tin & truyền thông" }, "majors": { "ko": "정보통신공학", "vi": "Kỹ thuật thông tin & truyền thông" }, "new": "MDI", "tr": "MD", "alt": true, "lang": ["en"] },
+        { "id": "computer", "name": { "ko": "컴퓨터공학과", "vi": "Kỹ thuật máy tính" }, "majors": { "ko": "컴퓨터공학", "vi": "Kỹ thuật máy tính" }, "new": "MDI", "tr": "MD", "alt": true },
+        { "id": "chem-eng", "name": { "ko": "화학공학과", "vi": "Kỹ thuật hóa học" }, "majors": { "ko": "화학공학, 고분자바이오소재공학", "vi": "Kỹ thuật hóa học, Vật liệu sinh học polymer" }, "new": "MDI", "tr": "", "alt": true, "lang": ["en"] },
+        { "id": "fiber", "name": { "ko": "파이버시스템공학과", "vi": "Kỹ thuật hệ thống sợi" }, "majors": { "ko": "파이버시스템공학", "vi": "Kỹ thuật hệ thống sợi" }, "new": "MDI", "tr": "MD", "alt": true },
+        { "id": "environmental", "name": { "ko": "환경공학과", "vi": "Kỹ thuật môi trường" }, "majors": { "ko": "환경공학", "vi": "Kỹ thuật môi trường" }, "new": "MDI", "tr": "MD", "alt": false, "lang": ["en"] },
+        { "id": "future-car", "name": { "ko": "미래자동차공학과", "vi": "Kỹ thuật ô tô tương lai" }, "majors": { "ko": "미래자동차공학", "vi": "Kỹ thuật ô tô tương lai" }, "new": "MDI", "tr": "", "alt": true },
+        { "id": "robot", "name": { "ko": "로봇공학과", "vi": "Kỹ thuật robot" }, "majors": { "ko": "로봇공학", "vi": "Kỹ thuật robot" }, "new": "M", "tr": "M", "alt": true }
+      ]
+    },
+    {
+      "id": "arts",
+      "label": { "ko": "예체능 계열", "vi": "Khối Nghệ thuật – Thể thao" },
+      "departments": [
+        { "id": "composition", "name": { "ko": "작곡과", "vi": "Sáng tác âm nhạc" }, "majors": { "ko": "작곡, 지휘", "vi": "Sáng tác, Chỉ huy" }, "new": "M", "tr": "M", "alt": true },
+        { "id": "vocal", "name": { "ko": "성악과", "vi": "Thanh nhạc" }, "majors": { "ko": "성악", "vi": "Thanh nhạc" }, "new": "M", "tr": "M", "alt": true },
+        { "id": "instrumental", "name": { "ko": "기악과", "vi": "Nhạc cụ" }, "majors": { "ko": "피아노, 관현악", "vi": "Piano, Nhạc cụ dàn nhạc" }, "new": "M", "tr": "M", "alt": true, "note": { "ko": "편입학(석사)은 피아노 전공만", "vi": "Chuyển tiếp (thạc sĩ) chỉ có chuyên ngành Piano" } },
+        { "id": "korean-music", "name": { "ko": "국악과", "vi": "Âm nhạc truyền thống Hàn Quốc" }, "majors": { "ko": "국악", "vi": "Âm nhạc truyền thống Hàn Quốc" }, "new": "M", "tr": "M", "alt": true },
+        { "id": "painting", "name": { "ko": "회화과", "vi": "Hội họa" }, "majors": { "ko": "한국회화, 회화", "vi": "Hội họa Hàn Quốc, Hội họa" }, "new": "M", "tr": "M", "alt": true },
+        { "id": "visual-design", "name": { "ko": "시각디자인학과", "vi": "Thiết kế thị giác" }, "majors": { "ko": "시각디자인", "vi": "Thiết kế thị giác" }, "new": "MDI", "tr": "MD", "alt": true, "lang": ["zh"], "note": { "ko": "학사 및 논문 지도 시 통역 지원", "vi": "Hỗ trợ phiên dịch khi hướng dẫn học tập và luận văn" } },
+        { "id": "industrial-design", "name": { "ko": "산업디자인학과", "vi": "Thiết kế công nghiệp" }, "majors": { "ko": "산업디자인", "vi": "Thiết kế công nghiệp" }, "new": "M", "tr": "M", "alt": true },
+        { "id": "product-design", "name": { "ko": "생활제품디자인학과", "vi": "Thiết kế sản phẩm đời sống" }, "majors": { "ko": "생활제품디자인", "vi": "Thiết kế sản phẩm đời sống" }, "new": "M", "tr": "M", "alt": true },
+        { "id": "trans-art", "name": { "ko": "트랜스아트과", "vi": "Trans Art (Nghệ thuật liên ngành)" }, "majors": { "ko": "트랜스아트", "vi": "Nghệ thuật liên ngành" }, "new": "M", "tr": "M", "alt": true },
+        { "id": "physical-edu", "name": { "ko": "체육학과", "vi": "Thể dục thể thao" }, "majors": { "ko": "체육학", "vi": "Thể dục thể thao" }, "new": "MD", "tr": "MD", "alt": true, "fee": "sci" }
+      ]
+    },
+    {
+      "id": "med",
+      "label": { "ko": "의학 계열", "vi": "Khối Y" },
+      "departments": [
+        { "id": "medicine", "name": { "ko": "의학과", "vi": "Y khoa" }, "majors": { "ko": "해부학, 생리학, 생화학·분자생물학, 병리학, 미생물학, 약리학, 예방의학, 내과학, 신경과학, 외과학, 정형외과학, 신경외과학, 심장혈관흉부외과학, 성형외과학, 산부인과학, 소아청소년과학, 정신건강의학, 안과학, 이비인후과학, 피부과학, 비뇨의학, 영상의학과학, 방사선종양학, 마취통증의학, 진단검사의학, 재활의학, 응급의학, 가정의학, 치과학, 핵의학, 의과학", "vi": "Các chuyên ngành y học cơ sở và lâm sàng: giải phẫu, sinh lý, hóa sinh – sinh học phân tử, bệnh học, vi sinh, dược lý, y học dự phòng, nội khoa, ngoại khoa, sản phụ khoa, nhi khoa, chẩn đoán hình ảnh, y học cấp cứu, khoa học y sinh…" }, "new": "MDI", "tr": "", "alt": true, "note": { "ko": "지원 전에 반드시 학과 사무실과 상담", "vi": "Bắt buộc liên hệ văn phòng khoa trước khi nộp đơn" } }
+      ]
+    },
+    {
+      "id": "coop",
+      "label": { "ko": "학과간 협동과정", "vi": "Chương trình liên ngành" },
+      "intro": { "ko": "여러 학과가 함께 교육과정을 운영하는 학위과정", "vi": "Chương trình do nhiều khoa cùng phối hợp đào tạo" },
+      "departments": [
+        { "id": "global-business", "name": { "ko": "글로벌비즈니스학과", "vi": "Kinh doanh toàn cầu" }, "majors": { "ko": "글로벌비즈니스", "vi": "Kinh doanh toàn cầu" }, "new": "MD", "tr": "", "alt": true, "lang": ["zh"], "fee": "hum", "note": { "ko": "학사 및 논문 지도 시 중국어 지원", "vi": "Hỗ trợ tiếng Trung khi hướng dẫn học tập và luận văn" } },
+        { "id": "digital-business", "name": { "ko": "디지털융합비즈니스학과", "vi": "Kinh doanh hội tụ số" }, "majors": { "ko": "디지털융합비즈니스학", "vi": "Kinh doanh hội tụ số" }, "new": "MDI", "tr": "MD", "alt": true, "fee": "hum" },
+        { "id": "logistics", "name": { "ko": "국제물류정책학과", "vi": "Chính sách logistics quốc tế" }, "majors": { "ko": "국제물류정책", "vi": "Chính sách logistics quốc tế" }, "new": "MDI", "tr": "MD", "alt": true, "fee": "hum" },
+        { "id": "saemaul", "name": { "ko": "새마을국제개발학과", "vi": "Phát triển quốc tế Saemaul" }, "majors": { "ko": "새마을국제개발", "vi": "Phát triển quốc tế Saemaul" }, "new": "MDI", "tr": "MD", "alt": true, "fee": "hum" },
+        { "id": "east-asia", "name": { "ko": "동아시아문화학과", "vi": "Văn hóa Đông Á" }, "majors": { "ko": "동아시아문화학", "vi": "Văn hóa Đông Á" }, "new": "MDI", "tr": "MD", "alt": true, "fee": "hum" },
+        { "id": "entrepreneurship", "name": { "ko": "기술혁신기업가정신학과", "vi": "Đổi mới công nghệ & Tinh thần khởi nghiệp" }, "majors": { "ko": "기술혁신기업가정신", "vi": "Đổi mới công nghệ & Khởi nghiệp" }, "new": "MDI", "tr": "", "alt": true, "fee": "hum" },
+        { "id": "military", "name": { "ko": "군사학과", "vi": "Khoa học quân sự" }, "majors": { "ko": "군사학", "vi": "Khoa học quân sự" }, "new": "D", "tr": "D", "alt": false, "fee": "hum" },
+        { "id": "robot-ai", "name": { "ko": "로봇AI융합학과", "vi": "Hội tụ Robot & AI" }, "majors": { "ko": "로봇AI융합", "vi": "Hội tụ Robot & AI" }, "new": "MDI", "tr": "MD", "alt": false, "fee": "sci" },
+        { "id": "battery", "name": { "ko": "배터리학과 (영어트랙)", "vi": "Pin & Năng lượng (chương trình tiếng Anh)" }, "majors": { "ko": "배터리", "vi": "Pin" }, "new": "MDI", "tr": "MD", "alt": false, "lang": ["entrack"], "fee": "sci", "note": { "ko": "영어트랙 (TOEFL iBT 71점 이상)", "vi": "Chương trình tiếng Anh (TOEFL iBT từ 71)" } },
+        { "id": "music", "name": { "ko": "음악학과", "vi": "Âm nhạc học" }, "majors": { "ko": "음악학실기, 음악이론", "vi": "Thực hành âm nhạc, Lý thuyết âm nhạc" }, "new": "D", "tr": "D", "alt": false, "fee": "arts" },
+        { "id": "dance", "name": { "ko": "무용공연예술학과", "vi": "Múa & Nghệ thuật biểu diễn" }, "majors": { "ko": "무용공연예술", "vi": "Múa & Nghệ thuật biểu diễn" }, "new": "M", "tr": "M", "alt": true, "fee": "arts" }
+      ]
+    }
+  ]
+}

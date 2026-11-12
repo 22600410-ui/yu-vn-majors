@@ -51,5 +51,21 @@ export function simulate(group, levelId, yuBonus = false) {
   };
 }
 
+/* ---------------- 외화 환산 (대략) ---------------- */
+export const CURRENCIES = data.currencies.list;
+
+/** 원화 금액을 외화로 바꿔 '약 ○○' 문자열로 (반올림 단위는 tuition.json 의 round) */
+export function convert(krw, code, lang) {
+  const c = CURRENCIES.find((x) => x.code === code);
+  if (!c) return '';
+  const raw = c.unitsPerKrw ? krw * c.unitsPerKrw : krw / c.krwPerUnit;
+  const rounded = Math.round(raw / c.round) * c.round;
+  const num = rounded.toLocaleString(lang === 'ko' ? 'ko-KR' : lang === 'vi' ? 'vi-VN' : 'en-US');
+  return `${c.prefix ?? ''}${num}${c.suffix ?? ''}`;
+}
+
+/** 언어별 기본 통화: 베트남어 → VND, 중국어 → CNY, 그 외 → USD */
+export const defaultCurrency = (lang) => (lang === 'vi' ? 'VND' : lang === 'zh' ? 'CNY' : 'USD');
+
 /** 원화 표시 (언어별 숫자 형식) */
 export const won = (n, lang) => `${Number(n).toLocaleString(lang === 'ko' ? 'ko-KR' : lang)}${lang === 'ko' ? '원' : ' KRW'}`;

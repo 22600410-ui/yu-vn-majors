@@ -8,6 +8,7 @@ import MajorCard from '../components/MajorCard';
 import LocalizedText from '../components/LocalizedText';
 import UnderlineTabs from '../components/UnderlineTabs';
 import FaqSection from '../components/FaqSection';
+import DdayBanner from '../components/DdayBanner';
 import { useChat } from '../components/RecommenderChat';
 import { isComingSoon } from '../components/Notice';
 
@@ -81,6 +82,11 @@ export default function Home() {
 
   return (
     <div className="pb-24">
+      {/* 입학 일정 D-day (src/data/schedule.json, 남은 일정이 없으면 숨김) */}
+      <section className="mx-auto max-w-6xl px-4 pt-5">
+        <DdayBanner />
+      </section>
+
       {/* 상단 기능 카드 */}
       <section className="mx-auto max-w-6xl px-4 pt-6 sm:pt-8">
         <div className="grid grid-cols-1 gap-x-5 gap-y-6 sm:grid-cols-3">
